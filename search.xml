@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/08/12/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>显示所有文件：（含隐藏文件）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -la</span><br></pre></td></tr></table></figure>
+
+<h3 id="not-a-directory"><a href="#not-a-directory" class="headerlink" title="not a directory"></a>not a directory</h3><p>使用 adb push 一个文件到手机中一个并不存在的目录下。虽然显示 push 成功了，但是 cd 到那个目录下时，却显示<code>not a directory</code>。</p>
+<p>原因是：要先使用 mkdir 创建这个文件夹，才能再 push 文件进去。</p>
+<h3 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h3><p><a class="link"   href="http://www.cnblogs.com/xxoome/p/5891768.html" >http://www.cnblogs.com/xxoome/p/5891768.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>进入指定文件夹，输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS 8.2开发环境</title>
     <url>/2021/08/14/CentOS%208.2%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<blockquote>
@@ -324,22 +343,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux常用命令</title>
-    <url>/2021/08/12/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>显示所有文件：（含隐藏文件）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -la</span><br></pre></td></tr></table></figure>
-
-<h3 id="not-a-directory"><a href="#not-a-directory" class="headerlink" title="not a directory"></a>not a directory</h3><p>使用 adb push 一个文件到手机中一个并不存在的目录下。虽然显示 push 成功了，但是 cd 到那个目录下时，却显示<code>not a directory</code>。</p>
-<p>原因是：要先使用 mkdir 创建这个文件夹，才能再 push 文件进去。</p>
-<h3 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h3><p><a class="link"   href="http://www.cnblogs.com/xxoome/p/5891768.html" >http://www.cnblogs.com/xxoome/p/5891768.html<i class="fas fa-external-link-alt"></i></a></p>
-<p>进入指定文件夹，输入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
+    <title>开到荼蘼</title>
+    <url>/2021/08/11/%E5%BC%80%E5%88%B0%E8%8D%BC%E8%98%BC/</url>
+    <content><![CDATA[<blockquote>
+<p>彼岸花开，开到荼蘼</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg"
+                      alt="开到荼蘼花事了"
+                ></p>
+<h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><p>每只蚂蚁，都有眼睛鼻子，它美不美丽<br>偏差有没有一毫厘，有何关系<br>每一个人，伤心了就哭泣，饿了就要吃<br>相差大不过天地，有何刺激</p>
+<h2 id="II"><a href="#II" class="headerlink" title="II"></a>II</h2><p>有太多太多魔力，太少道理<br>太多太多游戏，只是为了好奇<br>还有什么值得歇斯底里<br>对什么东西，死心塌地</p>
+<h2 id="III"><a href="#III" class="headerlink" title="III"></a>III</h2><p>一个一个偶像，都不外如此<br>沉迷过的偶像，一个个消失<br>谁曾伤天害理，谁又是上帝<br>我们在等待，什么奇迹</p>
+<h2 id="IV"><a href="#IV" class="headerlink" title="IV"></a>IV</h2><p>最后剩下自己，舍不得挑剔<br>最后对着自己，也不大看得起<br>谁给我全世界，我都会怀疑<br>心花怒放，却开到荼蘼</p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>日常</category>
       </categories>
       <tags>
-        <tag>技巧</tag>
+        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -404,30 +428,6 @@
       </categories>
       <tags>
         <tag>SQL技能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开到荼蘼</title>
-    <url>/2021/08/11/%E5%BC%80%E5%88%B0%E8%8D%BC%E8%98%BC/</url>
-    <content><![CDATA[<blockquote>
-<p>彼岸花开，开到荼蘼</p>
-</blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg"
-                      alt="开到荼蘼花事了"
-                ></p>
-<h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><p>每只蚂蚁，都有眼睛鼻子，它美不美丽<br>偏差有没有一毫厘，有何关系<br>每一个人，伤心了就哭泣，饿了就要吃<br>相差大不过天地，有何刺激</p>
-<h2 id="II"><a href="#II" class="headerlink" title="II"></a>II</h2><p>有太多太多魔力，太少道理<br>太多太多游戏，只是为了好奇<br>还有什么值得歇斯底里<br>对什么东西，死心塌地</p>
-<h2 id="III"><a href="#III" class="headerlink" title="III"></a>III</h2><p>一个一个偶像，都不外如此<br>沉迷过的偶像，一个个消失<br>谁曾伤天害理，谁又是上帝<br>我们在等待，什么奇迹</p>
-<h2 id="IV"><a href="#IV" class="headerlink" title="IV"></a>IV</h2><p>最后剩下自己，舍不得挑剔<br>最后对着自己，也不大看得起<br>谁给我全世界，我都会怀疑<br>心花怒放，却开到荼蘼</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
