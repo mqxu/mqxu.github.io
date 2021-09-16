@@ -324,25 +324,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux常用命令</title>
-    <url>/2021/08/12/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>显示所有文件：（含隐藏文件）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -la</span><br></pre></td></tr></table></figure>
-
-<h3 id="not-a-directory"><a href="#not-a-directory" class="headerlink" title="not a directory"></a>not a directory</h3><p>使用 adb push 一个文件到手机中一个并不存在的目录下。虽然显示 push 成功了，但是 cd 到那个目录下时，却显示<code>not a directory</code>。</p>
-<p>原因是：要先使用 mkdir 创建这个文件夹，才能再 push 文件进去。</p>
-<h3 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h3><p><a class="link"   href="http://www.cnblogs.com/xxoome/p/5891768.html" >http://www.cnblogs.com/xxoome/p/5891768.html<i class="fas fa-external-link-alt"></i></a></p>
-<p>进入指定文件夹，输入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SQL可能是你掌握的最有用的技能</title>
     <url>/2021/09/17/sql/</url>
     <content><![CDATA[<p><img  
@@ -403,7 +384,26 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>SQL技能</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/08/12/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>显示所有文件：（含隐藏文件）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -la</span><br></pre></td></tr></table></figure>
+
+<h3 id="not-a-directory"><a href="#not-a-directory" class="headerlink" title="not a directory"></a>not a directory</h3><p>使用 adb push 一个文件到手机中一个并不存在的目录下。虽然显示 push 成功了，但是 cd 到那个目录下时，却显示<code>not a directory</code>。</p>
+<p>原因是：要先使用 mkdir 创建这个文件夹，才能再 push 文件进去。</p>
+<h3 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h3><p><a class="link"   href="http://www.cnblogs.com/xxoome/p/5891768.html" >http://www.cnblogs.com/xxoome/p/5891768.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>进入指定文件夹，输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
