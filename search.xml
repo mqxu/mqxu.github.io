@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux常用命令</title>
+    <url>/2021/08/12/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>显示所有文件：（含隐藏文件）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -la</span><br></pre></td></tr></table></figure>
+
+<h3 id="not-a-directory"><a href="#not-a-directory" class="headerlink" title="not a directory"></a>not a directory</h3><p>使用 adb push 一个文件到手机中一个并不存在的目录下。虽然显示 push 成功了，但是 cd 到那个目录下时，却显示<code>not a directory</code>。</p>
+<p>原因是：要先使用 mkdir 创建这个文件夹，才能再 push 文件进去。</p>
+<h3 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h3><p><a class="link"   href="http://www.cnblogs.com/xxoome/p/5891768.html" >http://www.cnblogs.com/xxoome/p/5891768.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>进入指定文件夹，输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>技能</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS 8.2开发环境</title>
     <url>/2021/08/14/CentOS%208.2%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<blockquote>
@@ -314,25 +333,6 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone  https://github.com/foxiswho/docker-rocketmq.gitcd docker-rocketmqcd rmqchmod +x  start.sh./start.sh</span><br></pre></td></tr></table></figure>
 
 <p>访问浏览器：你的 IP 地址:8180</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>技能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux常用命令</title>
-    <url>/2021/08/12/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>显示所有文件：（含隐藏文件）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -la</span><br></pre></td></tr></table></figure>
-
-<h3 id="not-a-directory"><a href="#not-a-directory" class="headerlink" title="not a directory"></a>not a directory</h3><p>使用 adb push 一个文件到手机中一个并不存在的目录下。虽然显示 push 成功了，但是 cd 到那个目录下时，却显示<code>not a directory</code>。</p>
-<p>原因是：要先使用 mkdir 创建这个文件夹，才能再 push 文件进去。</p>
-<h3 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h3><p><a class="link"   href="http://www.cnblogs.com/xxoome/p/5891768.html" >http://www.cnblogs.com/xxoome/p/5891768.html<i class="fas fa-external-link-alt"></i></a></p>
-<p>进入指定文件夹，输入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Linux</category>
