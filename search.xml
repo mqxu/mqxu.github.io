@@ -319,8 +319,7 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>日常操作</tag>
-        <tag>必备技能</tag>
+        <tag>技能</tag>
       </tags>
   </entry>
   <entry>
@@ -339,12 +338,12 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>技巧</tag>
+        <tag>技能</tag>
       </tags>
   </entry>
   <entry>
     <title>SQL可能是你掌握的最有用的技能</title>
-    <url>/2021/09/17/sql/</url>
+    <url>/2021/09/15/sql/</url>
     <content><![CDATA[<p><img  
                      lazyload
                      src="/images/loading.svg"
