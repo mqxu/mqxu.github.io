@@ -1,14 +1,14 @@
 :root {
   --background-color: #fff;
   --second-background-color: #f7f7f7;
-  --primary-color: #06c;
+  --primary-color: #a47cc9;
   --first-text-color: #484853;
   --second-text-color: #4c4c57;
   --third-text-color: #808091;
   --fourth-text-color: #ededef;
   --default-text-color: #50505c;
   --border-color: #b3b3b3;
-  --selection-color: #0075eb;
+  --selection-color: #ad89ce;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
   --scrollbar-color: #595967;
@@ -22,14 +22,14 @@
   :root {
     --background-color: #fff;
     --second-background-color: #f7f7f7;
-    --primary-color: #06c;
+    --primary-color: #a47cc9;
     --first-text-color: #484853;
     --second-text-color: #4c4c57;
     --third-text-color: #808091;
     --fourth-text-color: #ededef;
     --default-text-color: #50505c;
     --border-color: #b3b3b3;
-    --selection-color: #0075eb;
+    --selection-color: #ad89ce;
     --shadow-color: rgba(0,0,0,0.2);
     --shadow-hover-color: rgba(0,0,0,0.28);
     --scrollbar-color: #595967;
@@ -44,14 +44,14 @@
   :root {
     --background-color: #383940;
     --second-background-color: #32333a;
-    --primary-color: #06c;
+    --primary-color: #a47cc9;
     --first-text-color: #d2d2d7;
     --second-text-color: #cbcbd1;
     --third-text-color: #9595a2;
     --fourth-text-color: #242429;
     --default-text-color: #bebec6;
     --border-color: #5c5e6a;
-    --selection-color: #0075eb;
+    --selection-color: #ad89ce;
     --shadow-color: rgba(128,128,128,0.2);
     --shadow-hover-color: rgba(128,128,128,0.28);
     --scrollbar-color: #32333a;
@@ -65,14 +65,14 @@
 .light-mode {
   --background-color: #fff;
   --second-background-color: #f7f7f7;
-  --primary-color: #06c;
+  --primary-color: #a47cc9;
   --first-text-color: #484853;
   --second-text-color: #4c4c57;
   --third-text-color: #808091;
   --fourth-text-color: #ededef;
   --default-text-color: #50505c;
   --border-color: #b3b3b3;
-  --selection-color: #0075eb;
+  --selection-color: #ad89ce;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
   --scrollbar-color: #595967;
@@ -85,14 +85,14 @@
 .dark-mode {
   --background-color: #383940;
   --second-background-color: #32333a;
-  --primary-color: #06c;
+  --primary-color: #a47cc9;
   --first-text-color: #d2d2d7;
   --second-text-color: #cbcbd1;
   --third-text-color: #9595a2;
   --fourth-text-color: #242429;
   --default-text-color: #bebec6;
   --border-color: #5c5e6a;
-  --selection-color: #0075eb;
+  --selection-color: #ad89ce;
   --shadow-color: rgba(128,128,128,0.2);
   --shadow-hover-color: rgba(128,128,128,0.28);
   --scrollbar-color: #32333a;
@@ -543,14 +543,14 @@ button {
 :root {
   --background-color: #fff;
   --second-background-color: #f7f7f7;
-  --primary-color: #06c;
+  --primary-color: #a47cc9;
   --first-text-color: #484853;
   --second-text-color: #4c4c57;
   --third-text-color: #808091;
   --fourth-text-color: #ededef;
   --default-text-color: #50505c;
   --border-color: #b3b3b3;
-  --selection-color: #0075eb;
+  --selection-color: #ad89ce;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
   --scrollbar-color: #595967;
@@ -564,14 +564,14 @@ button {
   :root {
     --background-color: #fff;
     --second-background-color: #f7f7f7;
-    --primary-color: #06c;
+    --primary-color: #a47cc9;
     --first-text-color: #484853;
     --second-text-color: #4c4c57;
     --third-text-color: #808091;
     --fourth-text-color: #ededef;
     --default-text-color: #50505c;
     --border-color: #b3b3b3;
-    --selection-color: #0075eb;
+    --selection-color: #ad89ce;
     --shadow-color: rgba(0,0,0,0.2);
     --shadow-hover-color: rgba(0,0,0,0.28);
     --scrollbar-color: #595967;
@@ -586,14 +586,14 @@ button {
   :root {
     --background-color: #383940;
     --second-background-color: #32333a;
-    --primary-color: #06c;
+    --primary-color: #a47cc9;
     --first-text-color: #d2d2d7;
     --second-text-color: #cbcbd1;
     --third-text-color: #9595a2;
     --fourth-text-color: #242429;
     --default-text-color: #bebec6;
     --border-color: #5c5e6a;
-    --selection-color: #0075eb;
+    --selection-color: #ad89ce;
     --shadow-color: rgba(128,128,128,0.2);
     --shadow-hover-color: rgba(128,128,128,0.28);
     --scrollbar-color: #32333a;
@@ -607,14 +607,14 @@ button {
 .light-mode {
   --background-color: #fff;
   --second-background-color: #f7f7f7;
-  --primary-color: #06c;
+  --primary-color: #a47cc9;
   --first-text-color: #484853;
   --second-text-color: #4c4c57;
   --third-text-color: #808091;
   --fourth-text-color: #ededef;
   --default-text-color: #50505c;
   --border-color: #b3b3b3;
-  --selection-color: #0075eb;
+  --selection-color: #ad89ce;
   --shadow-color: rgba(0,0,0,0.2);
   --shadow-hover-color: rgba(0,0,0,0.28);
   --scrollbar-color: #595967;
@@ -627,14 +627,14 @@ button {
 .dark-mode {
   --background-color: #383940;
   --second-background-color: #32333a;
-  --primary-color: #06c;
+  --primary-color: #a47cc9;
   --first-text-color: #d2d2d7;
   --second-text-color: #cbcbd1;
   --third-text-color: #9595a2;
   --fourth-text-color: #242429;
   --default-text-color: #bebec6;
   --border-color: #5c5e6a;
-  --selection-color: #0075eb;
+  --selection-color: #ad89ce;
   --shadow-color: rgba(128,128,128,0.2);
   --shadow-hover-color: rgba(128,128,128,0.28);
   --scrollbar-color: #32333a;
@@ -1426,7 +1426,6 @@ pre .javascript .function {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background-color);
   padding-top: 2px;
   box-shadow: 2px 2px 5px var(--shadow-color);
 }
@@ -1942,12 +1941,15 @@ pre .javascript .function {
   position: relative;
 }
 .page-template-container .friends-link-container .friends-link-list .friends-link-item {
+  border-radius: 6px;
+  margin: 10px;
+  background-image: linear-gradient(to right, #a56cc1 0%, #a6acec 100%);
   box-sizing: border-box;
   position: relative;
   float: left;
-  width: 50%;
+  width: 32%;
   cursor: pointer;
-  height: 82px;
+  height: 222px;
   padding-bottom: 16px;
 }
 @media (max-width: 780px) {
@@ -1955,19 +1957,13 @@ pre .javascript .function {
     height: 68px;
   }
 }
-.page-template-container .friends-link-container .friends-link-list .friends-link-item:nth-child(odd) {
-  padding-right: 8px;
-}
-.page-template-container .friends-link-container .friends-link-list .friends-link-item:nth-child(even) {
-  padding-left: 8px;
-}
 .page-template-container .friends-link-container .friends-link-list .friends-link-item .content {
   position: relative;
   width: 100%;
   height: 100%;
   box-shadow: 1px 1px 2px var(--shadow-color);
   border-radius: 6px;
-  padding-left: 66px;
+  padding-left: 206px;
   box-sizing: border-box;
 }
 @media (max-width: 780px) {
@@ -1982,15 +1978,14 @@ pre .javascript .function {
   color: var(--primary-color);
 }
 .page-template-container .friends-link-container .friends-link-list .friends-link-item .content .radius {
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-radius: 6px;
 }
 .page-template-container .friends-link-container .friends-link-list .friends-link-item .content .avatar {
   position: absolute;
   top: 0;
   left: 0;
-  width: 66px;
-  height: 100%;
+  width: 206px;
+  height: 108%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2014,7 +2009,7 @@ pre .javascript .function {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2026,21 +2021,22 @@ pre .javascript .function {
   }
 }
 .page-template-container .friends-link-container .friends-link-list .friends-link-item .content .info .name {
-  width: 100%;
-  height: 60%;
-  font-size: 1.28rem;
+  width: 95%;
+  height: 55%;
+  font-size: 1.66rem;
+  margin-top: 20px;
   color: var(--second-text-color);
 }
 @media (max-width: 780px) {
   .page-template-container .friends-link-container .friends-link-list .friends-link-item .content .info .name {
-    font-size: 1.08rem;
+    font-size: 0.98rem;
   }
 }
 .page-template-container .friends-link-container .friends-link-list .friends-link-item .content .info .description {
-  width: 100%;
+  width: 95%;
   height: 40%;
-  font-size: 1rem;
-  color: var(--third-text-color);
+  font-size: 1.2rem;
+  color: #eee;
 }
 @media (max-width: 780px) {
   .page-template-container .friends-link-container .friends-link-list .friends-link-item .content .info .description {
