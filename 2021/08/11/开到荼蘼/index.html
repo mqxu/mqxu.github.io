@@ -1,536 +1,531 @@
-<!DOCTYPE html>
-<html lang="cn">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Hexo Theme Keep">
-    <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="mqxu">
-    
-    <title>
-        
-            开到荼蘼 |
-        
-        Mqxu&#39;s Blog
-    </title>
-    
-<link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="/images/avatar.jpg">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
-    <script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"mqxu.top","root":"/","language":"cn","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#A47CC9","avatar":"/images/me.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"黄色的森林分出两条路，我选择了人迹更少的那一条，从此决定我一生的道路。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.3"};
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="mqxu">
+  <meta name="keywords" content="">
+  
+  <title>开到荼蘼 - MQXU</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"mqxu.top","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
-<div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
-    
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Mqxu's Blog</strong>&nbsp;</a>
 
-    
-</div>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-
-<main class="page-container">
-
-    
-
-    <div class="page-main-content">
-
-        <div class="page-main-content-top">
-            <header class="header-wrapper">
-
-    <div class="header-content">
-        <div class="left">
-            
-                <a class="logo-image" href="/">
-                    <img src="/images/avatar.jpg">
-                </a>
-            
-            <a class="logo-title" href="/">
-                Mqxu&#39;s Blog
-            </a>
-        </div>
-
-        <div class="right">
-            <div class="pc">
-                <ul class="menu-list">
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/"
-                            >
-                                HOME
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/archives"
-                            >
-                                ARCHIVES
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/categories"
-                            >
-                                CATEGORIES
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/tags"
-                            >
-                                TAGS
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/links"
-                            >
-                                LINKS
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/about"
-                            >
-                                ABOUT
-                            </a>
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="fas fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="header-drawer">
-        <ul class="drawer-menu-list">
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/">HOME</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/archives">ARCHIVES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/categories">CATEGORIES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/tags">TAGS</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/links">LINKS</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/about">ABOUT</a>
-                </li>
-            
-        </ul>
-    </div>
-
-    <div class="window-mask"></div>
-
-</header>
-
-
-        </div>
-
-        <div class="page-main-content-middle">
-
-            <div class="main-content">
-
-                
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">开到荼蘼</span>
-        </div>
-
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/me.jpg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">mqxu</span>
-                        
-                            <span class="author-label">Teacher</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-08-11 16:19:19
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="开到荼蘼">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      mqxu
     </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>192 Words</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
-        </span>
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-11 16:19" pubdate>
+        2021年8月11日 下午
+      </time>
+    </span>
+  
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      192 字
+    </span>
+  
 
-        <div class="article-content markdown-body">
-            <blockquote>
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">开到荼蘼</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
 <p>彼岸花开，开到荼蘼</p>
 </blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg"
-                      alt="开到荼蘼花事了"
-                ></p>
+<p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg" srcset="/img/loading.gif" lazyload alt="开到荼蘼花事了"></p>
 <h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><p>每只蚂蚁，都有眼睛鼻子，它美不美丽<br>偏差有没有一毫厘，有何关系<br>每一个人，伤心了就哭泣，饿了就要吃<br>相差大不过天地，有何刺激</p>
 <h2 id="II"><a href="#II" class="headerlink" title="II"></a>II</h2><p>有太多太多魔力，太少道理<br>太多太多游戏，只是为了好奇<br>还有什么值得歇斯底里<br>对什么东西，死心塌地</p>
 <h2 id="III"><a href="#III" class="headerlink" title="III"></a>III</h2><p>一个一个偶像，都不外如此<br>沉迷过的偶像，一个个消失<br>谁曾伤天害理，谁又是上帝<br>我们在等待，什么奇迹</p>
 <h2 id="IV"><a href="#IV" class="headerlink" title="IV"></a>IV</h2><p>最后剩下自己，舍不得挑剔<br>最后对着自己，也不大看得起<br>谁给我全世界，我都会怀疑<br>心花怒放，却开到荼蘼</p>
 
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/13/Mac%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Mac软件汇总</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"mqxu-0gj1hh6bb8038596","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname'
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
-
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>Post title：开到荼蘼</li>
-        <li>Post author：mqxu</li>
-        <li>Create time：2021-08-11 16:19:19</li>
-        <li>
-            Post link：https://mqxu.top/2021/08/11/开到荼蘼/
-        </li>
-        <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
-        </li>
-    </ul>
-</div>
-
-            </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/08/13/Mac%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Mac软件汇总</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;Comments</i>
+      </div>
     </div>
     
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
-        
-            
-    <div class="twikoo-container">
-        <script 
-                src="//cdn.jsdelivr.net/npm/twikoo@1.0.0/dist/twikoo.all.min.js"
-        ></script>
-        <div id="twikoo-comment"></div>
-        <script >
-            function loadTwikoo() {
-                twikoo.init({
-                    el: '#twikoo-comment',
-                    envId: 'mqxu-0gj1hh6bb8038596',
-                    region: '',
-                });
-            }
-
-            if ('false') {
-                const loadTwikooTimeout = setTimeout(() => {
-                    loadTwikoo();
-                    clearTimeout(loadTwikooTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadTwikoo);
-            }
-        </script>
-    </div>
-
-
-
-        
+      </div>
     
+  </div>
 </div>
 
-            </div>
-        
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
     </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
 </div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
 
 
-                
-            </div>
+  
 
-        </div>
-
-        <div class="page-main-content-bottom">
-            <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            
-              <span>2021</span>&nbsp;-&nbsp;
-            
-            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">mqxu</a>
-        </div>
-        
-            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
-                
-                    <span id="busuanzi_container_site_uv">
-                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                    </span>
-                
-                
-                    <span id="busuanzi_container_site_pv">
-                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                    </span>
-                
-            </div>
-        
-        <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
-        </div>
-        
-    </div>
+  
 </footer>
 
-        </div>
-    </div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fas fa-comment"></i>
-            </li>
-        
-    </ul>
-</div>
-
-        </div>
-    
-
-    <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-    <ul class="side-tools-list">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
-
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list">
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-    </ul>
-</div>
-
-    </div>
-
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#I"><span class="nav-number">1.</span> <span class="nav-text">I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#II"><span class="nav-number">2.</span> <span class="nav-text">II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#III"><span class="nav-number">3.</span> <span class="nav-text">III</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IV"><span class="nav-number">4.</span> <span class="nav-text">IV</span></a></li></ol>
-    </div>
-</div>
-        </aside>
-    
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fas fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
-    
+<!-- Plugins -->
 
-</main>
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
-
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+  
 
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/lazyload.js"></script>
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
 
-<div class="post-scripts">
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
-    
-</div>
 
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
 
 
 </body>
