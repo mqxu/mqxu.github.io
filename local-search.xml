@@ -132,17 +132,6 @@
   
   
   <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg" alt="开到荼蘼花事了"></p><h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><ul><li>MQXU | InfinityX</li><li>程序员鼓励师 | 岛主</li><li>Web Developer | 全栈学习者</li></ul><h2 id="Contact-me"><a href="#Contact-me" class="headerlink" title="Contact me"></a>Contact me</h2><ul><li><a href="https://mqxu.github.com/">GitHub | mqxu</a></li><li><a href="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/IMG_4755.34kliff7e0k0.JPG">DingTalk</a></li></ul>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>archives</title>
     <link href="/"/>
     <url>/</url>
@@ -165,7 +154,18 @@
   
   
   <entry>
-    <title>categories</title>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg" alt="开到荼蘼"></p><h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><ul><li>MQXU | InfinityX</li><li>程序员鼓励师 | 岛主</li><li>Web Developer | 全栈学习者</li></ul><h2 id="Contact-me"><a href="#Contact-me" class="headerlink" title="Contact me"></a>Contact me</h2><ul><li><a href="https://mqxu.github.com/">GitHub | mqxu</a></li><li><a href="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/IMG_4755.34kliff7e0k0.JPG">DingTalk</a></li></ul>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>tags</title>
     <link href="/"/>
     <url>/</url>
     
@@ -176,7 +176,7 @@
   
   
   <entry>
-    <title>tags</title>
+    <title>categories</title>
     <link href="/"/>
     <url>/</url>
     
