@@ -204,7 +204,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      786 字
+      788 字
     </span>
   
 
@@ -278,14 +278,7 @@
 <p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
 </blockquote>
 <h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
-<div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;
-    FXMLLoader fxmlLoader = <span class="hljs-keyword">new</span> FXMLLoader(HelloApplication.class.getResource(<span class="hljs-string">&quot;hello-view.fxml&quot;</span>));
-    Scene scene = <span class="hljs-keyword">new</span> Scene(fxmlLoader.load(), <span class="hljs-number">320</span>, <span class="hljs-number">240</span>);
-    stage.setTitle(<span class="hljs-string">&quot;Hello!&quot;</span>);
-    stage.setScene(scene);
-    stage.show();
-&#125;
-</code></pre></div>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;<br>    FXMLLoader fxmlLoader = <span class="hljs-keyword">new</span> FXMLLoader(HelloApplication.class.getResource(<span class="hljs-string">&quot;hello-view.fxml&quot;</span>));<br>    Scene scene = <span class="hljs-keyword">new</span> Scene(fxmlLoader.load(), <span class="hljs-number">320</span>, <span class="hljs-number">240</span>);<br>    stage.setTitle(<span class="hljs-string">&quot;Hello!&quot;</span>);<br>    stage.setScene(scene);<br>    stage.show();<br>&#125;<br><br></code></pre></div></td></tr></table></figure>
 
 <p><strong>主要步骤解释</strong></p>
 <ul>
@@ -296,22 +289,7 @@
 <h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
 <p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
 </blockquote>
-<div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-
-&lt;?import javafx.geometry.Insets?&gt;
-&lt;?import javafx.scene.control.Label?&gt;
-&lt;?import javafx.scene.layout.VBox?&gt;
-&lt;?import javafx.scene.control.Button?&gt;
-
-<span class="hljs-tag">&lt;<span class="hljs-name">VBox</span> <span class="hljs-attr">alignment</span>=<span class="hljs-string">&quot;CENTER&quot;</span> <span class="hljs-attr">spacing</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">xmlns:fx</span>=<span class="hljs-string">&quot;http://javafx.com/fxml&quot;</span></span>
-<span class="hljs-tag">      <span class="hljs-attr">fx:controller</span>=<span class="hljs-string">&quot;top.mqxu.jfxdemo.HelloController&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">padding</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">Insets</span> <span class="hljs-attr">bottom</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">left</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">right</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">top</span>=<span class="hljs-string">&quot;20.0&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">padding</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">fx:id</span>=<span class="hljs-string">&quot;welcomeText&quot;</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Hello!&quot;</span> <span class="hljs-attr">onAction</span>=<span class="hljs-string">&quot;#onHelloButtonClick&quot;</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">VBox</span>&gt;</span></code></pre></div>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><br>&lt;?import javafx.geometry.Insets?&gt;<br>&lt;?import javafx.scene.control.Label?&gt;<br>&lt;?import javafx.scene.layout.VBox?&gt;<br>&lt;?import javafx.scene.control.Button?&gt;<br><br><span class="hljs-tag">&lt;<span class="hljs-name">VBox</span> <span class="hljs-attr">alignment</span>=<span class="hljs-string">&quot;CENTER&quot;</span> <span class="hljs-attr">spacing</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">xmlns:fx</span>=<span class="hljs-string">&quot;http://javafx.com/fxml&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">fx:controller</span>=<span class="hljs-string">&quot;top.mqxu.jfxdemo.HelloController&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">padding</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">Insets</span> <span class="hljs-attr">bottom</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">left</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">right</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">top</span>=<span class="hljs-string">&quot;20.0&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">padding</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">fx:id</span>=<span class="hljs-string">&quot;welcomeText&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Hello!&quot;</span> <span class="hljs-attr">onAction</span>=<span class="hljs-string">&quot;#onHelloButtonClick&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">VBox</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <p><strong>代码解释</strong></p>
 <ul>
@@ -325,15 +303,7 @@
 <h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
 <p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
 </blockquote>
-<div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloController</span> </span>&#123;
-    <span class="hljs-meta">@FXML</span>
-    <span class="hljs-keyword">private</span> Label welcomeText;
-
-    <span class="hljs-meta">@FXML</span>
-    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onHelloButtonClick</span><span class="hljs-params">()</span> </span>&#123;
-        welcomeText.setText(<span class="hljs-string">&quot;Welcome to JavaFX Application!&quot;</span>);
-    &#125;
-&#125;</code></pre></div>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloController</span> </span>&#123;<br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">private</span> Label welcomeText;<br><br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onHelloButtonClick</span><span class="hljs-params">()</span> </span>&#123;<br>        welcomeText.setText(<span class="hljs-string">&quot;Welcome to JavaFX Application!&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
 <p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
@@ -349,29 +319,7 @@
 <ol start="3">
 <li>样式文件</li>
 </ol>
-<div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*根组件样式*/</span>
-<span class="hljs-selector-class">.root</span> &#123;
-  -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
-  <span class="hljs-comment">/*背景图设置，注意相对路径*/</span>
-  -fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">../images/bg.png</span>);
-  -fx-<span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;
-&#125;
-
-<span class="hljs-comment">/*标签文本色*/</span>
-<span class="hljs-selector-class">.label</span> &#123;
-  -fx-text-fill: <span class="hljs-number">#bcb3d7</span>;
-&#125;
-
-<span class="hljs-comment">/*按钮背景色和文本色*/</span>
-<span class="hljs-selector-class">.button</span> &#123;
-  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a06cc9</span>;
-  -fx-text-fill: white;
-&#125;
-
-<span class="hljs-comment">/*鼠标悬停按钮色*/</span>
-<span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> &#123;
-  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#7bb4d7</span>;
-&#125;</code></pre></div>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*根组件样式*/</span><br><span class="hljs-selector-class">.root</span> &#123;<br>  -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;<br>  <span class="hljs-comment">/*背景图设置，注意相对路径*/</span><br>  -fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">../images/bg.png</span>);<br>  -fx-<span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;<br>&#125;<br><br><span class="hljs-comment">/*标签文本色*/</span><br><span class="hljs-selector-class">.label</span> &#123;<br>  -fx-text-fill: <span class="hljs-number">#bcb3d7</span>;<br>&#125;<br><br><span class="hljs-comment">/*按钮背景色和文本色*/</span><br><span class="hljs-selector-class">.button</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a06cc9</span>;<br>  -fx-text-fill: white;<br>&#125;<br><br><span class="hljs-comment">/*鼠标悬停按钮色*/</span><br><span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#7bb4d7</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <ol start="4">
 <li>应用主程序修改（布局文件路径改变了）</li>
