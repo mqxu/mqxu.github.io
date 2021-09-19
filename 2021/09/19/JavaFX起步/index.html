@@ -20,7 +20,7 @@
   <meta name="author" content="mqxu">
   <meta name="keywords" content="">
   
-  <title>Markdown笔记转思维导图工具你值得拥有 - Infinity</title>
+  <title>JavaFX起步 - Infinity</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -177,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Markdown笔记转思维导图工具你值得拥有">
+            <span class="h2" id="subtitle" title="JavaFX起步">
               
             </span>
 
@@ -192,8 +192,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-18 18:21" pubdate>
-        2021年9月18日 晚上
+      <time datetime="2021-09-19 22:08" pubdate>
+        2021年9月19日 晚上
       </time>
     </span>
   
@@ -204,7 +204,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      281 字
+      786 字
     </span>
   
 
@@ -214,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      10
        分钟
     </span>
   
@@ -252,27 +252,136 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Markdown笔记转思维导图工具你值得拥有</h1>
+            <h1 style="display: none">JavaFX起步</h1>
             
             <div class="markdown-body">
               <blockquote>
-<p>Markdown 的好处是专注码字的同时还能兼顾排版，缺点就是可视化能力很弱，毕竟人对于图像化内容的接收程度要强于文本。</p>
+<p>要求：</p>
+<ol>
+<li>JDK11 以上</li>
+<li>Maven 环境已正确配置</li>
+</ol>
 </blockquote>
-<p>可视化表达方面，思维导图就很不错。它作为一种图象化工具，通过层级式发散式地组织主题，帮助我们更好的记忆、学习和思考。</p>
-<p>但在过去，这两类工具是各自独立的，也就是你写完 Markdown 文本，想要可视化地传达一些重点给读者，就需要重新录入下思维导图，比较繁琐。</p>
-<blockquote>
-<p>markmap 是一款能够直接将 Markdown 笔记转换成思维导图的工具。使用 Markdown 记录想法，在需要的时候又能直接转换成思维导图，香不香？</p>
+<h1 id="一、项目初始化"><a href="#一、项目初始化" class="headerlink" title="一、项目初始化"></a>一、项目初始化</h1><ol>
+<li>IDEA 新建项目，如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/9I3e1G.png" srcset="/img/loading.gif" lazyload alt="9I3e1G"></p>
+<ol start="2">
+<li>选择依赖，如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/aq1RaA.png" srcset="/img/loading.gif" lazyload alt="aq1RaA"></p>
+<ol start="3">
+<li>项目结构和运行效果如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/0dDOLR.png" srcset="/img/loading.gif" lazyload alt="0dDOLR"></p>
+<h1 id="二、程序结构"><a href="#二、程序结构" class="headerlink" title="二、程序结构"></a>二、程序结构</h1><blockquote>
+<p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
 </blockquote>
-<p><img src="https://www.pianshen.com/images/314/4f90da2004c96d8535f18db56cd19d72.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="在线版"><a href="#在线版" class="headerlink" title="在线版"></a>在线版</h2><p><a target="_blank" rel="noopener" href="https://markmap.js.org/repl">试用网址</a><br>左边录入 Markdown 文本，右边会实时展示出思维导图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/fBIEY1.png" srcset="/img/loading.gif" lazyload alt="fBIEY1"></p>
-<h2 id="离线版"><a href="#离线版" class="headerlink" title="离线版"></a>离线版</h2><p>在 Visual Studio Code 上安装<br><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode">https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/I8YPxM.png" srcset="/img/loading.gif" lazyload alt="I8YPxM"></p>
-<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/Fmw8Fw.png" srcset="/img/loading.gif" lazyload alt="Fmw8Fw"></p>
+<h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
+<div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;
+    FXMLLoader fxmlLoader = <span class="hljs-keyword">new</span> FXMLLoader(HelloApplication.class.getResource(<span class="hljs-string">&quot;hello-view.fxml&quot;</span>));
+    Scene scene = <span class="hljs-keyword">new</span> Scene(fxmlLoader.load(), <span class="hljs-number">320</span>, <span class="hljs-number">240</span>);
+    stage.setTitle(<span class="hljs-string">&quot;Hello!&quot;</span>);
+    stage.setScene(scene);
+    stage.show();
+&#125;
+</code></pre></div>
+
+<p><strong>主要步骤解释</strong></p>
 <ul>
-<li>可以点击右下角「export」按钮导出动态的 html 文件。</li>
-<li>～ markdown 一次书写，到处使用。</li>
+<li>载入资源目录的布局文件</li>
+<li>创建指定大小的 scene（场景）</li>
+<li>将 scene 加入 stage（舞台），并设置标题和可见性</li>
 </ul>
+<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
+<p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
+</blockquote>
+<div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+
+&lt;?import javafx.geometry.Insets?&gt;
+&lt;?import javafx.scene.control.Label?&gt;
+&lt;?import javafx.scene.layout.VBox?&gt;
+&lt;?import javafx.scene.control.Button?&gt;
+
+<span class="hljs-tag">&lt;<span class="hljs-name">VBox</span> <span class="hljs-attr">alignment</span>=<span class="hljs-string">&quot;CENTER&quot;</span> <span class="hljs-attr">spacing</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">xmlns:fx</span>=<span class="hljs-string">&quot;http://javafx.com/fxml&quot;</span></span>
+<span class="hljs-tag">      <span class="hljs-attr">fx:controller</span>=<span class="hljs-string">&quot;top.mqxu.jfxdemo.HelloController&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">padding</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Insets</span> <span class="hljs-attr">bottom</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">left</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">right</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">top</span>=<span class="hljs-string">&quot;20.0&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">padding</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">fx:id</span>=<span class="hljs-string">&quot;welcomeText&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Hello!&quot;</span> <span class="hljs-attr">onAction</span>=<span class="hljs-string">&quot;#onHelloButtonClick&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">VBox</span>&gt;</span></code></pre></div>
+
+<p><strong>代码解释</strong></p>
+<ul>
+<li>头部主要是导入本例中用到的 jafafx 的组件</li>
+<li>根布局组件为 VBox——垂直布局（从上到下排列子组件）</li>
+<li>声明 VBox 的对齐方式为居中，每个子组件的间距为 20，对应 HelloController 控制器</li>
+<li>padding 用来声明 VBox 的内边距，用 Insets 的四个属性来表示四个方向的距离</li>
+<li>Label 为文本组件，绑定 id 用于在控制器中访问</li>
+<li>Button 为按钮组建，初始化默认文本，绑定点击事件</li>
+</ul>
+<h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
+<p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
+</blockquote>
+<div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloController</span> </span>&#123;
+    <span class="hljs-meta">@FXML</span>
+    <span class="hljs-keyword">private</span> Label welcomeText;
+
+    <span class="hljs-meta">@FXML</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onHelloButtonClick</span><span class="hljs-params">()</span> </span>&#123;
+        welcomeText.setText(<span class="hljs-string">&quot;Welcome to JavaFX Application!&quot;</span>);
+    &#125;
+&#125;</code></pre></div>
+
+<h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
+<p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
+</blockquote>
+<ol>
+<li>项目结构修改如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/AgAF8O.png" srcset="/img/loading.gif" lazyload alt="AgAF8O"></p>
+<ol start="2">
+<li>布局文件修改如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/8NSLjn.png" srcset="/img/loading.gif" lazyload alt="8NSLjn"></p>
+<ol start="3">
+<li>样式文件</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*根组件样式*/</span>
+<span class="hljs-selector-class">.root</span> &#123;
+  -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-comment">/*背景图设置，注意相对路径*/</span>
+  -fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">../images/bg.png</span>);
+  -fx-<span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;
+&#125;
+
+<span class="hljs-comment">/*标签文本色*/</span>
+<span class="hljs-selector-class">.label</span> &#123;
+  -fx-text-fill: <span class="hljs-number">#bcb3d7</span>;
+&#125;
+
+<span class="hljs-comment">/*按钮背景色和文本色*/</span>
+<span class="hljs-selector-class">.button</span> &#123;
+  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a06cc9</span>;
+  -fx-text-fill: white;
+&#125;
+
+<span class="hljs-comment">/*鼠标悬停按钮色*/</span>
+<span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> &#123;
+  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#7bb4d7</span>;
+&#125;</code></pre></div>
+
+<ol start="4">
+<li>应用主程序修改（布局文件路径改变了）</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/DuzVD0.png" srcset="/img/loading.gif" lazyload alt="DuzVD0"></p>
+<ol start="5">
+<li>改变后的运行效果</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/run.gif" srcset="/img/loading.gif" lazyload alt="run"></p>
+<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>通过以上 demo 初步认识了 JavaFX，其结构比较清晰易懂，并且视图、样式、行为分离，和 Android 开发、Web 前端 HTML、CSS、JS 各司其职的思想都比较相似，写起来体验还算 OK。</p>
 
             </div>
             <hr>
@@ -282,7 +391,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
                     
                   </div>
                 
@@ -290,7 +399,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Markdown/">Markdown</a>
+                      <a class="hover-with-bg" href="/tags/JavaFX/">JavaFX</a>
                     
                   </div>
                 
@@ -301,18 +410,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/19/JavaFX%E8%B5%B7%E6%AD%A5/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaFX起步</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/14/CentOS%208.2%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
-                        <span class="hidden-mobile">CentOS 8.2开发环境</span>
+                      <a href="/2021/09/18/Markmap/">
+                        <span class="hidden-mobile">Markdown笔记转思维导图工具你值得拥有</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
