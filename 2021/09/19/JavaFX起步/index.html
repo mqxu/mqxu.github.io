@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=&#34;light&#34;>
 
 
 
@@ -70,7 +70,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Infinity Blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>InfinityX Blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -172,7 +172,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/5.png') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img165.5y83zifgblk0.jpeg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -204,7 +204,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      788 字
+      787 字
     </span>
   
 
@@ -253,6 +253,12 @@
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">JavaFX起步</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
             
             <div class="markdown-body">
               <blockquote>
@@ -319,7 +325,7 @@
 <ol start="3">
 <li>样式文件</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*根组件样式*/</span><br><span class="hljs-selector-class">.root</span> &#123;<br>  -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;<br>  <span class="hljs-comment">/*背景图设置，注意相对路径*/</span><br>  -fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">../images/bg.png</span>);<br>  -fx-<span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;<br>&#125;<br><br><span class="hljs-comment">/*标签文本色*/</span><br><span class="hljs-selector-class">.label</span> &#123;<br>  -fx-text-fill: <span class="hljs-number">#bcb3d7</span>;<br>&#125;<br><br><span class="hljs-comment">/*按钮背景色和文本色*/</span><br><span class="hljs-selector-class">.button</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a06cc9</span>;<br>  -fx-text-fill: white;<br>&#125;<br><br><span class="hljs-comment">/*鼠标悬停按钮色*/</span><br><span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#7bb4d7</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*根组件样式*/</span><br><span class="hljs-selector-class">.root</span> &#123;<br>  -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;<br>  <span class="hljs-comment">/*背景图设置，注意相对路径*/</span><br>  -fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">../images/bg.png</span>);<br>  -fx-<span class="hljs-attribute">background-size</span>: cover;<br>&#125;<br><br><span class="hljs-comment">/*标签文本色*/</span><br><span class="hljs-selector-class">.label</span> &#123;<br>  -fx-text-fill: <span class="hljs-number">#bcb3d7</span>;<br>&#125;<br><br><span class="hljs-comment">/*按钮背景色和文本色*/</span><br><span class="hljs-selector-class">.button</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a06cc9</span>;<br>  -fx-text-fill: white;<br>&#125;<br><br><span class="hljs-comment">/*鼠标悬停按钮色*/</span><br><span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#7bb4d7</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <ol start="4">
 <li>应用主程序修改（布局文件路径改变了）</li>
@@ -417,12 +423,6 @@
 </div>
 
 <!-- Custom -->
-
-  <div class="col-lg-7 mx-auto nopadding-x-md">
-    <div class="container custom post-custom mx-auto">
-      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
-    </div>
-  </div>
 
 
     
@@ -571,13 +571,6 @@
 
 
 
-
-  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({"theme":"default"});
-    }
-  </script>
 
 
 
