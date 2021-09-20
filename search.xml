@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>CentOS 8.2开发环境</title>
-    <url>/2021/08/14/CentOS%208.2%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <url>/2021/08/14/centos-8.2-kai-fa-huan-jing/</url>
     <content><![CDATA[<blockquote>
 <p>说明: 本文档云服务器操作系统为 CentOS 8.2</p>
 <p>命令：cat /etc/redhat-release</p>
@@ -16,202 +16,202 @@
 <ul>
 <li>备份</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /etc/yum.repos.d/<br>mkdir bak<br>mv *.repo bak/<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">cd /etc/yum.repos.d/</span><br><span class="line">mkdir bak</span><br><span class="line">mv *.repo bak/</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>下载新的 yum 源</li>
 </ul>
 <p>当前目录为：**/etc/yum.repos.d/**</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget https://mirrors.aliyun.com/repo/Centos-8.repo<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">wget https://mirrors.aliyun.com/repo/Centos-8.repo</span><br></pre></td></tr></tbody></table></figure>
 
-<p>查看<br><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714154542495.png" alt="1" style="zoom:50%;margin-left:0;" /></p>
+<p>查看<br><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714154542495.png" alt="1" style="zoom:50%;margin-left:0;"></p>
 <ul>
 <li>清除 yum 历史</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum clean all<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>重新生成</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum makecache<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum makecache</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>验证</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum --version<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum --version</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714155423362.png" alt="1" style="zoom:50%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714155423362.png" alt="1" style="zoom:50%;margin-left:0;">
 
 <h3 id="2-gcc-和-make-插件"><a href="#2-gcc-和-make-插件" class="headerlink" title="2) gcc 和 make 插件"></a>2) gcc 和 make 插件</h3><p>GCC 代表: <strong>the GNU Compiler Collection</strong>，表示 C 语言编译器的合集， g++则是 GCC 的 c++编译器。</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum install gcc gcc-c++<br>yum -y install gcc automake autoconf libtool make<br>yum groupinstall -y &#x27;Development Tools&#x27;<br>yum install -y gcc openssl-devel bzip2-devel libffi-devel<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum install gcc gcc-c++</span><br><span class="line">yum -y install gcc automake autoconf libtool make</span><br><span class="line">yum groupinstall -y 'Development Tools'</span><br><span class="line">yum install -y gcc openssl-devel bzip2-devel libffi-devel</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="1-OpenJDK-安装和配置"><a href="#1-OpenJDK-安装和配置" class="headerlink" title="1. OpenJDK 安装和配置"></a>1. OpenJDK 安装和配置</h2><h3 id="1-查看-yum-源"><a href="#1-查看-yum-源" class="headerlink" title="1) 查看 yum 源"></a>1) 查看 yum 源</h3><p>先查看 yum 源中有什么版本（JDK 关键字标红）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum search java | grep -i --color JDK<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum search java | grep -i --color JDK</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714155948648.png" alt="1" style="zoom:40%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714155948648.png" alt="1" style="zoom:40%;margin-left:0;">
 
 <h3 id="2-安装-openjdk1-8"><a href="#2-安装-openjdk1-8" class="headerlink" title="2) 安装 openjdk1.8"></a>2) 安装 openjdk1.8</h3><p>命令如下:</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum install java-1.8.0-openjdk  java-1.8.0-openjdk-devel<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk  java-1.8.0-openjdk-devel</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714160247638.png" alt="1" style="zoom:30%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714160247638.png" alt="1" style="zoom:30%;margin-left:0;">
 
 <p>默认安装位置为：**/usr/lib/jvm/**</p>
 <h3 id="3-配置环境"><a href="#3-配置环境" class="headerlink" title="3) 配置环境"></a>3) 配置环境</h3><p>然后，编辑.bashrc 文件，在最后添加 JAVA_HOME 配置等，然后退出生效</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim ~/.bashrc<br>export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64<br>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar<br>export PATH=.:$JAVA_HOME/bin:$PATH<br>source ~/.bashrc<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">vim ~/.bashrc</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=.:$JAVA_HOME/bin:$PATH</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></tbody></table></figure>
 
 <p>查看是否生效</p>
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714160549887.png" alt="1" style="zoom:50%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714160549887.png" alt="1" style="zoom:50%;margin-left:0;">
 
-<h2 id="2-Maven-安装和配置"><a href="#2-Maven-安装和配置" class="headerlink" title="2. Maven 安装和配置"></a>2. Maven 安装和配置</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1) 下载"></a>1) 下载</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 创建tools目录</span><br>mkdir /home/tools<br>cd /home/tools<br><span class="hljs-meta">#</span><span class="bash"> 使用wget下载,如果443就多试两次</span><br>wget https://www-us.apache.org/dist/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz<br></code></pre></div></td></tr></table></figure>
+<h2 id="2-Maven-安装和配置"><a href="#2-Maven-安装和配置" class="headerlink" title="2. Maven 安装和配置"></a>2. Maven 安装和配置</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1) 下载"></a>1) 下载</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建tools目录</span></span><br><span class="line">mkdir /home/tools</span><br><span class="line">cd /home/tools</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用wget下载,如果443就多试两次</span></span><br><span class="line">wget https://www-us.apache.org/dist/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz</span><br></pre></td></tr></tbody></table></figure>
 
 <p><a href="https://maven.apache.org/download.cgi">这里</a> 是 maven 的最新版下载页面，如果在线下载很慢的话，可以手动下载 maven 的压缩包后上传到/home/tools</p>
 <h3 id="2-解压"><a href="#2-解压" class="headerlink" title="2) 解压"></a>2) 解压</h3><p>下载完成或者手动上传完成后，解压到<code>/opt</code>目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo tar xf /home/tools/apache-maven-3.8.1-bin.tar.gz -C /opt<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo tar xf /home/tools/apache-maven-3.8.1-bin.tar.gz -C /opt</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="3-创建虚拟链接"><a href="#3-创建虚拟链接" class="headerlink" title="3) 创建虚拟链接"></a>3) 创建虚拟链接</h3><p>创建一个虚拟链接<code>maven</code>指向 Maven 安装目录，方便控制 Maven 版本和升级</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo ln -s /opt/apache-maven-3.8.1 /opt/maven<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo ln -s /opt/apache-maven-3.8.1 /opt/maven</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="4-设置环境变量"><a href="#4-设置环境变量" class="headerlink" title="4) 设置环境变量"></a>4) 设置环境变量</h3><p>在<code>/etc/profile.d/</code>目录下创建一个名为 <code>mavenenv.sh</code>的新文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo nano /etc/profile.d/maven.sh<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo nano /etc/profile.d/maven.sh</span><br></pre></td></tr></tbody></table></figure>
 
 <p>粘贴以下内容：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el8_4.x86_64<br>export M2_HOME=/opt/maven<br>export MAVEN_HOME=/opt/maven<br>export PATH=$&#123;M2_HOME&#125;/bin:$&#123;PATH&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el8_4.x86_64</span><br><span class="line">export M2_HOME=/opt/maven</span><br><span class="line">export MAVEN_HOME=/opt/maven</span><br><span class="line">export PATH=${M2_HOME}/bin:${PATH}</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714162001450.png" alt="1" style="zoom:33%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714162001450.png" alt="1" style="zoom:33%;margin-left:0;">
 
 <p>然后按 Y，回车退出 nano，这个脚本将会在 shell 启动时执行</p>
 <p>运行 <code>chmod</code>命令，使脚本可执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo chmod +x /etc/profile.d/maven.sh<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo chmod +x /etc/profile.d/maven.sh</span><br></pre></td></tr></tbody></table></figure>
 
 <p>使用<code>source</code>命令加载环境变量：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">source /etc/profile.d/maven.sh<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">source /etc/profile.d/maven.sh</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="4-验证安装"><a href="#4-验证安装" class="headerlink" title="4) 验证安装"></a>4) 验证安装</h3><p>输入以下命令验证 maven 是否安装成功</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">mvn -version<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">mvn -version</span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714162715150.png" alt="image-20210714162715150"></p>
-<h3 id="5-配置-Maven-镜像"><a href="#5-配置-Maven-镜像" class="headerlink" title="5) 配置 Maven 镜像"></a>5) 配置 Maven 镜像</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /opt/maven/conf/settings.xml<br></code></pre></div></td></tr></table></figure>
+<h3 id="5-配置-Maven-镜像"><a href="#5-配置-Maven-镜像" class="headerlink" title="5) 配置 Maven 镜像"></a>5) 配置 Maven 镜像</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">vim /opt/maven/conf/settings.xml</span><br></pre></td></tr></tbody></table></figure>
 
 <p>配置 mirrors 节点：</p>
-<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">mirrors</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>aliyunmaven<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>阿里云公共仓库<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">mirrors</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>aliyunmaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>阿里云公共仓库<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://maven.aliyun.com/repository/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>编辑完成保存退出即可</p>
-<h2 id="3-Git-安装和配置"><a href="#3-Git-安装和配置" class="headerlink" title="3. Git 安装和配置"></a>3. Git 安装和配置</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1) 安装"></a>1) 安装</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum install -y git<br></code></pre></div></td></tr></table></figure>
+<h2 id="3-Git-安装和配置"><a href="#3-Git-安装和配置" class="headerlink" title="3. Git 安装和配置"></a>3. Git 安装和配置</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1) 安装"></a>1) 安装</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum install -y git</span><br></pre></td></tr></tbody></table></figure>
 
 <p>查看版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git --version<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714163859205.png" alt="1" style="zoom:50%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714163859205.png" alt="1" style="zoom:50%;margin-left:0;">
 
-<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2) 配置"></a>2) 配置</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git config --global user.name &quot;你的用户名&quot;git config --global user.email &quot;你的邮箱&quot;<br></code></pre></div></td></tr></table></figure>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2) 配置"></a>2) 配置</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name "你的用户名"git config --global user.email "你的邮箱"</span><br></pre></td></tr></tbody></table></figure>
 
 <p>查看配置</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git config --list<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="4-Python-安装和配置"><a href="#4-Python-安装和配置" class="headerlink" title="4. Python 安装和配置"></a>4. Python 安装和配置</h2><h3 id="1-安装-1"><a href="#1-安装-1" class="headerlink" title="1) 安装"></a>1) 安装</h3><p>在 /home 下创建一个目录如 tools，进入该目录</p>
 <p>依次运行以下命令，用于安装 Python3.8、设置软链接、升级 pip3（如果第一步因为网络问题 wget 下载失败，多试几次，或手动下载后上传）</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgztar -zxvf Python-3.8.1.tgzmkdir /usr/local/python3 cd Python-3.8.1./configure --prefix=/usr/local/python3 --enable-optimizations --with-ssl make &amp;&amp; make installln -s /usr/local/python3/bin/python3 /usr/local/bin/python3ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3pip3 install --upgrade pip<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgztar -zxvf Python-3.8.1.tgzmkdir /usr/local/python3 cd Python-3.8.1./configure --prefix=/usr/local/python3 --enable-optimizations --with-ssl make &amp;&amp; make installln -s /usr/local/python3/bin/python3 /usr/local/bin/python3ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3pip3 install --upgrade pip</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714171335462.png" alt="1" style="zoom:40%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714171335462.png" alt="1" style="zoom:40%;margin-left:0;">
 
-<h3 id="2-查看版本"><a href="#2-查看版本" class="headerlink" title="2) 查看版本"></a>2) 查看版本</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">python -Vpip3 -V<br></code></pre></div></td></tr></table></figure>
+<h3 id="2-查看版本"><a href="#2-查看版本" class="headerlink" title="2) 查看版本"></a>2) 查看版本</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">python -Vpip3 -V</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714171502409.png" alt="1" style="zoom:45%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714171502409.png" alt="1" style="zoom:45%;margin-left:0;">
 
 <h2 id="5-Docker"><a href="#5-Docker" class="headerlink" title="5. Docker"></a>5. Docker</h2><h3 id="1-Docker-安装"><a href="#1-Docker-安装" class="headerlink" title="1) Docker 安装"></a>1) Docker 安装</h3><ul>
 <li>卸载老版本</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \                  docker-latest \                  docker-latest-logrotate \                  docker-logrotate \                  docker-engine<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum remove docker \                  docker-client \                  docker-client-latest \                  docker-common \                  docker-latest \                  docker-latest-logrotate \                  docker-logrotate \                  docker-engine</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>安装 docker 基础包</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum install -y yum-utils device-mapper-persistent-data lvm2<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>设置稳定仓库</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum-config-manager \    --add-repo \    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">yum-config-manager \    --add-repo \    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>安装 Docker Engine - Community</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> step1： 查看版本yum list docker-ce --showduplicates | sort -r<span class="hljs-comment">## step2： 安装指定版本，这里安装20.10.7-3.el8版本sudo yum install docker-ce-20.10.7-3.el8 docker-ce-cli-20.10.7-3.el8 containerd.io</span></span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> step1： 查看版本yum list docker-ce --showduplicates | sort -r<span class="comment">## step2： 安装指定版本，这里安装20.10.7-3.el8版本sudo yum install docker-ce-20.10.7-3.el8 docker-ce-cli-20.10.7-3.el8 containerd.io</span></span></span><br></pre></td></tr></tbody></table></figure>
 
 <ul>
 <li>启动与测试</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo systemctl start docker  # 开机启动dockerdocker version        # 查看版本docker run hello-world       #测试，如果出443的问题，多试几次<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo systemctl start docker  # 开机启动dockerdocker version        # 查看版本docker run hello-world       #测试，如果出443的问题，多试几次</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714173155782.png" alt="1" style="zoom:35%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714173155782.png" alt="1" style="zoom:35%;margin-left:0;">
 
-<h3 id="2-Docker-国内镜像配置"><a href="#2-Docker-国内镜像配置" class="headerlink" title="2) Docker 国内镜像配置"></a>2) Docker 国内镜像配置</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/docker/daemon.json<br></code></pre></div></td></tr></table></figure>
+<h3 id="2-Docker-国内镜像配置"><a href="#2-Docker-国内镜像配置" class="headerlink" title="2) Docker 国内镜像配置"></a>2) Docker 国内镜像配置</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">vim /etc/docker/daemon.json</span><br></pre></td></tr></tbody></table></figure>
 
 <p>粘贴以下内容：</p>
-<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;registry-mirrors&quot;</span>: [<br>    <span class="hljs-string">&quot;https://registry.docker-cn.com&quot;</span>,<br>    <span class="hljs-string">&quot;https://registry.cn-hangzhou.aliyuncs.com/&quot;</span>,<br>    <span class="hljs-string">&quot;http://f1361db2.m.daocloud.io&quot;</span>,<br>    <span class="hljs-string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>,<br>    <span class="hljs-string">&quot;https://mirror.ccs.tencentyun.com&quot;</span>,<br>    <span class="hljs-string">&quot;http://hub-mirror.c.163.com&quot;</span><br>  ]<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"registry-mirrors"</span>: [</span><br><span class="line">    <span class="string">"https://registry.docker-cn.com"</span>,</span><br><span class="line">    <span class="string">"https://registry.cn-hangzhou.aliyuncs.com/"</span>,</span><br><span class="line">    <span class="string">"http://f1361db2.m.daocloud.io"</span>,</span><br><span class="line">    <span class="string">"https://docker.mirrors.ustc.edu.cn"</span>,</span><br><span class="line">    <span class="string">"https://mirror.ccs.tencentyun.com"</span>,</span><br><span class="line">    <span class="string">"http://hub-mirror.c.163.com"</span></span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>保存退出后重启 docker 即可</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo systemctl restart docker<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="3-Docker-compose-安装"><a href="#3-Docker-compose-安装" class="headerlink" title="3) Docker-compose 安装"></a>3) Docker-compose 安装</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 安装sudo curl -L <span class="hljs-string">&quot;https://github.com/docker/compose/releases/download/1.27.4/docker-compose-<span class="hljs-subst">$(uname -s)</span>-<span class="hljs-subst">$(uname -m)</span>&quot;</span> -o /usr/<span class="hljs-built_in">local</span>/bin/docker-compose<span class="hljs-comment"># 修改权限sudo chmod +x /usr/local/bin/docker-compose# 创建软链sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose# 测试是否安装成功docker-compose --version# 输出：docker-compose version 1.27.4, build xxx</span></span><br></code></pre></div></td></tr></table></figure>
+<h3 id="3-Docker-compose-安装"><a href="#3-Docker-compose-安装" class="headerlink" title="3) Docker-compose 安装"></a>3) Docker-compose 安装</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装sudo curl -L <span class="string">"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-<span class="subst">$(uname -s)</span>-<span class="subst">$(uname -m)</span>"</span> -o /usr/<span class="built_in">local</span>/bin/docker-compose<span class="comment"># 修改权限sudo chmod +x /usr/local/bin/docker-compose# 创建软链sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose# 测试是否安装成功docker-compose --version# 输出：docker-compose version 1.27.4, build xxx</span></span></span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="6-docker-安装-MySQL"><a href="#6-docker-安装-MySQL" class="headerlink" title="6. docker 安装 MySQL"></a>6. docker 安装 MySQL</h2><h3 id="1-拉取-MySQL-镜像"><a href="#1-拉取-MySQL-镜像" class="headerlink" title="1) 拉取 MySQL 镜像"></a>1) 拉取 MySQL 镜像</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker pull mysql:8.0.25<br></code></pre></div></td></tr></table></figure>
+<h2 id="6-docker-安装-MySQL"><a href="#6-docker-安装-MySQL" class="headerlink" title="6. docker 安装 MySQL"></a>6. docker 安装 MySQL</h2><h3 id="1-拉取-MySQL-镜像"><a href="#1-拉取-MySQL-镜像" class="headerlink" title="1) 拉取 MySQL 镜像"></a>1) 拉取 MySQL 镜像</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">docker pull mysql:8.0.25</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="2-运行"><a href="#2-运行" class="headerlink" title="2) 运行"></a>2) 运行</h3><p>创建/home/mysql 目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /homemkdir /mysql<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">cd /homemkdir /mysql</span><br></pre></td></tr></tbody></table></figure>
 
 <p>运行以下命令，将密码替换为自己需要的</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker run -d --name myMysql -p 9506:3306 -v /home/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.25<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">docker run -d --name myMysql -p 9506:3306 -v /home/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.25</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>参数解析：</strong><br><code>-d</code>: 后台运行容器，并返回容器 ID<br><code>--name myMysql</code>: 为容器指定一个名称<br><code>-p</code>: 指定端口映射，格式为：主机(宿主)端口:容器端口，这里宿主机用 9506 端口，容器用 3306 端口<br><code>-v</code>: 绑定一个卷，主机的目录/data/mysql ，映射到容器的 /var/lib/mysql<br><code>-e MYSQL_ROOT_PASSWORD=123456</code>: 设置环境变量，密码设置为 123456<br><code>mysql:8.0.25</code>：使用镜像 mysql:8.0.25</p>
 <h3 id="3-修改数据库密码"><a href="#3-修改数据库密码" class="headerlink" title="3) 修改数据库密码"></a>3) 修改数据库密码</h3><p>此时运行 <code>docker ps</code> 可以看到容器正在运行</p>
 <p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714175938755.png" alt="image-20210714175938755"></p>
 <p>进入到容器命令为：<code>docker exec -it [容器ID] /bin/bash</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 将容器ID替换为上图中的docker <span class="hljs-built_in">exec</span> -it 1c94c6403fd4 /bin/bash<span class="hljs-comment"># 使用mysql账号密码登录mysql -uroot -p</span></span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 将容器ID替换为上图中的docker <span class="built_in">exec</span> -it 1c94c6403fd4 /bin/bash<span class="comment"># 使用mysql账号密码登录mysql -uroot -p</span></span></span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714180245070.png" alt="1" style="zoom:35%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714180245070.png" alt="1" style="zoom:35%;margin-left:0;">
 
 <p>在 mysql 命令行分别执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">show databases;use mysql;ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;新密码&#x27;;  flush privileges;exit<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">show databases;use mysql;ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';  flush privileges;exit</span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714181136355.png" alt="1" style="zoom:40%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714181136355.png" alt="1" style="zoom:40%;margin-left:0;">
 
 <p>可以看到新密码生效（但是这里只是修改了 docker 容器内的 mysql 密码），输入 exit 依次退出 mysql 和 docker 容器</p>
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714182140577.png" alt="1" style="zoom:50%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714182140577.png" alt="1" style="zoom:50%;margin-left:0;">
 
 <p>使用 navicat 可以连接到刚刚安装的 MySQL，注意端口要填宿主机的（<strong>注意密码要用第一次安装的：123456</strong>）</p>
- <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714182432043.png" alt="image-20210714182432043" style="zoom:33%;" />
+ <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714182432043.png" alt="image-20210714182432043" style="zoom:33%;">
 
-<h2 id="7-docker-安装-Redis"><a href="#7-docker-安装-Redis" class="headerlink" title="7. docker 安装 Redis"></a>7. docker 安装 Redis</h2><h3 id="1-拉取最新镜像"><a href="#1-拉取最新镜像" class="headerlink" title="1) 拉取最新镜像"></a>1) 拉取最新镜像</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker pull redis<br></code></pre></div></td></tr></table></figure>
+<h2 id="7-docker-安装-Redis"><a href="#7-docker-安装-Redis" class="headerlink" title="7. docker 安装 Redis"></a>7. docker 安装 Redis</h2><h3 id="1-拉取最新镜像"><a href="#1-拉取最新镜像" class="headerlink" title="1) 拉取最新镜像"></a>1) 拉取最新镜像</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="2-运行-1"><a href="#2-运行-1" class="headerlink" title="2) 运行"></a>2) 运行</h3><p>默认会在 <code>6379</code> 端口启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker run --name mqxu-redis -d -p 6379:6379 redis<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">docker run --name mqxu-redis -d -p 6379:6379 redis</span><br></pre></td></tr></tbody></table></figure>
 
 <p>使用桌面连接工具测试连接情况</p>
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714183011051.png" alt="image-20210714183011051" style="zoom:33%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714183011051.png" alt="image-20210714183011051" style="zoom:33%;margin-left:0;">
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714183139063.png" alt="image-20210714183139063" style="zoom:28%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714183139063.png" alt="image-20210714183139063" style="zoom:28%;margin-left:0;">
 
 <h2 id="8-Nacos"><a href="#8-Nacos" class="headerlink" title="8. Nacos"></a>8. Nacos</h2><blockquote>
 <p>官方文档：<a href="https://nacos.io/zh-cn/docs/quick-start.html">https://nacos.io/zh-cn/docs/quick-start.html</a></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 进入 /home/tools目录<span class="hljs-built_in">cd</span> /home/tools<span class="hljs-comment"># 下载release包,亲测这个要快点wget https://github.com/alibaba/nacos/releases/download/2.0.2/nacos-server-2.0.2.tar.gztar -xvf nacos-server-2.0.2.tar.gz# 如果要修改nacos的启动端口，可以编辑nacos/conf/application.properties，修改server.port=自己想要的端口vim nacos/conf/application.properties# 启动nacoscd nacos/bin# 单机运行sh startup.sh -m standalone# 关闭服务器sh shutdown.sh</span></span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入 /home/tools目录<span class="built_in">cd</span> /home/tools<span class="comment"># 下载release包,亲测这个要快点wget https://github.com/alibaba/nacos/releases/download/2.0.2/nacos-server-2.0.2.tar.gztar -xvf nacos-server-2.0.2.tar.gz# 如果要修改nacos的启动端口，可以编辑nacos/conf/application.properties，修改server.port=自己想要的端口vim nacos/conf/application.properties# 启动nacoscd nacos/bin# 单机运行sh startup.sh -m standalone# 关闭服务器sh shutdown.sh</span></span></span><br></pre></td></tr></tbody></table></figure>
 
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714185649885.png" alt="1" style="zoom:40%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714185649885.png" alt="1" style="zoom:40%;margin-left:0;">
 
 <p>浏览器输入：服务器 IP 地址:8848/nacos</p>
-<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714203708081.png" alt="image-20210714203708081" style="zoom:30%;margin-left:0;" />
+<img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714203708081.png" alt="image-20210714203708081" style="zoom:30%;margin-left:0;">
 
 <h2 id="9-Sentinel"><a href="#9-Sentinel" class="headerlink" title="9. Sentinel"></a>9. Sentinel</h2><blockquote>
 <p>官方文档：<a href="https://sentinelguard.io/zh-cn/">https://sentinelguard.io/zh-cn/</a></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 进入 /home/tools目录<span class="hljs-built_in">cd</span> /home/tools<span class="hljs-comment"># 下载最新稳定版sentinel-dashboard-1.8.2,慢的话就手动下载上传wget https://github.com/alibaba/Sentinel/releases/download/1.8.2/sentinel-dashboard-1.8.2.jar# 指定启动端口为8088，后台启动，注意修改服务器地址nohup java -Dserver.port=8088 -Dcsp.sentinel.dashboard.server=47.**.**.33:8088 -jar sentinel-dashboard-1.8.2.jar &amp;</span></span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入 /home/tools目录<span class="built_in">cd</span> /home/tools<span class="comment"># 下载最新稳定版sentinel-dashboard-1.8.2,慢的话就手动下载上传wget https://github.com/alibaba/Sentinel/releases/download/1.8.2/sentinel-dashboard-1.8.2.jar# 指定启动端口为8088，后台启动，注意修改服务器地址nohup java -Dserver.port=8088 -Dcsp.sentinel.dashboard.server=47.**.**.33:8088 -jar sentinel-dashboard-1.8.2.jar &amp;</span></span></span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="10-Seata"><a href="#10-Seata" class="headerlink" title="10. Seata"></a>10. Seata</h2><p>进入 /home/tools 目录下载 seata，或手动上传</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget https://github.com/seata/seata/releases/download/v1.4.2/seata-server-1.4.2.tar.gz<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">wget https://github.com/seata/seata/releases/download/v1.4.2/seata-server-1.4.2.tar.gz</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="11-RocketMQ"><a href="#11-RocketMQ" class="headerlink" title="11. RocketMQ"></a>11. RocketMQ</h2><p>进入 /home/tools 目录，依次执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git clone  https://github.com/foxiswho/docker-rocketmq.gitcd docker-rocketmqcd rmqchmod +x  start.sh./start.sh<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">git clone  https://github.com/foxiswho/docker-rocketmq.gitcd docker-rocketmqcd rmqchmod +x  start.sh./start.sh</span><br></pre></td></tr></tbody></table></figure>
 
 <p>访问浏览器：你的 IP 地址:8180</p>
 ]]></content>
@@ -224,7 +224,7 @@
   </entry>
   <entry>
     <title>JavaFX起步</title>
-    <url>/2021/09/19/JavaFX%E8%B5%B7%E6%AD%A5/</url>
+    <url>/2021/09/19/javafx-qi-bu/</url>
     <content><![CDATA[<blockquote>
 <p>要求：</p>
 <ol>
@@ -248,7 +248,7 @@
 <p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
 </blockquote>
 <h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
-<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;<br>    FXMLLoader fxmlLoader = <span class="hljs-keyword">new</span> FXMLLoader(HelloApplication.class.getResource(<span class="hljs-string">&quot;hello-view.fxml&quot;</span>));<br>    Scene scene = <span class="hljs-keyword">new</span> Scene(fxmlLoader.load(), <span class="hljs-number">320</span>, <span class="hljs-number">240</span>);<br>    stage.setTitle(<span class="hljs-string">&quot;Hello!&quot;</span>);<br>    stage.setScene(scene);<br>    stage.show();<br>&#125;<br><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage stage)</span> <span class="keyword">throws</span> IOException </span>{</span><br><span class="line">    FXMLLoader fxmlLoader = <span class="keyword">new</span> FXMLLoader(HelloApplication.class.getResource(<span class="string">"hello-view.fxml"</span>));</span><br><span class="line">    Scene scene = <span class="keyword">new</span> Scene(fxmlLoader.load(), <span class="number">320</span>, <span class="number">240</span>);</span><br><span class="line">    stage.setTitle(<span class="string">"Hello!"</span>);</span><br><span class="line">    stage.setScene(scene);</span><br><span class="line">    stage.show();</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>主要步骤解释</strong></p>
 <ul>
@@ -259,7 +259,7 @@
 <h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
 <p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><br>&lt;?import javafx.geometry.Insets?&gt;<br>&lt;?import javafx.scene.control.Label?&gt;<br>&lt;?import javafx.scene.layout.VBox?&gt;<br>&lt;?import javafx.scene.control.Button?&gt;<br><br><span class="hljs-tag">&lt;<span class="hljs-name">VBox</span> <span class="hljs-attr">alignment</span>=<span class="hljs-string">&quot;CENTER&quot;</span> <span class="hljs-attr">spacing</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">xmlns:fx</span>=<span class="hljs-string">&quot;http://javafx.com/fxml&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">fx:controller</span>=<span class="hljs-string">&quot;top.mqxu.jfxdemo.HelloController&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">padding</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">Insets</span> <span class="hljs-attr">bottom</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">left</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">right</span>=<span class="hljs-string">&quot;20.0&quot;</span> <span class="hljs-attr">top</span>=<span class="hljs-string">&quot;20.0&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">padding</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">fx:id</span>=<span class="hljs-string">&quot;welcomeText&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;Hello!&quot;</span> <span class="hljs-attr">onAction</span>=<span class="hljs-string">&quot;#onHelloButtonClick&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">VBox</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;?import javafx.geometry.Insets?&gt;</span><br><span class="line">&lt;?import javafx.scene.control.Label?&gt;</span><br><span class="line">&lt;?import javafx.scene.layout.VBox?&gt;</span><br><span class="line">&lt;?import javafx.scene.control.Button?&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">VBox</span> <span class="attr">alignment</span>=<span class="string">"CENTER"</span> <span class="attr">spacing</span>=<span class="string">"20.0"</span> <span class="attr">xmlns:fx</span>=<span class="string">"http://javafx.com/fxml"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">fx:controller</span>=<span class="string">"top.mqxu.jfxdemo.HelloController"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">padding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Insets</span> <span class="attr">bottom</span>=<span class="string">"20.0"</span> <span class="attr">left</span>=<span class="string">"20.0"</span> <span class="attr">right</span>=<span class="string">"20.0"</span> <span class="attr">top</span>=<span class="string">"20.0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">padding</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Label</span> <span class="attr">fx:id</span>=<span class="string">"welcomeText"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span> <span class="attr">text</span>=<span class="string">"Hello!"</span> <span class="attr">onAction</span>=<span class="string">"#onHelloButtonClick"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">VBox</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>代码解释</strong></p>
 <ul>
@@ -273,7 +273,7 @@
 <h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
 <p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloController</span> </span>&#123;<br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">private</span> Label welcomeText;<br><br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onHelloButtonClick</span><span class="hljs-params">()</span> </span>&#123;<br>        welcomeText.setText(<span class="hljs-string">&quot;Welcome to JavaFX Application!&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>{</span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="keyword">private</span> Label welcomeText;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onHelloButtonClick</span><span class="params">()</span> </span>{</span><br><span class="line">        welcomeText.setText(<span class="string">"Welcome to JavaFX Application!"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
 <p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
@@ -289,7 +289,7 @@
 <ol start="3">
 <li>样式文件</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*根组件样式*/</span><br><span class="hljs-selector-class">.root</span> &#123;<br>  -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;<br>  <span class="hljs-comment">/*背景图设置，注意相对路径*/</span><br>  -fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">../images/bg.png</span>);<br>  -fx-<span class="hljs-attribute">background-size</span>: cover;<br>&#125;<br><br><span class="hljs-comment">/*标签文本色*/</span><br><span class="hljs-selector-class">.label</span> &#123;<br>  -fx-text-fill: <span class="hljs-number">#bcb3d7</span>;<br>&#125;<br><br><span class="hljs-comment">/*按钮背景色和文本色*/</span><br><span class="hljs-selector-class">.button</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#a06cc9</span>;<br>  -fx-text-fill: white;<br>&#125;<br><br><span class="hljs-comment">/*鼠标悬停按钮色*/</span><br><span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#7bb4d7</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight css"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">/*根组件样式*/</span></span><br><span class="line"><span class="selector-class">.root</span> {</span><br><span class="line">  -fx-<span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">  <span class="comment">/*背景图设置，注意相对路径*/</span></span><br><span class="line">  -fx-<span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">../images/bg.png</span>);</span><br><span class="line">  -fx-<span class="attribute">background-size</span>: cover;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*标签文本色*/</span></span><br><span class="line"><span class="selector-class">.label</span> {</span><br><span class="line">  -fx-text-fill: <span class="number">#bcb3d7</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*按钮背景色和文本色*/</span></span><br><span class="line"><span class="selector-class">.button</span> {</span><br><span class="line">  -fx-<span class="attribute">background-color</span>: <span class="number">#a06cc9</span>;</span><br><span class="line">  -fx-text-fill: white;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*鼠标悬停按钮色*/</span></span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> {</span><br><span class="line">  -fx-<span class="attribute">background-color</span>: <span class="number">#7bb4d7</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <ol start="4">
 <li>应用主程序修改（布局文件路径改变了）</li>
@@ -310,7 +310,7 @@
   </entry>
   <entry>
     <title>Mac下安装多个版本的JDK并随意切换</title>
-    <url>/2021/09/20/Mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84JDK%E5%B9%B6%E9%9A%8F%E6%84%8F%E5%88%87%E6%8D%A2/</url>
+    <url>/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/</url>
     <content><![CDATA[<blockquote>
 <p>JDK 版本已经更新到了 17，我们需要学习 JDK 的一些新特性，但是日常使用基本上都是基于 JDK8，因此，需要在 Mac 环境下安装多个版本的 JDK，并且确保能够随意切换。</p>
 </blockquote>
@@ -330,16 +330,16 @@
 <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><blockquote>
 <p>Mac 下通过 bash_profile 文件来对环境信息进行配置。执行以下命令打开配置文件：</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">vim ~/.bash_profile<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></tbody></table></figure>
 
 <p>如果原本没有.bash_profile 文件，在运行 vim ~/.bash_profile 命令时会创建该文件。<br>根据环境变量信息新增 JDK 几个版本的相关内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># Java Config : Java家配置</span><br><span class="hljs-built_in">export</span> JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home<br><span class="hljs-built_in">export</span> JAVA11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home<br><span class="hljs-built_in">export</span> JAVA17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home<br><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$&#123;PATH&#125;</span>:<span class="hljs-variable">$&#123;JAVA_HOME&#125;</span>/bin<br><br><span class="hljs-comment"># config alias: 配置别名</span><br><span class="hljs-built_in">alias</span> jdk8=<span class="hljs-string">&quot;export JAVA_HOME=<span class="hljs-variable">$JAVA8_HOME</span>&quot;</span><br><span class="hljs-built_in">alias</span> jdk11=<span class="hljs-string">&quot;export JAVA_HOME=<span class="hljs-variable">$JAVA11_HOME</span>&quot;</span><br><span class="hljs-built_in">alias</span> jdk17=<span class="hljs-string">&quot;export JAVA_HOME=<span class="hljs-variable">$JAVA17_HOME</span>&quot;</span><br><br><span class="hljs-comment"># config default :jdk 配置默认JDK</span><br><span class="hljs-built_in">export</span> JAVA_HOME=<span class="hljs-variable">$JAVA8_HOME</span><br><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$JAVA_HOME</span>:<span class="hljs-variable">$PATH</span>&quot;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Java Config : Java家配置</span></span><br><span class="line"><span class="built_in">export</span> JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> JAVA11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> JAVA17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">${PATH}</span>:<span class="variable">${JAVA_HOME}</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># config alias: 配置别名</span></span><br><span class="line"><span class="built_in">alias</span> jdk8=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA8_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk11=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA11_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk17=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA17_HOME</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># config default :jdk 配置默认JDK</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA8_HOME</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$JAVA_HOME</span>:<span class="variable">$PATH</span>"</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>修改保存上述配置，对 bash_profile 进行编译生效</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.bash_profile<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></tbody></table></figure>
 
 <p>如果使用的是 zshrc,则使用以下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.zshrc<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></tbody></table></figure>
 
 <p>然后在终端执行 <code>java -version</code> 会发现 jdk 版本正常显示为 jdk8<br><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.30.08.5vfa7jf3tys0.png" alt="显示默认的JDK8版本"></p>
 <h1 id="任意切换-Java-环境"><a href="#任意切换-Java-环境" class="headerlink" title="任意切换 Java 环境"></a>任意切换 Java 环境</h1><blockquote>
@@ -363,7 +363,7 @@
   </entry>
   <entry>
     <title>Markdown笔记转思维导图工具你值得拥有</title>
-    <url>/2021/09/18/Markmap/</url>
+    <url>/2021/09/18/markmap/</url>
     <content><![CDATA[<blockquote>
 <p>Markdown 的好处是专注码字的同时还能兼顾排版，缺点就是可视化能力很弱，毕竟人对于图像化内容的接收程度要强于文本。</p>
 </blockquote>
@@ -392,7 +392,7 @@
   </entry>
   <entry>
     <title>开到荼蘼</title>
-    <url>/2021/08/11/%E5%BC%80%E5%88%B0%E8%8D%BC%E8%98%BC/</url>
+    <url>/2021/08/11/kai-dao-tu-mi/</url>
     <content><![CDATA[<blockquote>
 <p>彼岸花开，开到荼蘼</p>
 </blockquote>
@@ -411,7 +411,7 @@
   </entry>
   <entry>
     <title>Mac软件汇总</title>
-    <url>/2021/08/13/Mac%E8%BD%AF%E4%BB%B6%E6%B1%87%E6%80%BB/</url>
+    <url>/2021/08/13/mac-ruan-jian-hui-zong/</url>
     <content><![CDATA[<blockquote>
 <p>收集好用的 Mac 软件。</p>
 </blockquote>
@@ -858,7 +858,7 @@
 <h3 id="即时通信"><a href="#即时通信" class="headerlink" title="即时通信"></a>即时通信</h3><ul>
 <li><a href="http://meetfranz.com/">Franz</a> - 一个使用 <a href="http://electron.atom.io/">Electron</a>开发的，可以同时登录 23 个平台的即时通讯软件。[hot]</li>
 <li><a href="http://im.qq.com/macqq/index.shtml">QQ</a> - QQ for Mac App。![Freeware][freeware icon]</li>
-<li><a href="http://weixin.qq.com/cgi-bin/readtemplate?t=mac&platform=wx&lang=zh_CN">WeChat</a> - 微信 for Mac App。</li>
+<li><a href="http://weixin.qq.com/cgi-bin/readtemplate?t=mac&amp;platform=wx&amp;lang=zh_CN">WeChat</a> - 微信 for Mac App。</li>
 <li><a href="https://desktop.telegram.org/">Telegram</a> - 通讯新时代。[荐]</li>
 <li><a href="https://github.com/trazyn/weweChat">weweChat</a> - 不比官方差的微信第三方客户端。[荐]。<a href="https://www.waerfa.com/wewechat-review">#</a></li>
 <li><a href="https://github.com/geeeeeeeeek/electronic-wechat">Electronic WeChat</a> - 调用微信接口，使用 <a href="https://github.com/electron/electron">Electron</a> 开发的第三方漂亮<a href="https://github.com/geeeeeeeeek/electronic-wechat">开源</a>微信应用。</li>
@@ -1019,7 +1019,7 @@
 <h3 id="正则编辑器"><a href="#正则编辑器" class="headerlink" title="正则编辑器"></a>正则编辑器</h3><ul>
 <li><a href="http://krillapps.com/patterns/">Patterns</a> - 正则表达式编辑器。</li>
 <li><a href="https://github.com/michaeltyson/Reginald">Reginald</a> - 正则表达式测试应用程序，使用 <a href="http://atastypixel.com/blog/reginald-regex-explorer/">RegexKitLite</a>。<a href="https://github.com/michaeltyson/Reginald">开源</a> 。</li>
-<li><a href="http://motionobj.com/regex/?utm_source=RegexApp&utm_medium=app">Regex</a> - 感觉是用过最漂亮的正则表达式测试工具。</li>
+<li><a href="http://motionobj.com/regex/?utm_source=RegexApp&amp;utm_medium=app">Regex</a> - 感觉是用过最漂亮的正则表达式测试工具。</li>
 <li><a href="http://reggyapp.com/">Reggy</a> - 正则表达式编辑器。<a href="https://github.com/samsouder/reggy">开源</a>。</li>
 <li><a href="http://www.mactechnologies.com/index.php?page=downloads#regexrx">RegExRX</a> - 正则表达式的开发工具。</li>
 </ul>
