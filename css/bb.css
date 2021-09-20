@@ -105,8 +105,8 @@ div.timenode:hover .meta {
 }
 
 div.timenode:hover .meta:before {
-  /* background: rgba(255, 87, 34, 0.5); */
-  background: rgba(241, 172, 180, 0.5);
+  background: rgba(196, 143, 221, 0.5);
+  /* background: rgba(241, 172, 180, 0.5); */
 }
 
 div.timenode:hover .meta:after {

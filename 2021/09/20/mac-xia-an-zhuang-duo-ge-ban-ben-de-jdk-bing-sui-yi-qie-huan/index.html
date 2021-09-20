@@ -124,7 +124,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>留言板</span>
+      <span>Contact</span>
     </a>
     
   </li>
@@ -135,14 +135,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>友链</span>
     </a>
     
   </li>
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/artitalk" class="waves-effect waves-light">
+    <a href="/artiTalk" class="waves-effect waves-light">
       
       <i class="fas fa-heartbeat" style="zoom: 0.6;"></i>
       
@@ -308,7 +308,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/artitalk" class="waves-effect waves-light">
+		<a href="/artiTalk" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-heartbeat"></i>
 			
@@ -552,7 +552,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    431
+                    436
                 </div>
                 
 
@@ -568,6 +568,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -593,16 +596,29 @@
 <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><blockquote>
 <p>Mac 下通过 bash_profile 文件来对环境信息进行配置。执行以下命令打开配置文件：</p>
 </blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如果原本没有.bash_profile 文件，在运行 vim ~/.bash_profile 命令时会创建该文件。<br>根据环境变量信息新增 JDK 几个版本的相关内容：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Java Config : Java家配置</span></span><br><span class="line"><span class="built_in">export</span> JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> JAVA11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> JAVA17_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">${PATH}</span>:<span class="variable">${JAVA_HOME}</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># config alias: 配置别名</span></span><br><span class="line"><span class="built_in">alias</span> jdk8=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA8_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk11=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA11_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk17=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA17_HOME</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># config default :jdk 配置默认JDK</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA8_HOME</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$JAVA_HOME</span>:<span class="variable">$PATH</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Java Config : Java家配置</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA8_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA11_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA17_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">${<span class="token environment constant">PATH</span>}</span><span class="token builtin class-name">:</span><span class="token variable">${JAVA_HOME}</span>/bin
+
+<span class="token comment"># config alias: 配置别名</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk8</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA8_HOME</span>"</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk11</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA11_HOME</span>"</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk17</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA17_HOME</span>"</span>
+
+<span class="token comment"># config default :jdk 配置默认JDK</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span><span class="token variable">$JAVA8_HOME</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token variable">$JAVA_HOME</span>:<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>修改保存上述配置，对 bash_profile 进行编译生效</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如果使用的是 zshrc,则使用以下命令</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>然后在终端执行 <code>java -version</code> 会发现 jdk 版本正常显示为 jdk8<br><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.30.08.5vfa7jf3tys0.png" alt="显示默认的JDK8版本"></p>
 <h1 id="任意切换-Java-环境"><a href="#任意切换-Java-环境" class="headerlink" title="任意切换 Java 环境"></a>任意切换 Java 环境</h1><blockquote>
