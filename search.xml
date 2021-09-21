@@ -1,6 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JavaFX起步</title>
+    <url>/2021/09/19/javafx-qi-bu/</url>
+    <content><![CDATA[<blockquote>
+<p>要求：</p>
+<ol>
+<li>JDK11 以上</li>
+<li>Maven 环境已正确配置</li>
+</ol>
+</blockquote>
+<h1 id="一、项目初始化"><a href="#一、项目初始化" class="headerlink" title="一、项目初始化"></a>一、项目初始化</h1><ol>
+<li>IDEA 新建项目，如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/9I3e1G.png" alt="新建项目"></p>
+<ol start="2">
+<li>选择依赖，如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/aq1RaA.png" alt="选择依赖"></p>
+<ol start="3">
+<li>项目结构和运行效果如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/0dDOLR.png" alt="项目结构和运行效果"></p>
+<h1 id="二、程序结构"><a href="#二、程序结构" class="headerlink" title="二、程序结构"></a>二、程序结构</h1><blockquote>
+<p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
+</blockquote>
+<h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token class-name">Stage</span> stage<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token class-name">FXMLLoader</span> fxmlLoader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FXMLLoader</span><span class="token punctuation">(</span><span class="token class-name">HelloApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"hello-view.fxml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Scene</span> scene <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scene</span><span class="token punctuation">(</span>fxmlLoader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">240</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stage<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stage<span class="token punctuation">.</span><span class="token function">setScene</span><span class="token punctuation">(</span>scene<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stage<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>主要步骤解释</strong></p>
+<ul>
+<li>载入资源目录的布局文件</li>
+<li>创建指定大小的 scene（场景）</li>
+<li>将 scene 加入 stage（舞台），并设置标题和可见性</li>
+</ul>
+<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
+<p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
+</blockquote>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="token prolog">&lt;?import javafx.geometry.Insets?&gt;</span>
+<span class="token prolog">&lt;?import javafx.scene.control.Label?&gt;</span>
+<span class="token prolog">&lt;?import javafx.scene.layout.VBox?&gt;</span>
+<span class="token prolog">&lt;?import javafx.scene.control.Button?&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VBox</span> <span class="token attr-name">alignment</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>CENTER<span class="token punctuation">"</span></span> <span class="token attr-name">spacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>fx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://javafx.com/fxml<span class="token punctuation">"</span></span>
+      <span class="token attr-name"><span class="token namespace">fx:</span>controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>top.mqxu.jfxdemo.HelloController<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>padding</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Insets</span> <span class="token attr-name">bottom</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>padding</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span> <span class="token attr-name"><span class="token namespace">fx:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>welcomeText<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hello!<span class="token punctuation">"</span></span> <span class="token attr-name">onAction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#onHelloButtonClick<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VBox</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代码解释</strong></p>
+<ul>
+<li>头部主要是导入本例中用到的 jafafx 的组件</li>
+<li>根布局组件为 VBox——垂直布局（从上到下排列子组件）</li>
+<li>声明 VBox 的对齐方式为居中，每个子组件的间距为 20，对应 HelloController 控制器</li>
+<li>padding 用来声明 VBox 的内边距，用 Insets 的四个属性来表示四个方向的距离</li>
+<li>Label 为文本组件，绑定 id 用于在控制器中访问</li>
+<li>Button 为按钮组建，初始化默认文本，绑定点击事件</li>
+</ul>
+<h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
+<p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@FXML</span>
+    <span class="token keyword">private</span> <span class="token class-name">Label</span> welcomeText<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@FXML</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onHelloButtonClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        welcomeText<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"Welcome to JavaFX Application!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
+<p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
+</blockquote>
+<ol>
+<li>项目结构修改如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/AgAF8O.png" alt="修改resource资源目录"></p>
+<ol start="2">
+<li>布局文件修改如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/8NSLjn.png" alt="布局绑定样式"></p>
+<ol start="3">
+<li>样式文件</li>
+</ol>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*根组件样式*/</span>
+<span class="token selector">.root</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token comment">/*背景图设置，注意相对路径*/</span>
+  <span class="token property">-fx-background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>../images/bg.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">-fx-background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*标签文本色*/</span>
+<span class="token selector">.label</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> #bcb3d7<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*按钮背景色和文本色*/</span>
+<span class="token selector">.button</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #a06cc9<span class="token punctuation">;</span>
+  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*鼠标悬停按钮色*/</span>
+<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #7bb4d7<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>应用主程序修改（布局文件路径改变了）</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/DuzVD0.png" alt="修改fxml路径"></p>
+<ol start="5">
+<li>改变后的运行效果</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/run.gif" alt="运行效果"></p>
+<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>通过以上 demo 初步认识了 JavaFX，其结构比较清晰易懂，并且视图、样式、行为分离，和 Android 开发、Web 前端 HTML、CSS、JS 各司其职的思想都比较相似，写起来体验还算 OK。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>JavaFX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS 8.2开发环境</title>
     <url>/2021/08/14/centos-8.2-kai-fa-huan-jing/</url>
     <content><![CDATA[<blockquote>
@@ -295,144 +433,6 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </categories>
       <tags>
         <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaFX起步</title>
-    <url>/2021/09/19/javafx-qi-bu/</url>
-    <content><![CDATA[<blockquote>
-<p>要求：</p>
-<ol>
-<li>JDK11 以上</li>
-<li>Maven 环境已正确配置</li>
-</ol>
-</blockquote>
-<h1 id="一、项目初始化"><a href="#一、项目初始化" class="headerlink" title="一、项目初始化"></a>一、项目初始化</h1><ol>
-<li>IDEA 新建项目，如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/9I3e1G.png" alt="新建项目"></p>
-<ol start="2">
-<li>选择依赖，如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/aq1RaA.png" alt="选择依赖"></p>
-<ol start="3">
-<li>项目结构和运行效果如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/0dDOLR.png" alt="项目结构和运行效果"></p>
-<h1 id="二、程序结构"><a href="#二、程序结构" class="headerlink" title="二、程序结构"></a>二、程序结构</h1><blockquote>
-<p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
-</blockquote>
-<h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token class-name">Stage</span> stage<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-    <span class="token class-name">FXMLLoader</span> fxmlLoader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FXMLLoader</span><span class="token punctuation">(</span><span class="token class-name">HelloApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"hello-view.fxml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">Scene</span> scene <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scene</span><span class="token punctuation">(</span>fxmlLoader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">240</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">setScene</span><span class="token punctuation">(</span>scene<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>主要步骤解释</strong></p>
-<ul>
-<li>载入资源目录的布局文件</li>
-<li>创建指定大小的 scene（场景）</li>
-<li>将 scene 加入 stage（舞台），并设置标题和可见性</li>
-</ul>
-<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
-<p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
-</blockquote>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-
-<span class="token prolog">&lt;?import javafx.geometry.Insets?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.control.Label?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.layout.VBox?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.control.Button?&gt;</span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VBox</span> <span class="token attr-name">alignment</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>CENTER<span class="token punctuation">"</span></span> <span class="token attr-name">spacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>fx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://javafx.com/fxml<span class="token punctuation">"</span></span>
-      <span class="token attr-name"><span class="token namespace">fx:</span>controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>top.mqxu.jfxdemo.HelloController<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>padding</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Insets</span> <span class="token attr-name">bottom</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>padding</span><span class="token punctuation">&gt;</span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span> <span class="token attr-name"><span class="token namespace">fx:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>welcomeText<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hello!<span class="token punctuation">"</span></span> <span class="token attr-name">onAction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#onHelloButtonClick<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VBox</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>代码解释</strong></p>
-<ul>
-<li>头部主要是导入本例中用到的 jafafx 的组件</li>
-<li>根布局组件为 VBox——垂直布局（从上到下排列子组件）</li>
-<li>声明 VBox 的对齐方式为居中，每个子组件的间距为 20，对应 HelloController 控制器</li>
-<li>padding 用来声明 VBox 的内边距，用 Insets 的四个属性来表示四个方向的距离</li>
-<li>Label 为文本组件，绑定 id 用于在控制器中访问</li>
-<li>Button 为按钮组建，初始化默认文本，绑定点击事件</li>
-</ul>
-<h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
-<p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@FXML</span>
-    <span class="token keyword">private</span> <span class="token class-name">Label</span> welcomeText<span class="token punctuation">;</span>
-
-    <span class="token annotation punctuation">@FXML</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onHelloButtonClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        welcomeText<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"Welcome to JavaFX Application!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
-<p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
-</blockquote>
-<ol>
-<li>项目结构修改如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/AgAF8O.png" alt="修改resource资源目录"></p>
-<ol start="2">
-<li>布局文件修改如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/8NSLjn.png" alt="布局绑定样式"></p>
-<ol start="3">
-<li>样式文件</li>
-</ol>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*根组件样式*/</span>
-<span class="token selector">.root</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
-  <span class="token comment">/*背景图设置，注意相对路径*/</span>
-  <span class="token property">-fx-background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>../images/bg.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
-  <span class="token property">-fx-background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*标签文本色*/</span>
-<span class="token selector">.label</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> #bcb3d7<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*按钮背景色和文本色*/</span>
-<span class="token selector">.button</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #a06cc9<span class="token punctuation">;</span>
-  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*鼠标悬停按钮色*/</span>
-<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #7bb4d7<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="4">
-<li>应用主程序修改（布局文件路径改变了）</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/DuzVD0.png" alt="修改fxml路径"></p>
-<ol start="5">
-<li>改变后的运行效果</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/run.gif" alt="运行效果"></p>
-<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>通过以上 demo 初步认识了 JavaFX，其结构比较清晰易懂，并且视图、样式、行为分离，和 Android 开发、Web 前端 HTML、CSS、JS 各司其职的思想都比较相似，写起来体验还算 OK。</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>JavaFX</tag>
       </tags>
   </entry>
   <entry>
