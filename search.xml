@@ -436,6 +436,104 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </tags>
   </entry>
   <entry>
+    <title>JavaStudy学习仓库维护</title>
+    <url>/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/</url>
+    <content><![CDATA[<h1 id="JavaStudy-学习仓库维护"><a href="#JavaStudy-学习仓库维护" class="headerlink" title="JavaStudy 学习仓库维护"></a>JavaStudy 学习仓库维护</h1><h2 id="前提条件（重要）"><a href="#前提条件（重要）" class="headerlink" title="前提条件（重要）"></a>前提条件（重要）</h2><p>检查你的 IDEA 的全局配置，保证 Maven 的运行环境 JDK 版本如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165135334.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165210890.png"></p>
+<h2 id="新建仓库目录"><a href="#新建仓库目录" class="headerlink" title="新建仓库目录"></a>新建仓库目录</h2><p>电脑上找个自己习惯存放代码的地方，新建一个文件夹，如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923151221174.png"></p>
+<h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>在该文件夹新建 README.md 文件，用来说明仓库的作用和建议命名，内容可以参考群文件发的 pdf</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923151639093.png"></p>
+<h2 id="初始化-git-仓库"><a href="#初始化-git-仓库" class="headerlink" title="初始化 git 仓库"></a>初始化 git 仓库</h2><p>在 JavaStudy 目录启动命令行，用 <code>git init</code> 初始化为一个 git 仓库</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923151853796.png"></p>
+<p>然后进行 add 和 commit 操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161145270.png"></p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>IDEA 新建 Maven 项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152017407.png" alt="image-20210923152017407"></p>
+<p>如图填写</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152240429.png"></p>
+<p>如图选择</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152430202.png"></p>
+<p>展开左侧项目结构视图，在 src 新建 package，右下角弹框就如图选择</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152648622.png"></p>
+<p>修改 pom.xml 文件，添加项目字符集配置，如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923155626849.png"></p>
+<p><strong>检查项目结构界面中的各处 JDK 版本（重要）</strong></p>
+<blockquote>
+<p>Win： ctrl+alt+shift+s</p>
+<p>Mac: command+ ;</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165627895.png" alt="1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165708069.png" alt="2"></p>
+<p>如果安装了多个 JDK，确保选择正确的那个</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165800427.png" alt="3"></p>
+<p>接着去设置界面看一下 Java 编译版本</p>
+<blockquote>
+<p>Win： ctrl+alt+s</p>
+<p>Mac: command+ ,</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165907528.png" alt="4"></p>
+<p><strong>以上操作正常情况都是正确的，如果发现不对，及时要修改过来！！！</strong></p>
+<p>接着，创建的包上新建 class，简单编辑如图。这样可以保证 top.mqxu.java.basic 下面有文件，然后再创建子包的时候，前面的一段同名前缀就可以复用，包的结构就可以是折叠形式。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152819680.png"></p>
+<p>新建子包</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923153056459.png"></p>
+<p>创建一个类，编写数组练习代码，参考如图，注意四种注释的写法</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923153536152.png"></p>
+<p>在 App 中调用刚才写的求和方法后运行，参考如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923160822478.png"></p>
+<h2 id="本地提交"><a href="#本地提交" class="headerlink" title="本地提交"></a>本地提交</h2><p>项目根目录命令行，执行 git commit 操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161300946.png"></p>
+<h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><p>如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161438477.png"></p>
+<h2 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h2><p>本地添加远程仓库，建立连接，推送。</p>
+<p>主要涉及命令在 github 仓库首页有给出</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch -M main
+<span class="token function">git</span> remote <span class="token function">add</span> origin git@github.com:mqxu/JavaStudy.git
+<span class="token function">git</span> push -u origin main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161644838.png"></p>
+<p>远程仓库刷新如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162252810.png"></p>
+<p>上图红框表明，我们发现不想要的文件也推上来了，这就需要**.gitignore**文件了。</p>
+<p>IDEA 项目根目录新建**.gitignore** 文件</p>
+<p>根据自己需要编辑</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162456398.png"></p>
+<p>本地查看 git 状态，添加，提交，推送</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162636964.png"></p>
+<p>刷新远程仓库发现规则文件推送成功了，但是之前想删除的内容还在</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162813717.png"></p>
+<p>回到本地，双击红框中的 clean 命令，清除 target</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162848969.png" alt="image-20210923162848969"></p>
+<p>提交，推送</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163031480.png"></p>
+<p>远程刷新，发现 target 没了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163108820.png"></p>
+<p>但是.idea 还在，可是我们不可能在本地把这个目录删除，删除后 IDEA 就不能工作了。</p>
+<p>这个时候执行删除远程仓库文件命令，在本地项目根目录命令行依次执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> -r -n --cached  .idea  <span class="token comment"># 预览将要删除的文件</span>
+<span class="token function">git</span> <span class="token function">rm</span> -r --cached .idea      <span class="token comment"># 确定无误后删除文件</span>
+<span class="token function">git</span> commit -m <span class="token string">"删除.idea目录"</span>  <span class="token comment"># 提交到本地</span>
+<span class="token function">git</span> push origin main          <span class="token comment"># 推送到远程服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>依次执行结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163650965.png" alt="1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163713249.png" alt="2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163737678.png" alt="3"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163814761.png" alt="4"></p>
+<p>最后再刷新远程仓库，解决！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163859758.png" alt="5"></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>同样的方法，创建其他项目，如 java-jfx 等，维护好相应代码，持续练习并推送。</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac下安装多个版本的JDK并随意切换</title>
     <url>/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/</url>
     <content><![CDATA[<blockquote>

@@ -1,1604 +1,374 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="InfinityX">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <title>InfinityX</title>
-    <link rel="icon" type="image/png" href="/medias/logo.png">
-
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-
-    <script src="/libs/jquery/jquery.min.js"></script>
-
-<meta name="generator" content="Hexo 5.4.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
-
-
-
-   <style>
-    body{
-       background-image: url(https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img6.5u9mssad9ow0.jpg);
-       background-repeat:no-repeat;
-       background-size:cover;
-       background-attachment:fixed;
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>InfinityX - 开到荼蘼</title><meta name="author" content="mqxu"><meta name="copyright" content="mqxu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="InfinityX">
+<meta property="og:url" content="https://mqxu.top/index.html">
+<meta property="og:site_name" content="InfinityX">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/me.1dg5a9627olc.jpg">
+<meta property="article:author" content="mqxu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/me.1dg5a9627olc.jpg"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="https://mqxu.top/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
     }
-</style>
-
-
-
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">InfinityX</span>
-                </a>
-            </div>
-            
-
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/artiTalk" class="waves-effect waves-light">
-      
-      <i class="fas fa-heartbeat" style="zoom: 0.6;"></i>
-      
-      <span>说说</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/movies">
-          
-          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Movies</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">InfinityX</div>
-        <div class="logo-desc">
-            
-            Never really desperate, only the lost of the soul.
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/artiTalk" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-heartbeat"></i>
-			
-			ArtiTalk
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/movies " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Movies</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
-          
-        </li>
-        
-        
-    </ul>
-</div>
-
-
-        </div>
-
-        
-    </nav>
-
-</header>
-
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        /* background: transparent; */
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-        <div id="prev-cover" class="left waves-effect carousel-control">
-            <i class="icon fa fa-angle-left"></i>
-        </div>
-        <div id="next-cover" class="right waves-effect carousel-control">
-            <i class="icon fa fa-angle-right"></i>
-        </div>
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                开到荼蘼
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                                "那时我们有梦，关于文学，关于爱情，关于穿越世界的旅行。如今我们深夜饮酒，杯子碰到一起，都是梦破碎的声音。",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/mqxu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=16422802" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 16422802" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
-    </div>
-
-    
-        
-
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner6.549xh4vmcvc0.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">CentOS 8.2开发环境</div>
-                            <div class="description center-align">
-                                
-                                    
-说明: 本文档云服务器操作系统为 CentOS 8.2
-命令：cat /etc/redhat-release
-注意：涉及相应端口需要自己放行
-
-0. 安装工具1) Yum 包管理器Yum（全称为 Yellow dog Updater, M
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/08/14/centos-8.2-kai-fa-huan-jing/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img165.5y83zifgblk0.jpeg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">JavaFX起步</div>
-                            <div class="description center-align">
-                                
-                                    
-要求：
-
-JDK11 以上
-Maven 环境已正确配置
-
-
-一、项目初始化
-IDEA 新建项目，如图
-
-
-
-选择依赖，如图
-
-
-
-项目结构和运行效果如图
-
-
-二、程序结构
-这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/09/19/javafx-qi-bu/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/801baf41cf12662f59557ecd10fad6e5.76gynyi9ai40.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">Mac下安装多个版本的JDK并随意切换</div>
-                            <div class="description center-align">
-                                
-                                    
-JDK 版本已经更新到了 17，我们需要学习 JDK 的一些新特性，但是日常使用基本上都是基于 JDK8，因此，需要在 Mac 环境下安装多个版本的 JDK，并且确保能够随意切换。
-
-JDK 下载
-通过下方链接或网盘下载相应版本和平台的 
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img170.7ixd8xo2qi40.jpeg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">Markdown笔记转思维导图工具你值得拥有</div>
-                            <div class="description center-align">
-                                
-                                    
-Markdown 的好处是专注码字的同时还能兼顾排版，缺点就是可视化能力很弱，毕竟人对于图像化内容的接收程度要强于文本。
-
-可视化表达方面，思维导图就很不错。它作为一种图象化工具，通过层级式发散式地组织主题，帮助我们更好的记忆、学习和思考
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/09/18/markmap/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">开到荼蘼</div>
-                            <div class="description center-align">
-                                
-                                    
-彼岸花开，开到荼蘼
-
-
-I每只蚂蚁，都有眼睛鼻子，它美不美丽偏差有没有一毫厘，有何关系每一个人，伤心了就哭泣，饿了就要吃相差大不过天地，有何刺激
-II有太多太多魔力，太少道理太多太多游戏，只是为了好奇还有什么值得歇斯底里对什么东西，死心塌
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/08/11/kai-dao-tu-mi/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img9.39ng0ztekz60.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">超美的文字</div>
-                            <div class="description center-align">
-                                
-                                    
-1、岁月不饶人，我亦未曾绕过岁月。
-2、剑未佩妥，出门已是江湖；酒尚余温，入口不识乾坤。
-3、枕上诗书闲处好，门前风景雨来佳。
-4、愿你历尽千帆，归来仍是少年。
-5、何来人间一惊鸿，只是世间一俗人。
-6、愿你垂垂老矣，我可明我心。
-7、你
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/09/21/chao-mei-de-wen-zi/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img52.3wn8csjyvrq0.jpeg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">Mac软件汇总</div>
-                            <div class="description center-align">
-                                
-                                    
-收集好用的 Mac 软件。
-
-一、常用软件效率工具
-Alfred - Mac 上应该安装的第一个效率神器。
-
-截图
-snipaste - 新生代截图工具。【荐】。
-
-Xnip- Mac 上方便好用的截图工具，支持滚动截图；最大的优点是，截
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/08/13/mac-ruan-jian-hui-zong/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-    
-</div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'InfinityX',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-09-23 17:02:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
         }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
-
-<main class="content">
-
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;时光碎片
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            我不记得那是何年何月的事情了。我只知道记忆与我同在，将美好的往事完美的浓缩起来，如同一笔浓墨重彩，涂抹在我们那已经变得灰白单调的生活画布上。——《追风筝的人》
-        </div>
-    </div>
-</div>
-
-                    
-
-                    
-
-                    
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/21/chao-mei-de-wen-zi/">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img9.39ng0ztekz60.jpg" class="responsive-img" alt="超美的文字">
-                            
-                            <span class="card-title">超美的文字</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-1、岁月不饶人，我亦未曾绕过岁月。
-2、剑未佩妥，出门已是江湖；酒尚余温，入口不识乾坤。
-3、枕上诗书闲处好，门前风景雨来佳。
-4、愿你历尽千帆，归来仍是少年。
-5、何来人间一惊鸿，只是世间一俗人。
-6、愿你垂垂老矣，我可明我心。
-7、你
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-21
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%96%87%E8%89%BA/" class="post-category">
-                                    文艺
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%AE%B0%E5%BD%95/">
-                            <span class="chip bg-color">记录</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/801baf41cf12662f59557ecd10fad6e5.76gynyi9ai40.jpg" class="responsive-img" alt="Mac下安装多个版本的JDK并随意切换">
-                            
-                            <span class="card-title">Mac下安装多个版本的JDK并随意切换</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-JDK 版本已经更新到了 17，我们需要学习 JDK 的一些新特性，但是日常使用基本上都是基于 JDK8，因此，需要在 Mac 环境下安装多个版本的 JDK，并且确保能够随意切换。
-
-JDK 下载
-通过下方链接或网盘下载相应版本和平台的 
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%8E%AF%E5%A2%83/" class="post-category">
-                                    环境
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Mac/">
-                            <span class="chip bg-color">Mac</span>
-                        </a>
-                        
-                        <a href="/tags/JDK/">
-                            <span class="chip bg-color">JDK</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/19/javafx-qi-bu/">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img165.5y83zifgblk0.jpeg" class="responsive-img" alt="JavaFX起步">
-                            
-                            <span class="card-title">JavaFX起步</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-要求：
-
-JDK11 以上
-Maven 环境已正确配置
-
-
-一、项目初始化
-IDEA 新建项目，如图
-
-
-
-选择依赖，如图
-
-
-
-项目结构和运行效果如图
-
-
-二、程序结构
-这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaFX/">
-                            <span class="chip bg-color">JavaFX</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/18/markmap/">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img170.7ixd8xo2qi40.jpeg" class="responsive-img" alt="Markdown笔记转思维导图工具你值得拥有">
-                            
-                            <span class="card-title">Markdown笔记转思维导图工具你值得拥有</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-Markdown 的好处是专注码字的同时还能兼顾排版，缺点就是可视化能力很弱，毕竟人对于图像化内容的接收程度要强于文本。
-
-可视化表达方面，思维导图就很不错。它作为一种图象化工具，通过层级式发散式地组织主题，帮助我们更好的记忆、学习和思考
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Markdown/">
-                            <span class="chip bg-color">Markdown</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/08/14/centos-8.2-kai-fa-huan-jing/">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner6.549xh4vmcvc0.jpg" class="responsive-img" alt="CentOS 8.2开发环境">
-                            
-                            <span class="card-title">CentOS 8.2开发环境</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-说明: 本文档云服务器操作系统为 CentOS 8.2
-命令：cat /etc/redhat-release
-注意：涉及相应端口需要自己放行
-
-0. 安装工具1) Yum 包管理器Yum（全称为 Yellow dog Updater, M
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%8E%AF%E5%A2%83/" class="post-category">
-                                    环境
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CentOS/">
-                            <span class="chip bg-color">CentOS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/08/13/mac-ruan-jian-hui-zong/">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img52.3wn8csjyvrq0.jpeg" class="responsive-img" alt="Mac软件汇总">
-                            
-                            <span class="card-title">Mac软件汇总</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-收集好用的 Mac 软件。
-
-一、常用软件效率工具
-Alfred - Mac 上应该安装的第一个效率神器。
-
-截图
-snipaste - 新生代截图工具。【荐】。
-
-Xnip- Mac 上方便好用的截图工具，支持滚动截图；最大的优点是，截
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="post-category">
-                                    软件
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Mac/">
-                            <span class="chip bg-color">Mac</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/08/11/kai-dao-tu-mi/">
-                        <div class="card-image">
-                            
-                            <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg" class="responsive-img" alt="开到荼蘼">
-                            
-                            <span class="card-title">开到荼蘼</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-彼岸花开，开到荼蘼
-
-
-I每只蚂蚁，都有眼睛鼻子，它美不美丽偏差有没有一毫厘，有何关系每一个人，伤心了就哭泣，饿了就要吃相差大不过天地，有何刺激
-II有太多太多魔力，太少道理太多太多游戏，只是为了好奇还有什么值得歇斯底里对什么东西，死心塌
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%96%87%E8%89%BA/" class="post-category">
-                                    文艺
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%AE%B0%E5%BD%95/">
-                            <span class="chip bg-color">记录</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-        </div>
-    </article>
-
-</main>
-
-
-
-
-    <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
     }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="tencent"
-                   type="playlist"
-                   id="7074538435"
-                   fixed='true'
-                   autoplay='true'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
-
-    <div class="container row center-align"
-         style="margin-bottom: 15px !important;">
-        <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2021</span>
-            
-            <span id="year">2021</span>
-            <a href="/about" target="_blank">mqxu</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
-            
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.7k</span>
-            
-            
-            
-            
-                <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
-            
-            <br>
-
-            <!-- 运行天数提醒. -->
-            
-                <span id="sitetime"> Loading ...</span>
-                <script>
-                    var calcSiteTime = function () {
-                        var seconds = 1000;
-                        var minutes = seconds * 60;
-                        var hours = minutes * 60;
-                        var days = hours * 24;
-                        var years = days * 365;
-                        var today = new Date();
-                        var startYear = "2021";
-                        var startMonth = "8";
-                        var startDate = "16";
-                        var startHour = "0";
-                        var startMinute = "0";
-                        var startSecond = "0";
-                        var todayYear = today.getFullYear();
-                        var todayMonth = today.getMonth() + 1;
-                        var todayDate = today.getDate();
-                        var todayHour = today.getHours();
-                        var todayMinute = today.getMinutes();
-                        var todaySecond = today.getSeconds();
-                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                        var diff = t2 - t1;
-                        var diffYears = Math.floor(diff / years);
-                        var diffDays = Math.floor((diff / days) - diffYears * 365);
-
-                        // 区分是否有年份.
-                        var language = 'zh-CN';
-                        if (startYear === String(todayYear)) {
-                            document.getElementById("year").innerHTML = todayYear;
-                            var daysTip = 'This site has been running for ' + diffDays + ' days';
-                            if (language === 'zh-CN') {
-                                daysTip = '本站已运行 ' + diffDays + ' 天';
-                            } else if (language === 'zh-HK') {
-                                daysTip = '本站已運行 ' + diffDays + ' 天';
-                            }
-                            document.getElementById("sitetime").innerHTML = daysTip;
-                        } else {
-                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
-                                + diffDays + ' days';
-                            if (language === 'zh-CN') {
-                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
-                            } else if (language === 'zh-HK') {
-                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
-                            }
-                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
-                        }
-                    }
-
-                    calcSiteTime();
-                </script>
-            
-            <br>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link ">
-    <a href="https://github.com/mqxu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=16422802" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 16422802" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script type="text/javascript">
-$(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    };
-
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
-});
-</script>
-
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
         } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+          document.documentElement.classList.remove('hide-aside')
         }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/me.1dg5a9627olc.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 分享</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/img17.69s7wmftfhw0.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">InfinityX</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 分享</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">InfinityX</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/mqxu" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:16422802@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/" title="JavaStudy学习仓库维护">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaStudy学习仓库维护"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/" title="JavaStudy学习仓库维护">JavaStudy学习仓库维护</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-23T08:43:39.000Z" title="发表于 2021-09-23 16:43:39">2021-09-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">JavaStudy 学习仓库维护前提条件（重要）检查你的 IDEA 的全局配置，保证 Maven 的运行环境 JDK 版本如图
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
 
-    
+新建仓库目录电脑上找个自己习惯存放代码的地方，新建一个文件夹，如图
 
-    
+README.md在该文件夹新建 README.md 文件，用来说明仓库的作用和建议命名，内容可以参考群文件发的 pdf
 
-    <!--腾讯兔小巢-->
-    
-    
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
+初始化 git 仓库在 JavaStudy 目录启动命令行，用 git init 初始化为一个 git 仓库
 
-    
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
-    
+然后进行 add 和 commit 操作
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
+创建项目IDEA 新建 Maven 项目
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
+如图填写
 
-</body>
+如图选择
 
-</html>
+展开左侧项目结构视图，在 src 新建 package，右下角弹框就如图选择
+
+修改 pom.xml 文件，添加项目字符集配置，如图
+
+检查项目结构界面中的各处 JDK 版本（重要）
+
+Win： ctrl+alt+shift+s
+Mac: command+ ;
+
+
+
+如果安装了多个 JDK，确保选择正确的那个
+
+接着去设置界面看一下 Java 编译版本
+
+Win： ctrl+alt+s
+Mac: command+ ,
+
+
+以上操作正常情况都是正确 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/09/21/chao-mei-de-wen-zi/" title="超美的文字">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img9.39ng0ztekz60.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="超美的文字"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/21/chao-mei-de-wen-zi/" title="超美的文字">超美的文字</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-21T08:55:01.000Z" title="发表于 2021-09-21 16:55:01">2021-09-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%96%87%E8%89%BA/">文艺</a></span></div><div class="content">
+1、岁月不饶人，我亦未曾绕过岁月。
+2、剑未佩妥，出门已是江湖；酒尚余温，入口不识乾坤。
+3、枕上诗书闲处好，门前风景雨来佳。
+4、愿你历尽千帆，归来仍是少年。
+5、何来人间一惊鸿，只是世间一俗人。
+6、愿你垂垂老矣，我可明我心。
+7、你踏万千星河而来，有乘舟奔赴远方。
+8、沧海明月，何尝不是一滴相思泪。
+9、人生天地间，忽如远行客。
+10、青丝蘸白雪，来路生云烟。
+11、你没有如期归来，而这正是离别的意义。
+12、山外青山楼外楼，江山不及你温柔。
+13、海底月是天上月，眼前人是心上人。
+14、我只愿面朝大海，春暖花开。
+15、愿岁月可回首，且以深情共白头。
+16、你是千堆雪，我是长街。怕日出一到，彼此瓦解。
+17、在青山绿水之间，我想牵着你的手，走过这座桥，桥上是绿叶红花，桥下是流水人家，桥的那头是青丝，桥的这头是白发。
+18、回首向来萧瑟处，归去，也无风雨也无晴。
+19、与一人琴瑟和鸣，守山青月明。
+20、夜阑卧听风吹雨，铁马是你，冰河也是你。
+21、余生还长，请多多指教。
+22、秋风凉，秋风忘，今夜别思量。
+23、我还是很喜欢你，像风走了八千里，不问归期。
+24、人道海水深，不 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/" title="Mac下安装多个版本的JDK并随意切换">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/801baf41cf12662f59557ecd10fad6e5.76gynyi9ai40.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mac下安装多个版本的JDK并随意切换"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/" title="Mac下安装多个版本的JDK并随意切换">Mac下安装多个版本的JDK并随意切换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-20T07:16:52.000Z" title="发表于 2021-09-20 15:16:52">2021-09-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83/">环境</a></span></div><div class="content">
+JDK 版本已经更新到了 17，我们需要学习 JDK 的一些新特性，但是日常使用基本上都是基于 JDK8，因此，需要在 Mac 环境下安装多个版本的 JDK，并且确保能够随意切换。
+
+JDK 下载
+通过下方链接或网盘下载相应版本和平台的 JDK
+
+
+OracleJDK
+OpenJDK
+百度网盘 提取码：2nmw
+
+安装
+这里我安装了 OracleJDK 的 8、11、17 三个 LTS 版本
+
+在/Library/Java/JavaVirtualMachines 目录下会出现三个目录：
+
+配置环境
+Mac 下通过 bash_profile 文件来对环境信息进行配置。执行以下命令打开配置文件：
+
+vim ~/.bash_profile
+
+如果原本没有.bash_profile 文件，在运行 vim ~/.bash_profile 命令时会创建该文件。根据环境变量信息新增 JDK 几个版本的相关内容：
+# Java Config : Java家配置
+export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/C ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/09/19/javafx-qi-bu/" title="JavaFX起步">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img165.5y83zifgblk0.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaFX起步"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/19/javafx-qi-bu/" title="JavaFX起步">JavaFX起步</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-19T14:08:46.000Z" title="发表于 2021-09-19 22:08:46">2021-09-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">
+要求：
+
+JDK11 以上
+Maven 环境已正确配置
+
+
+一、项目初始化
+IDEA 新建项目，如图
+
+
+
+选择依赖，如图
+
+
+
+项目结构和运行效果如图
+
+
+二、程序结构
+这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。
+
+应用主程序需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。
+public void start(Stage stage) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+    Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+    stage.setTitle("Hello!");
+    stage.setScene(scene);
+    stage.show();
+}
+
+
+主要步骤解释
+
+载入资源目录的布局文件
+创建指定大小的 scene（场景 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/09/18/markmap/" title="Markdown笔记转思维导图工具你值得拥有">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img170.7ixd8xo2qi40.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown笔记转思维导图工具你值得拥有"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/09/18/markmap/" title="Markdown笔记转思维导图工具你值得拥有">Markdown笔记转思维导图工具你值得拥有</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-18T10:21:02.000Z" title="发表于 2021-09-18 18:21:02">2021-09-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">
+Markdown 的好处是专注码字的同时还能兼顾排版，缺点就是可视化能力很弱，毕竟人对于图像化内容的接收程度要强于文本。
+
+可视化表达方面，思维导图就很不错。它作为一种图象化工具，通过层级式发散式地组织主题，帮助我们更好的记忆、学习和思考。
+但在过去，这两类工具是各自独立的，也就是你写完 Markdown 文本，想要可视化地传达一些重点给读者，就需要重新录入下思维导图，比较繁琐。
+
+markmap 是一款能够直接将 Markdown 笔记转换成思维导图的工具。使用 Markdown 记录想法，在需要的时候又能直接转换成思维导图，香不香？
+
+
+在线版试用网址左边录入 Markdown 文本，右边会实时展示出思维导图。
+
+离线版在 Visual Studio Code 上安装https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode
+
+使用效果
+
+可以点击右下角「export」按钮导出动态的 html 文件。
+～ markdown 一次书写，到处使用。
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/14/centos-8.2-kai-fa-huan-jing/" title="CentOS 8.2开发环境">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner6.549xh4vmcvc0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CentOS 8.2开发环境"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/14/centos-8.2-kai-fa-huan-jing/" title="CentOS 8.2开发环境">CentOS 8.2开发环境</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-14T15:55:23.000Z" title="发表于 2021-08-14 23:55:23">2021-08-14</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83/">环境</a></span></div><div class="content">
+说明: 本文档云服务器操作系统为 CentOS 8.2
+命令：cat /etc/redhat-release
+注意：涉及相应端口需要自己放行
+
+0. 安装工具1) Yum 包管理器Yum（全称为 Yellow dog Updater, Modified）是一个在 Fedora 和 RedHat 以及 CentOS 中的 Shell 前端软件包管理器。
+基于 RPM 包管理，能够从指定的服务器自动下载 RPM 包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum 提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。
+使用 yum 安装和卸载软件，有个前提是 yum 安装的软件包都是 rpm 格式的
+yum 常用命令学习：https://www.runoob.com/linux/linux-yum.html
+我们更新 yum 源为阿里镜像
+
+备份
+
+cd /etc/yum.repos.d/
+mkdir bak
+mv *.repo bak/
+
+
+下载新的 yum 源
+
+当前目录为：**/etc/yum.repos.d ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/13/mac-ruan-jian-hui-zong/" title="Mac软件汇总">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img52.3wn8csjyvrq0.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mac软件汇总"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/13/mac-ruan-jian-hui-zong/" title="Mac软件汇总">Mac软件汇总</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-13T07:35:59.000Z" title="发表于 2021-08-13 15:35:59">2021-08-13</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a></span></div><div class="content">
+收集好用的 Mac 软件。
+
+一、常用软件效率工具
+Alfred - Mac 上应该安装的第一个效率神器。
+
+截图
+snipaste - 新生代截图工具。【荐】。
+
+Xnip- Mac 上方便好用的截图工具，支持滚动截图；最大的优点是，截图可以自带阴影，效果不错。#。【荐】
+
+Annotate - 款非常强大的图片注释软件，可对屏幕截图或者现有图片进行批注。同时，在基础的图片注释功能上还增加了“局部高亮”、“Emoji 表情”、 ”GIF 动图录制与注释“、“与 Dropbox/CloudApp 同步数据“等功能，虽然没有 Skitch 的图片管理功能，也没有 Napkin 的图片拼贴功能，但从注释操作的需求上看，它的确算是 No.1。#
+
+截图(Jietu) - 截图附带强大的标注功能，腾讯作品。支持截图生成二维码。支持视频录制，可以录制成 gif、mp4、mov 等格式。 # #
+
+Skitch - 截图附带强大的标注功能。
+
+Snip - 高效的截图工具，支持滚动截屏，腾讯作品。
+
+snappy - 官网地址：http://snappy-app.com/。新出来的一款截图工具， ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/08/11/kai-dao-tu-mi/" title="开到荼蘼">     <img class="post_bg" src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/img/wallpaper/img6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开到荼蘼"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/11/kai-dao-tu-mi/" title="开到荼蘼">开到荼蘼</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-11T08:19:19.000Z" title="发表于 2021-08-11 16:19:19">2021-08-11</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%96%87%E8%89%BA/">文艺</a></span></div><div class="content">
+彼岸花开，开到荼蘼
+
+
+I每只蚂蚁，都有眼睛鼻子，它美不美丽偏差有没有一毫厘，有何关系每一个人，伤心了就哭泣，饿了就要吃相差大不过天地，有何刺激
+II有太多太多魔力，太少道理太多太多游戏，只是为了好奇还有什么值得歇斯底里对什么东西，死心塌地
+III一个一个偶像，都不外如此沉迷过的偶像，一个个消失谁曾伤天害理，谁又是上帝我们在等待，什么奇迹
+IV最后剩下自己，舍不得挑剔最后对着自己，也不大看得起谁给我全世界，我都会怀疑心花怒放，却开到荼蘼
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/me.1dg5a9627olc.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">mqxu</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mqxu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mqxu" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:16422802@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">InfinityX Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/" title="JavaStudy学习仓库维护"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaStudy学习仓库维护"/></a><div class="content"><a class="title" href="/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/" title="JavaStudy学习仓库维护">JavaStudy学习仓库维护</a><time datetime="2021-09-23T08:43:39.000Z" title="发表于 2021-09-23 16:43:39">2021-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/21/chao-mei-de-wen-zi/" title="超美的文字"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img9.39ng0ztekz60.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="超美的文字"/></a><div class="content"><a class="title" href="/2021/09/21/chao-mei-de-wen-zi/" title="超美的文字">超美的文字</a><time datetime="2021-09-21T08:55:01.000Z" title="发表于 2021-09-21 16:55:01">2021-09-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/" title="Mac下安装多个版本的JDK并随意切换"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/801baf41cf12662f59557ecd10fad6e5.76gynyi9ai40.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mac下安装多个版本的JDK并随意切换"/></a><div class="content"><a class="title" href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/" title="Mac下安装多个版本的JDK并随意切换">Mac下安装多个版本的JDK并随意切换</a><time datetime="2021-09-20T07:16:52.000Z" title="发表于 2021-09-20 15:16:52">2021-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/19/javafx-qi-bu/" title="JavaFX起步"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img165.5y83zifgblk0.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaFX起步"/></a><div class="content"><a class="title" href="/2021/09/19/javafx-qi-bu/" title="JavaFX起步">JavaFX起步</a><time datetime="2021-09-19T14:08:46.000Z" title="发表于 2021-09-19 22:08:46">2021-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/18/markmap/" title="Markdown笔记转思维导图工具你值得拥有"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img170.7ixd8xo2qi40.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown笔记转思维导图工具你值得拥有"/></a><div class="content"><a class="title" href="/2021/09/18/markmap/" title="Markdown笔记转思维导图工具你值得拥有">Markdown笔记转思维导图工具你值得拥有</a><time datetime="2021-09-18T10:21:02.000Z" title="发表于 2021-09-18 18:21:02">2021-09-18</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%96%87%E8%89%BA/"><span class="card-category-list-name">文艺</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83/"><span class="card-category-list-name">环境</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6/"><span class="card-category-list-name">软件</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/img17.69s7wmftfhw0.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 By mqxu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "那时我们有梦，关于文学，关于爱情，关于穿越世界的旅行。如今我们深夜饮酒，杯子碰到一起，都是梦破碎的声音。".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '那'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JavaStudy学习仓库维护 | InfinityX</title><meta name="keywords" content="Git"><meta name="author" content="mqxu"><meta name="copyright" content="mqxu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JavaStudy 学习仓库维护前提条件（重要）检查你的 IDEA 的全局配置，保证 Maven 的运行环境 JDK 版本如图   新建仓库目录电脑上找个自己习惯存放代码的地方，新建一个文件夹，如图  README.md在该文件夹新建 README.md 文件，用来说明仓库的作用和建议命名，内容可以参考群文件发的 pdf  初始化 git 仓库在 JavaStudy 目录启动命令行，用 git i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaStudy学习仓库维护">
+<meta property="og:url" content="https://mqxu.top/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/index.html">
+<meta property="og:site_name" content="InfinityX">
+<meta property="og:description" content="JavaStudy 学习仓库维护前提条件（重要）检查你的 IDEA 的全局配置，保证 Maven 的运行环境 JDK 版本如图   新建仓库目录电脑上找个自己习惯存放代码的地方，新建一个文件夹，如图  README.md在该文件夹新建 README.md 文件，用来说明仓库的作用和建议命名，内容可以参考群文件发的 pdf  初始化 git 仓库在 JavaStudy 目录启动命令行，用 git i">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg">
+<meta property="article:published_time" content="2021-09-23T08:43:39.000Z">
+<meta property="article:modified_time" content="2021-09-23T09:01:22.889Z">
+<meta property="article:author" content="mqxu">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="https://mqxu.top/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaStudy学习仓库维护',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-23 17:01:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/me.1dg5a9627olc.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 分享</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">InfinityX</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 分享</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JavaStudy学习仓库维护</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-23T08:43:39.000Z" title="发表于 2021-09-23 16:43:39">2021-09-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-09-23T09:01:22.889Z" title="更新于 2021-09-23 17:01:22">2021-09-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">775</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="JavaStudy-学习仓库维护"><a href="#JavaStudy-学习仓库维护" class="headerlink" title="JavaStudy 学习仓库维护"></a>JavaStudy 学习仓库维护</h1><h2 id="前提条件（重要）"><a href="#前提条件（重要）" class="headerlink" title="前提条件（重要）"></a>前提条件（重要）</h2><p>检查你的 IDEA 的全局配置，保证 Maven 的运行环境 JDK 版本如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165135334.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165210890.png"></p>
+<h2 id="新建仓库目录"><a href="#新建仓库目录" class="headerlink" title="新建仓库目录"></a>新建仓库目录</h2><p>电脑上找个自己习惯存放代码的地方，新建一个文件夹，如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923151221174.png"></p>
+<h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>在该文件夹新建 README.md 文件，用来说明仓库的作用和建议命名，内容可以参考群文件发的 pdf</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923151639093.png"></p>
+<h2 id="初始化-git-仓库"><a href="#初始化-git-仓库" class="headerlink" title="初始化 git 仓库"></a>初始化 git 仓库</h2><p>在 JavaStudy 目录启动命令行，用 <code>git init</code> 初始化为一个 git 仓库</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923151853796.png"></p>
+<p>然后进行 add 和 commit 操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161145270.png"></p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>IDEA 新建 Maven 项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152017407.png" alt="image-20210923152017407"></p>
+<p>如图填写</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152240429.png"></p>
+<p>如图选择</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152430202.png"></p>
+<p>展开左侧项目结构视图，在 src 新建 package，右下角弹框就如图选择</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152648622.png"></p>
+<p>修改 pom.xml 文件，添加项目字符集配置，如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923155626849.png"></p>
+<p><strong>检查项目结构界面中的各处 JDK 版本（重要）</strong></p>
+<blockquote>
+<p>Win： ctrl+alt+shift+s</p>
+<p>Mac: command+ ;</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165627895.png" alt="1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165708069.png" alt="2"></p>
+<p>如果安装了多个 JDK，确保选择正确的那个</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165800427.png" alt="3"></p>
+<p>接着去设置界面看一下 Java 编译版本</p>
+<blockquote>
+<p>Win： ctrl+alt+s</p>
+<p>Mac: command+ ,</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165907528.png" alt="4"></p>
+<p><strong>以上操作正常情况都是正确的，如果发现不对，及时要修改过来！！！</strong></p>
+<p>接着，创建的包上新建 class，简单编辑如图。这样可以保证 top.mqxu.java.basic 下面有文件，然后再创建子包的时候，前面的一段同名前缀就可以复用，包的结构就可以是折叠形式。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923152819680.png"></p>
+<p>新建子包</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923153056459.png"></p>
+<p>创建一个类，编写数组练习代码，参考如图，注意四种注释的写法</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923153536152.png"></p>
+<p>在 App 中调用刚才写的求和方法后运行，参考如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923160822478.png"></p>
+<h2 id="本地提交"><a href="#本地提交" class="headerlink" title="本地提交"></a>本地提交</h2><p>项目根目录命令行，执行 git commit 操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161300946.png"></p>
+<h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><p>如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161438477.png"></p>
+<h2 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h2><p>本地添加远程仓库，建立连接，推送。</p>
+<p>主要涉及命令在 github 仓库首页有给出</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch -M main
+<span class="token function">git</span> remote <span class="token function">add</span> origin git@github.com:mqxu/JavaStudy.git
+<span class="token function">git</span> push -u origin main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923161644838.png"></p>
+<p>远程仓库刷新如图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162252810.png"></p>
+<p>上图红框表明，我们发现不想要的文件也推上来了，这就需要**.gitignore**文件了。</p>
+<p>IDEA 项目根目录新建**.gitignore** 文件</p>
+<p>根据自己需要编辑</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162456398.png"></p>
+<p>本地查看 git 状态，添加，提交，推送</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162636964.png"></p>
+<p>刷新远程仓库发现规则文件推送成功了，但是之前想删除的内容还在</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162813717.png"></p>
+<p>回到本地，双击红框中的 clean 命令，清除 target</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923162848969.png" alt="image-20210923162848969"></p>
+<p>提交，推送</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163031480.png"></p>
+<p>远程刷新，发现 target 没了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163108820.png"></p>
+<p>但是.idea 还在，可是我们不可能在本地把这个目录删除，删除后 IDEA 就不能工作了。</p>
+<p>这个时候执行删除远程仓库文件命令，在本地项目根目录命令行依次执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> -r -n --cached  .idea  <span class="token comment"># 预览将要删除的文件</span>
+<span class="token function">git</span> <span class="token function">rm</span> -r --cached .idea      <span class="token comment"># 确定无误后删除文件</span>
+<span class="token function">git</span> commit -m <span class="token string">"删除.idea目录"</span>  <span class="token comment"># 提交到本地</span>
+<span class="token function">git</span> push origin main          <span class="token comment"># 推送到远程服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>依次执行结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163650965.png" alt="1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163713249.png" alt="2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163737678.png" alt="3"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163814761.png" alt="4"></p>
+<p>最后再刷新远程仓库，解决！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923163859758.png" alt="5"></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>同样的方法，创建其他项目，如 java-jfx 等，维护好相应代码，持续练习并推送。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Git/">Git</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/09/21/chao-mei-de-wen-zi/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img9.39ng0ztekz60.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">超美的文字</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/me.1dg5a9627olc.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">mqxu</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mqxu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mqxu" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:16422802@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">InfinityX Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaStudy-%E5%AD%A6%E4%B9%A0%E4%BB%93%E5%BA%93%E7%BB%B4%E6%8A%A4"><span class="toc-number">1.</span> <span class="toc-text">JavaStudy 学习仓库维护</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">前提条件（重要）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93%E7%9B%AE%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">新建仓库目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#README-md"><span class="toc-number">1.3.</span> <span class="toc-text">README.md</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-git-%E4%BB%93%E5%BA%93"><span class="toc-number">1.4.</span> <span class="toc-text">初始化 git 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%8F%90%E4%BA%A4"><span class="toc-number">1.6.</span> <span class="toc-text">本地提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.7.</span> <span class="toc-text">创建远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81"><span class="toc-number">1.8.</span> <span class="toc-text">推送</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">1.9.</span> <span class="toc-text">后记</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/" title="JavaStudy学习仓库维护"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaStudy学习仓库维护"/></a><div class="content"><a class="title" href="/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/" title="JavaStudy学习仓库维护">JavaStudy学习仓库维护</a><time datetime="2021-09-23T08:43:39.000Z" title="发表于 2021-09-23 16:43:39">2021-09-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/21/chao-mei-de-wen-zi/" title="超美的文字"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img9.39ng0ztekz60.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="超美的文字"/></a><div class="content"><a class="title" href="/2021/09/21/chao-mei-de-wen-zi/" title="超美的文字">超美的文字</a><time datetime="2021-09-21T08:55:01.000Z" title="发表于 2021-09-21 16:55:01">2021-09-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/" title="Mac下安装多个版本的JDK并随意切换"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/801baf41cf12662f59557ecd10fad6e5.76gynyi9ai40.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mac下安装多个版本的JDK并随意切换"/></a><div class="content"><a class="title" href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/" title="Mac下安装多个版本的JDK并随意切换">Mac下安装多个版本的JDK并随意切换</a><time datetime="2021-09-20T07:16:52.000Z" title="发表于 2021-09-20 15:16:52">2021-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/19/javafx-qi-bu/" title="JavaFX起步"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img165.5y83zifgblk0.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaFX起步"/></a><div class="content"><a class="title" href="/2021/09/19/javafx-qi-bu/" title="JavaFX起步">JavaFX起步</a><time datetime="2021-09-19T14:08:46.000Z" title="发表于 2021-09-19 22:08:46">2021-09-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/18/markmap/" title="Markdown笔记转思维导图工具你值得拥有"><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img170.7ixd8xo2qi40.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown笔记转思维导图工具你值得拥有"/></a><div class="content"><a class="title" href="/2021/09/18/markmap/" title="Markdown笔记转思维导图工具你值得拥有">Markdown笔记转思维导图工具你值得拥有</a><time datetime="2021-09-18T10:21:02.000Z" title="发表于 2021-09-18 18:21:02">2021-09-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img8.jge24q0aaiw.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 By mqxu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'mqxu-0gj1hh6bb8038596',
+      region: 'ap-shanghai'
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'mqxu-0gj1hh6bb8038596',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>
