@@ -548,7 +548,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.6k
                 </div>
                 
 
@@ -670,9 +670,9 @@
 <h3 id="修改项目"><a href="#修改项目" class="headerlink" title="修改项目"></a>修改项目</h3><blockquote>
 <p>图片和图标文件可自行准备</p>
 </blockquote>
-<h4 id="项目结构修改"><a href="#项目结构修改" class="headerlink" title="项目结构修改"></a>项目结构修改</h4><p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210930160623972.png" alt="项目结构"></p>
+<h4 id="项目结构修改"><a href="#项目结构修改" class="headerlink" title="项目结构修改"></a>项目结构修改</h4><p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210930163049028.png" alt="项目结构"></p>
 <h4 id="代码修改"><a href="#代码修改" class="headerlink" title="代码修改"></a>代码修改</h4><ul>
-<li>Config.java</li>
+<li>AppConfig.java</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">top<span class="token punctuation">.</span>mqxu<span class="token punctuation">.</span>java<span class="token punctuation">.</span>jfx<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span>
 
@@ -691,23 +691,23 @@
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppConfig</span> <span class="token punctuation">{</span>
     <span class="token comment">/**
-     * 应用标题
+     * 应用默认标题，如果app.properties有配置值，就被覆盖
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> title <span class="token operator">=</span> <span class="token string">"JavaFx Application"</span><span class="token punctuation">;</span>
     <span class="token comment">/**
-     * 应用图标
+     * 应用默认图标
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> icon <span class="token operator">=</span> <span class="token string">"icon/logo.png"</span><span class="token punctuation">;</span>
     <span class="token comment">/**
-     * 窗口宽度
+     * 窗口默认宽度
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> stageWidth <span class="token operator">=</span> <span class="token number">640</span><span class="token punctuation">;</span>
     <span class="token comment">/**
-     * 窗口高度
+     * 窗口默认高度
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> stageHeight <span class="token operator">=</span> <span class="token number">480</span><span class="token punctuation">;</span>
     <span class="token comment">/**
-     * 允许调整窗口尺寸
+     * 默认允许调整窗口尺寸
      */</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> stageResizable <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 
@@ -725,8 +725,7 @@
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>MainCtrl.java</li>
@@ -746,6 +745,7 @@
  * 主界面控制器
  *
  * @author mqxu
+ * @date 2021/09/30
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainCtrl</span> <span class="token keyword">implements</span> <span class="token class-name">Initializable</span> <span class="token punctuation">{</span>
 
@@ -768,7 +768,7 @@
         alert<span class="token punctuation">.</span><span class="token function">setContentText</span><span class="token punctuation">(</span><span class="token string">"你好"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         alert<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>App.java</li>
@@ -838,7 +838,8 @@
 <li>Module-info.java</li>
 </ul>
 <blockquote>
-<p>注意：这里的模块名就是项目的 artifactId，如果多个单词如 java-jfx，则变为 java.jfx</p>
+<p>本文件为 JDK9 之后模块化的特征，按需引入</p>
+<p>注意：这里的模块名就是本模块的 artifactId，如果多个单词如 java-jfx，则变为 java.jfx</p>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">module</span> <span class="token namespace">java<span class="token punctuation">.</span>jfx</span> <span class="token punctuation">{</span>
     <span class="token keyword">requires</span> <span class="token namespace">javafx<span class="token punctuation">.</span>controls</span><span class="token punctuation">;</span>
@@ -880,7 +881,7 @@
 <span class="token prolog">&lt;?import javafx.scene.image.Image?&gt;</span>
 <span class="token prolog">&lt;?import javafx.geometry.Insets?&gt;</span>
 
-<span class="token comment">&lt;!--垂直布局容器，元素间距20，对齐方式底部居右--&gt;</span>
+<span class="token comment">&lt;!--垂直布局容器，元素之间间距为20，对齐方式底部居右--&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VBox</span> <span class="token attr-name"><span class="token namespace">fx:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rootPane<span class="token punctuation">"</span></span>
       <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://javafx.com/javafx<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>fx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://javafx.com/fxml<span class="token punctuation">"</span></span>
       <span class="token attr-name">spacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20<span class="token punctuation">"</span></span> <span class="token attr-name">alignment</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>BOTTOM_RIGHT<span class="token punctuation">"</span></span>
@@ -893,9 +894,9 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ImageView</span> <span class="token attr-name">fitWidth</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>110<span class="token punctuation">"</span></span> <span class="token attr-name">fitHeight</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Image</span> <span class="token attr-name">url</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/avatar/notebook.ctbin289cgw.png<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ImageView</span><span class="token punctuation">&gt;</span></span>
-    <span class="token comment">&lt;!--label使用外部样式--&gt;</span>
+    <span class="token comment">&lt;!--label使用main.css中的样式--&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>JavaFx 11 + JDK 11<span class="token punctuation">"</span></span> <span class="token attr-name">styleClass</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token comment">&lt;!--button使用外部样式--&gt;</span>
+    <span class="token comment">&lt;!--button使用main.css中的样式，如果用style=""的形式，就是内联样式--&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name"><span class="token namespace">fx:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btnAlert<span class="token punctuation">"</span></span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>提示框<span class="token punctuation">"</span></span> <span class="token attr-name">onAction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#onBtnAlertClick<span class="token punctuation">"</span></span> <span class="token attr-name">styleClass</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VBox</span><span class="token punctuation">&gt;</span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -903,20 +904,24 @@
 <ul>
 <li>app.properties</li>
 </ul>
+<blockquote>
+<p>本文件为应用的属性文件，这样将一些主要参数分离的做法也比较工程化</p>
+</blockquote>
 <pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">title</span><span class="token punctuation">=</span><span class="token attr-value">JavaFx Quick Start</span>
 <span class="token attr-name">icon</span><span class="token punctuation">=</span><span class="token attr-value">icon/logo.png</span>
 <span class="token attr-name">stage.width</span><span class="token punctuation">=</span><span class="token attr-value">800</span>
 <span class="token attr-name">stage.height</span><span class="token punctuation">=</span><span class="token attr-value">600</span>
 <span class="token attr-name">stage.resizable</span><span class="token punctuation">=</span><span class="token attr-value">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="三、运行项目"><a href="#三、运行项目" class="headerlink" title="三、运行项目"></a>三、运行项目</h2><p>运行 App.java，效果如图，点击按钮可以弹出对话框</p>
+<h2 id="三、运行项目"><a href="#三、运行项目" class="headerlink" title="三、运行项目"></a>三、运行项目</h2><p>运行 App.java，效果如图，点击按钮弹出对话框（找图配颜色花了一些时间）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210930161349265.png" alt="运行效果"></p>
 <h2 id="四、-打包项目"><a href="#四、-打包项目" class="headerlink" title="四、 打包项目"></a>四、 打包项目</h2><p>右边 Maven 视图，分别双击 clean、package</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210930161458492.png" alt="打包项目"></p>
-<p>即可在 target 目录生成打好的 jar 包，进入 target 目录启动命令行运行</p>
+<p>即可在 target 目录生成打好的 jar 包</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210930161610468.png" alt="target目录"></p>
-<p>效果一样，👌 push 到远程，开始构建第二个学习模块吧</p>
+<p>进入 target 目录启动命令行，运行效果一样，👌</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210930161718176.png" alt="jar包运行"></p>
+<p>推送你的 Github 远程仓库，让 JavaStudy 拥有第二个成员吧～</p>
 
                 
             </div>
@@ -1545,7 +1550,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15k</span>
+                        class="white-color">15.1k</span>
             
             
             
