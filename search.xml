@@ -1902,7 +1902,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
     <title>阶段1：JavaSE</title>
     <url>/2022/12/03/jie-duan-1-javase/</url>
     <content><![CDATA[<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ol>
-<li>能打字的笔记本<br>推荐网站 - 菜鸟工具：<a href="https://c.runoob.com/compile/10">https://c.runoob.com/compile/10</a></li>
+<li>能打字的笔记本<br>推荐网站 - 菜鸟工具：<a href="https://c.runoob.com/compile/10">https://c.runoob.com/compile/10</a></li>
 <li>记笔记的软件，比如看的视频中老师的思路、自己遇到的问题、解决问题的方法、感悟、看到的好资料。好记性不如烂笔头，有自己的博客也是日后求职的加分项。</li>
 </ol>
 <ul>
@@ -1911,79 +1911,61 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 <ol start="3">
 <li>想学好编程，无它，唯手熟尔！</li>
-<li>看视频和找资料的tip：多看评论区，评论区都有干货的说明是好资源，而不是水军<h1 id="基础（2-个月）"><a href="#基础（2-个月）" class="headerlink" title="基础（2 个月）"></a>基础（2 个月）</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2></li>
+<li>看视频和找资料的tip：多看评论区，评论区都有干货的说明是好资源，而不是水军</li>
 </ol>
-<ul>
-<li><p>开发环境搭建</p>
-</li>
-<li><p>数据类型</p>
-</li>
-<li><p>数组</p>
-</li>
-<li><p>OOP 三大特性</p>
-</li>
-<li><p>抽象类、接口</p>
-</li>
-<li><p>枚举、String、集合类</p>
-</li>
-<li><p>泛型</p>
-</li>
-<li><p>注解</p>
-</li>
-<li><p>异常体系</p>
-</li>
-<li><p>多线程</p>
-</li>
-<li><p>I/O 流</p>
-</li>
-<li><p>反射</p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2></li>
-<li><p>视频</p>
-<ul>
+<h1 id="基础（2-个月）"><a href="#基础（2-个月）" class="headerlink" title="基础（2 个月）"></a>基础（2 个月）</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>开发环境搭建</li>
+<li>数据类型</li>
+<li>数组</li>
+<li>OOP 三大特性</li>
+<li>抽象类、接口</li>
+<li>枚举、String、集合类</li>
+<li>泛型</li>
+<li>注解</li>
+<li>异常体系</li>
+<li>多线程</li>
+<li>I/O 流</li>
+<li>反射</li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>视频<ul>
 <li>⭐ 韩顺平 - 零基础 30 天学会 Java：<a href="https://www.bilibili.com/video/BV1fh411y7R8">https://www.bilibili.com/video/BV1fh411y7R8</a>（目录合理，讲解通俗、有实战）</li>
 </ul>
 </li>
-<li><p>文档</p>
-<ul>
+<li>文档<ul>
 <li>⭐ 菜鸟教程：<a href="https://www.runoob.com/java/java-tutorial.html">https://www.runoob.com/java/java-tutorial.html</a>（可以在线练习）</li>
 <li>廖雪峰 Java 教程：<a href="https://www.liaoxuefeng.com/wiki/1252599548343744">https://www.liaoxuefeng.com/wiki/1252599548343744</a></li>
 </ul>
 </li>
-<li><p>书籍</p>
-<ul>
-<li>《Java 核心技术卷一》<h1 id="Java-8（一周）"><a href="#Java-8（一周）" class="headerlink" title="Java 8（一周）"></a>Java 8（一周）</h1><h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2></li>
+<li>书籍<ul>
+<li>《Java 核心技术卷一》</li>
 </ul>
 </li>
-<li><p>Stream流式编程</p>
-</li>
-<li><p>Lambda 表达式</p>
-</li>
-<li><p>Java8日期时间 API</p>
-</li>
-<li><p>接口default方法</p>
-<h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2></li>
-<li><p>视频</p>
-<ul>
+</ul>
+<h1 id="Java-8（一周）"><a href="#Java-8（一周）" class="headerlink" title="Java 8（一周）"></a>Java 8（一周）</h1><h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
+<li>Stream流式编程</li>
+<li>Lambda 表达式</li>
+<li>Java8日期时间 API</li>
+<li>接口default方法</li>
+</ul>
+<h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>视频<ul>
 <li>⭐ 宋红康 - 全网最全Java零基础入门教程：<a href="https://www.bilibili.com/video/BV1Kb411W75N">https://www.bilibili.com/video/BV1Kb411W75N</a>（只看 Java 8 部分即可）</li>
 </ul>
 </li>
-<li><p>文档</p>
-<ul>
+<li>文档<ul>
 <li>⭐ 菜鸟教程：<a href="https://www.runoob.com/java/java8-new-features.html">https://www.runoob.com/java/java8-new-features.html</a></li>
 </ul>
 </li>
-<li><p>书籍</p>
-<ul>
+<li>书籍<ul>
 <li>《Java 8 实战 第二版》</li>
 </ul>
 </li>
-<li><p>工具</p>
-<ul>
+<li>工具<ul>
 <li>⭐ 在线编写运行 Java 8：<a href="https://www.tutorialspoint.com/compile_java8_online.php">https://www.tutorialspoint.com/compile_java8_online.php</a></li>
 </ul>
 </li>
-<li><p>项目</p>
-<ul>
+<li>项目<ul>
 <li>Java 8 小代码片段：<a href="https://github.com/biezhi/30-seconds-of-java8">https://github.com/biezhi/30-seconds-of-java8</a></li>
 </ul>
 </li>
