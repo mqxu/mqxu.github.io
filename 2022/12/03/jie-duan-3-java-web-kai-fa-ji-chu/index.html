@@ -1,0 +1,1729 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="阶段3：Java Web开发基础, InfinityX">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>阶段3：Java Web开发基础 | InfinityX</title>
+    <link rel="icon" type="image/png" href="/medias/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/banner/img6.5u9mssad9ow0.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">InfinityX</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artiTalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-heartbeat" style="zoom: 0.6;"></i>
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">InfinityX</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artiTalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-heartbeat"></i>
+			
+			ArtiTalk
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tva1.sinaimg.cn/large/e6c9d24egy1h6d1novko8j21hc0u0gsa.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">阶段3：Java Web开发基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%98%B6%E6%AE%B53/">
+                                <span class="chip bg-color">阶段3</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java%E5%85%A8%E6%A0%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" class="post-category">
+                                Java全栈学习路线
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-12-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-12-03
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><blockquote>
+<p>面向薪资编程，学习实际工作要用的技术，并能 <strong>独立</strong> 做出一个具有完整功能的 Java Web 项目。</p>
+</blockquote>
+<h1 id="MySQL-数据库（1周）"><a href="#MySQL-数据库（1周）" class="headerlink" title="MySQL 数据库（1周）"></a>MySQL 数据库（1周）</h1><blockquote>
+<p>企业中大部分业务数据都是用关系型数据库存储的，因此数据库是后台开发同学的必备技能，其中 MySQL 数据库是目前的主流，也是面试时的重点。</p>
+</blockquote>
+<h2 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h2><ul>
+<li>基本概念</li>
+<li>MySQL 搭建</li>
+<li>SQL 语句编写</li>
+<li>约束</li>
+<li>索引</li>
+<li>事务</li>
+<li>设计数据库表</li>
+<li>性能优化</li>
+</ul>
+<h2 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
+<p>其中，<strong>SQL 语句编写</strong> 和 <strong>设计数据库表</strong> 这两个能力一定要有！ 比如让你做一个学生管理系统，你要能想到需要哪些表，比如学生表、班级表；每个表需要哪些字段、字段类型。 这就要求大家多写 SQL、多根据实际的业务场景去练习设计能力。</p>
+</blockquote>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>视频<ul>
+<li>⭐ 老杜 - mysql入门基础 + 数据库实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vy4y1z7EX">https://www.bilibili.com/video/BV1Vy4y1z7EX</a>（较新、内容相对精炼，有习题）</li>
+<li>尚硅谷 - MySQL基础教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xW411u7ax">https://www.bilibili.com/video/BV1xW411u7ax</a>（小姐姐讲课，但感觉音质一般</li>
+</ul>
+</li>
+<li>在线练习<ul>
+<li>⭐ SQL 自学网：<a target="_blank" rel="noopener" href="http://xuesql.cn/">http://xuesql.cn/</a></li>
+<li>⭐ SQL 在线运行：<a target="_blank" rel="noopener" href="https://www.bejson.com/runcode/sql/">https://www.bejson.com/runcode/sql/</a></li>
+</ul>
+</li>
+<li>文档<ul>
+<li>SQL - 菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/sql/sql-tutorial.html">https://www.runoob.com/sql/sql-tutorial.html</a></li>
+<li>MySQL - 菜鸟教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-tutorial.html">https://www.runoob.com/mysql/mysql-tutorial.html</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="开发框架（2-个月）"><a href="#开发框架（2-个月）" class="headerlink" title="开发框架（2 个月）"></a>开发框架（2 个月）</h1><blockquote>
+<p>Java 之所以能成为主流的企业开发语言，很大一部分原因是它完善的框架生态，用好框架，不仅能够大大提升开发效率，还能提高项目的稳定性、减少维护成本。 开发框架是后台开发工作中不可或缺的，也是面试考察的重点，一定要好好学！ 不知道 Java 能做什么的朋友们，学完开发框架，就会有答案啦。 下面给大家推荐的都是企业中应用最多的主流开发框架，知识点比较零碎，就放在一起讲了。</p>
+</blockquote>
+<h2 id="知识-1"><a href="#知识-1" class="headerlink" title="知识"></a>知识</h2><ul>
+<li><strong>Java Web</strong><ul>
+<li>描述：Java 网页应用开发基础</li>
+<li>前端基础</li>
+<li>XML</li>
+<li>JSON</li>
+<li>Servlet</li>
+<li>Filter</li>
+<li>Listener</li>
+<li>JSP</li>
+<li>JSTL</li>
+<li>Cookie</li>
+<li>Session</li>
+</ul>
+</li>
+<li><strong>Spring 5</strong><ul>
+<li>描述：Java 轻量级应用框架</li>
+<li>IOC</li>
+<li>AOP</li>
+<li>事务</li>
+</ul>
+</li>
+<li><strong>SpringMVC</strong><ul>
+<li>描述：Java 轻量级 web 开发框架</li>
+<li>什么是 MVC？</li>
+<li>请求与响应</li>
+<li>Restful API</li>
+<li>拦截器</li>
+<li>配置</li>
+<li>执行过程</li>
+</ul>
+</li>
+<li><strong>MyBatis</strong><ul>
+<li>描述：数据访问框架，操作数据库进行增删改查等操作</li>
+<li>增删改查</li>
+<li>全局配置</li>
+<li>动态 SQL</li>
+<li>缓存</li>
+<li>和其他框架的整合</li>
+<li>逆向工程</li>
+</ul>
+</li>
+<li><strong>MyBatis Plus</strong><ul>
+<li>描述：Mybatis 的增强工具，能够简化开发、提高效率</li>
+<li>引入</li>
+<li>通用 CRUD</li>
+<li>条件构造器</li>
+<li>代码生成器</li>
+<li>插件扩展</li>
+<li>自定义全局操作</li>
+</ul>
+</li>
+<li><strong>SpringBoot 2</strong><ul>
+<li>描述：简化 Spring 应用的初始搭建以及开发过程，提高效率</li>
+<li>常用注解</li>
+<li>资源整合</li>
+<li>高级特性</li>
+<li>本地热部署</li>
+</ul>
+</li>
+<li><strong>Spring Security</strong><ul>
+<li>描述：Spring 的安全管理框架</li>
+<li>用户认证</li>
+<li>权限管理</li>
+</ul>
+</li>
+<li><strong>Maven / Gradle</strong><ul>
+<li>描述：项目管理工具</li>
+<li>构建</li>
+<li>依赖管理</li>
+<li>插件</li>
+<li>配置</li>
+<li>子父工程</li>
+</ul>
+</li>
+</ul>
+<h2 id="学习建议-1"><a href="#学习建议-1" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
+<p>由于技术较多，且框架之间存在一定的联系，因此建议大家看同一系列的视频教程（尚硅谷、狂神说等等都可以），以保证学习内容的连续以及体验上的一致。 学这些技术的时候，<strong>千万不能懒</strong> ！一定要多记笔记，并且跟着老师写代码。原理部分不要太过纠结，先以能跟着敲出代码、写出可运行的项目为主，有些东西做出来也能帮助你更好地理解理论。 学习顺序挺重要的，建议按我推荐的顺序学，不要一上手就学 SpringBoot。只有先学习下自己整合框架的方法，才能帮你理解 SpringBoot 解决的问题，感受到它的方便和高效。 Maven / Gradle 当工具用就好，面试基本不问，跟着框架教程去用就行了，先不用花太多时间去深入学。</p>
+</blockquote>
+<h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><p><strong>视频（按顺序看）</strong></p>
+<ul>
+<li>⭐ 尚硅谷最新版 JavaWeb 全套教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Y7411K7zz">https://www.bilibili.com/video/BV1Y7411K7zz</a>（前端部分最好也看下）</li>
+<li>⭐ 尚硅谷 - Spring 5 框架最新版教程（idea版）：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vf4y127N5">https://www.bilibili.com/video/BV1Vf4y127N5</a></li>
+<li>⭐ 尚硅谷 - SpringMVC 2021 最新教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ry4y1574R">https://www.bilibili.com/video/BV1Ry4y1574R</a></li>
+<li>⭐ 尚硅谷 - MyBatis 实战教程全套完整版：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mW411M737">https://www.bilibili.com/video/BV1mW411M737</a></li>
+<li>⭐ 尚硅谷 - MyBatisPlus 教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ds411E76Y">https://www.bilibili.com/video/BV1Ds411E76Y</a></li>
+<li>Maven 零基础入门教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TW411g7hP">https://www.bilibili.com/video/BV1TW411g7hP</a>（搞不懂 Maven 可以看看）</li>
+<li>⭐ 雷丰阳 2021 版 SpringBoot2 零基础入门：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19K4y1L7MT">https://www.bilibili.com/video/BV19K4y1L7MT</a></li>
+<li>尚硅谷 - SpringSecurity 框架教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15a411A7kP">https://www.bilibili.com/video/BV15a411A7kP</a></li>
+</ul>
+<h1 id="开发规范（3-天）"><a href="#开发规范（3-天）" class="headerlink" title="开发规范（3 天）"></a>开发规范（3 天）</h1><blockquote>
+<p>开发不规范，同事两行泪。 开发规范是团队开发中必须遵守的，有利于提高项目的开发效率、降低维护成本。</p>
+</blockquote>
+<h2 id="知识-2"><a href="#知识-2" class="headerlink" title="知识"></a>知识</h2><ol>
+<li>代码规范<ul>
+<li>代码风格</li>
+<li>命名</li>
+<li>其他规则</li>
+</ul>
+</li>
+<li>提交规范</li>
+</ol>
+<h2 id="学习建议-2"><a href="#学习建议-2" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
+<p>简单过一遍大厂团队的规范手册就好了，以后做项目的时候能想起来的话就去使用，或者从书中、网上查规范，再去遵守。 项目做得多了，自然会养成好的习惯，不用刻意去记（毕竟每个团队规范也不完全相同，背了也没用）。</p>
+</blockquote>
+<h2 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>书籍<ul>
+<li>⭐ 阿里巴巴 Java 开发手册：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/graph/java">https://developer.aliyun.com/graph/java</a>（搜索《Java开发手册》）</li>
+</ul>
+</li>
+<li>视频<ul>
+<li>华山版《Java开发手册》独家讲解：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/live/1201">https://developer.aliyun.com/live/1201</a></li>
+</ul>
+</li>
+<li>文档<ul>
+<li>Google Java Style Guide：<a target="_blank" rel="noopener" href="https://google.github.io/styleguide/javaguide.html">https://google.github.io/styleguide/javaguide.html</a>（谷歌 Java 代码规范）</li>
+</ul>
+</li>
+</ul>
+<h1 id="Git（3-天）"><a href="#Git（3-天）" class="headerlink" title="Git（3 天）"></a>Git（3 天）</h1><blockquote>
+<p>此前大家可能听说过 GitHub，一流的代码开源托管平台。 Git 和它可不一样，是一个版本控制工具，可以更好地管理和共享项目代码，比如把自己的代码传到 GitHub 上、或者从远程下载。 无论自己做项目、还是团队开发，Git 都是现在不可或缺的神器。</p>
+</blockquote>
+<h2 id="知识-3"><a href="#知识-3" class="headerlink" title="知识"></a>知识</h2><ul>
+<li>工作区</li>
+<li>分支</li>
+<li>代码提交、推送、拉取、回退、重置</li>
+<li>分支操作</li>
+<li>代码合并、解决冲突</li>
+<li>标签</li>
+<li>cherry-pick</li>
+</ul>
+<h2 id="学习建议-3"><a href="#学习建议-3" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
+<p>每个命令跟着敲一遍，有个大致的印象，会用即可，用的多了自然熟悉了。</p>
+</blockquote>
+<h2 id="资源-3"><a href="#资源-3" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>视频<ul>
+<li>⭐【尚硅谷】5h打通Git全套教程丨2021最新IDEA版 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vy4y1s7k6">https://www.bilibili.com/video/BV1vy4y1s7k6</a></li>
+</ul>
+</li>
+<li>书籍<ul>
+<li>猴子都能懂的 Git 入门 <a target="_blank" rel="noopener" href="https://backlog.com/git-tutorial/cn/">https://backlog.com/git-tutorial/cn/</a></li>
+<li>⭐ GitHub 漫游指南 <a target="_blank" rel="noopener" href="https://github.phodal.com/">https://github.phodal.com/</a></li>
+</ul>
+</li>
+<li>文档<ul>
+<li>GitHub 官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/cn">https://docs.github.com/cn</a></li>
+</ul>
+</li>
+<li>游戏<ul>
+<li>Learning Git Branching：<a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">https://learngitbranching.js.org/?locale=zh_CN</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="Linux（2周）"><a href="#Linux（2周）" class="headerlink" title="Linux（2周）"></a>Linux（2周）</h1><blockquote>
+<p>企业中的很多前后台项目都是部署在 Linux 服务器上的，因此很有必要熟悉 Linux 的操作和脚本的编写。后面学微服务、学架构都是在多台。</p>
+</blockquote>
+<h2 id="知识-4"><a href="#知识-4" class="headerlink" title="知识"></a>知识</h2><ul>
+<li>Linux 系统安装</li>
+<li>环境变量</li>
+<li>文件管理</li>
+<li>用户管理</li>
+<li>内存管理</li>
+<li>磁盘管理</li>
+<li>进程管理</li>
+<li>网络管理</li>
+<li>软件包管理</li>
+<li>服务管理</li>
+<li>日志管理</li>
+<li>Linux 内核</li>
+<li><strong>常用命令</strong></li>
+<li><strong>常用环境搭建</strong></li>
+<li><strong>Shell 脚本编程</strong></li>
+<li><strong>VIM 的使用</strong></li>
+</ul>
+<h2 id="学习建议-4"><a href="#学习建议-4" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
+<p>多动手实践，建议自己购买一台云服务器，并且在本地搭建 Linux 虚拟机环境。 一定要自己从 0 开始手敲命令安装软件、部署服务，熟悉整个项目的上线流程。 每个命令至少要跟着敲一遍，了解它们的作用，并通过自然地练习，熟悉常用的 Linux 命令。 记不住没关系，用文档查就行了。 先会用，再理解。</p>
+</blockquote>
+<h2 id="资源-4"><a href="#资源-4" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>视频<ul>
+<li>⭐ 2021 韩顺平 一周学会Linux <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sv411r7vd">https://www.bilibili.com/video/BV1Sv411r7vd</a>（基于 CentOS 7.6 ）</li>
+</ul>
+</li>
+<li>书籍<ul>
+<li>《鸟哥的 Linux 私房菜 —— 基础篇》<a target="_blank" rel="noopener" href="http://cn.linux.vbird.org/linux_basic/linux_basic.php">http://cn.linux.vbird.org/linux_basic/linux_basic.php</a>（经典）</li>
+</ul>
+</li>
+<li>文档<ul>
+<li>Linux 工具快速教程：<a target="_blank" rel="noopener" href="https://linuxtools-rst.readthedocs.io/">https://linuxtools-rst.readthedocs.io</a>（基础、工具进阶、工具参考）</li>
+</ul>
+</li>
+<li>实战<ul>
+<li>⭐ 蓝桥云课 Linux 基础入门：<a target="_blank" rel="noopener" href="https://www.lanqiao.cn/courses/1">https://www.lanqiao.cn/courses/1</a></li>
+<li>腾讯云动手实验室：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/labs">https://cloud.tencent.com/developer/labs</a></li>
+<li>阿里云体验实验室：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/adc/labs/">https://developer.aliyun.com/adc/labs/</a></li>
+<li>阿里云知行实验室：<a target="_blank" rel="noopener" href="https://start.aliyun.com/">https://start.aliyun.com/</a></li>
+<li>华为云沙箱实验室：<a target="_blank" rel="noopener" href="https://lab.huaweicloud.com/">https://lab.huaweicloud.com/</a></li>
+</ul>
+</li>
+<li>社区<ul>
+<li>Linux 中国：<a target="_blank" rel="noopener" href="https://linux.cn/">https://linux.cn/</a></li>
+</ul>
+</li>
+<li>工具<ul>
+<li>⭐ Linux 命令搜索：<a target="_blank" rel="noopener" href="https://wangchujiang.com/linux-command">https://wangchujiang.com/linux-command</a></li>
+<li>Linux 命令大全手册：<a target="_blank" rel="noopener" href="https://www.linuxcool.com/">https://www.linuxcool.com/</a></li>
+<li>Linux 命令示例：<a target="_blank" rel="noopener" href="http://linux-commands-examples.com/">http://linux-commands-examples.com/</a></li>
+<li>宝塔 Linux 面板：<a target="_blank" rel="noopener" href="https://www.bt.cn/">https://www.bt.cn/</a></li>
+</ul>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%98%B6%E6%AE%B53/">
+                                    <span class="chip bg-color">阶段3</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .twikoo-card {
+        margin: 1.5rem auto;
+    }
+
+    .twikoo-card .card-content {
+        padding: 20px;
+    }
+
+    #tcomments textarea {
+        box-sizing: border-box;
+        background: url("/") 100% 100% no-repeat;
+    }
+
+    #tcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #tcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #tcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #tcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #tcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #tcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #tcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #tcomments ul li {
+        list-style-type: disc;
+    }
+
+    #tcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #tcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #tcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #tcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #tcomments table td {
+        min-width: 80px;
+    }
+
+    #tcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #tcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #tcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #tcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #tcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #tcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #tcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #tcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #tcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #tcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #tcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #tcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #tcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #tcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #tcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #tcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #tcomments dfn {
+        font-style: italic;
+    }
+
+    #tcomments small {
+        font-size: 85%;
+    }
+
+    #tcomments cite {
+        font-style: normal;
+    }
+
+    #tcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #tcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #tcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #tcomments table td {
+        min-width: 80px;
+    }
+
+    #tcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card twikoo-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div class="card-content" style="display: grid">
+        <div id="tcomments"></div>
+    </div>
+</div>
+
+<script src="/libs/twikoo/twikoo.all.min.js"></script>
+<script>
+    twikoo.init({
+        envId: 'mqxu-0gj1hh6bb8038596',
+        el: '#tcomments',
+        region: 'ap-shanghai',
+        path: ''
+    }).then(function () {
+        var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
+        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
+            if (tkInputs[tkInputsIndex]) {
+                tkInputs[tkInputsIndex].classList.add('browser-default');
+            }
+        }
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/12/03/jie-duan-4-java-web-kai-fa-jin-jie/">
+                    <div class="card-image">
+                        
+                        <img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h6d1nufiq4j21hc0u00tn.jpg" class="responsive-img" alt="阶段4：Java Web开发进阶">
+                        
+                        <span class="card-title">阶段4：Java Web开发进阶</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java%E5%85%A8%E6%A0%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" class="post-category">
+                                    Java全栈学习路线
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%98%B6%E6%AE%B54/">
+                        <span class="chip bg-color">阶段4</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/03/jian-cha-bing-you-hua-flutter-app-zheng-ti-xing-neng/">
+                    <div class="card-image">
+                        
+                        <img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h5t78wt16mj20sg0e8756.jpg" class="responsive-img" alt="检查并优化 Flutter App 整体性能">
+                        
+                        <span class="card-title">检查并优化 Flutter App 整体性能</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Flutter/" class="post-category">
+                                    Flutter
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">优化</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1,h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="7074538435"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">mqxu</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">27k</span>
+            
+            
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "8";
+                        var startDate = "16";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/mqxu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=16422802" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 16422802" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
