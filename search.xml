@@ -1929,7 +1929,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>视频<ul>
-<li>⭐ 韩顺平 - 零基础 30 天学会 Java：<a href="https://www.bilibili.com/video/BV1fh411y7R8">https://www.bilibili.com/video/BV1fh411y7R8</a>（目录合理，讲解通俗、有实战）</li>
+<li>⭐ 韩顺平 - 零基础 30 天学会 Java：<a href="https://www.bilibili.com/video/BV1fh411y7R8">https://www.bilibili.com/video/BV1fh411y7R8</a>（目录合理，讲解通俗、有实战）</li>
 </ul>
 </li>
 <li>文档<ul>
@@ -1990,9 +1990,9 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>链表</li>
 <li>集合</li>
 <li>哈希表</li>
-<li>二叉树</li>
+<li>二叉树</li>
 </ul>
-<p><strong>算法</strong></p>
+<p><strong>算法</strong></p>
 <ul>
 <li>排序</li>
 <li>双指针</li>
@@ -2055,7 +2055,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>书籍<ul>
 <li>《编码》</li>
 <li>《30天自制操作系统》</li>
-<li>《现代操作系统》（难度较大，不推荐新手看）</li>
+<li>《现代操作系统》（难度较大，不推荐新手看）</li>
 <li>《深入理解计算机系统》（难度较大，不推荐新手看）</li>
 </ul>
 </li>
@@ -2127,7 +2127,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </li>
 </ul>
 <h1 id="开发框架（2-个月）"><a href="#开发框架（2-个月）" class="headerlink" title="开发框架（2 个月）"></a>开发框架（2 个月）</h1><blockquote>
-<p>Java 之所以能成为主流的企业开发语言，很大一部分原因是它完善的框架生态，用好框架，不仅能够大大提升开发效率，还能提高项目的稳定性、减少维护成本。 开发框架是后台开发工作中不可或缺的，也是面试考察的重点，一定要好好学！ 不知道 Java 能做什么的朋友们，学完开发框架，就会有答案啦。 下面给大家推荐的都是企业中应用最多的主流开发框架，知识点比较零碎，就放在一起讲了。</p>
+<p>Java 之所以能成为主流的企业开发语言，很大一部分原因是它完善的框架生态，用好框架，不仅能够大大提升开发效率，还能提高项目的稳定性、减少维护成本。 开发框架是后台开发工作中不可或缺的，也是面试考察的重点，一定要好好学。 不知道 Java 能做什么的朋友们，学完开发框架，就会有答案啦。 </p>
 </blockquote>
 <h2 id="知识-1"><a href="#知识-1" class="headerlink" title="知识"></a>知识</h2><ul>
 <li><strong>Java Web</strong><ul>
@@ -2167,7 +2167,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>全局配置</li>
 <li>动态 SQL</li>
 <li>缓存</li>
-<li>和其他框架的整合</li>
+<li>和其他框架的整合</li>
 <li>逆向工程</li>
 </ul>
 </li>
@@ -2185,13 +2185,13 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>描述：简化 Spring 应用的初始搭建以及开发过程，提高效率</li>
 <li>常用注解</li>
 <li>资源整合</li>
-<li>高级特性</li>
+<li>高级特性</li>
 <li>本地热部署</li>
 </ul>
 </li>
 <li><strong>Spring Security</strong><ul>
 <li>描述：Spring 的安全管理框架</li>
-<li>用户认证</li>
+<li>用户认证</li>
 <li>权限管理</li>
 </ul>
 </li>
@@ -2206,7 +2206,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </li>
 </ul>
 <h2 id="学习建议-1"><a href="#学习建议-1" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
-<p>由于技术较多，且框架之间存在一定的联系，因此建议大家看同一系列的视频教程（尚硅谷、狂神说等等都可以），以保证学习内容的连续以及体验上的一致。 学这些技术的时候，<strong>千万不能懒</strong> ！一定要多记笔记，并且跟着老师写代码。原理部分不要太过纠结，先以能跟着敲出代码、写出可运行的项目为主，有些东西做出来也能帮助你更好地理解理论。 学习顺序挺重要的，建议按我推荐的顺序学，不要一上手就学 SpringBoot。只有先学习下自己整合框架的方法，才能帮你理解 SpringBoot 解决的问题，感受到它的方便和高效。 Maven / Gradle 当工具用就好，面试基本不问，跟着框架教程去用就行了，先不用花太多时间去深入学。</p>
+<p>由于技术较多，且框架之间存在一定的联系，因此建议大家看同一系列的视频教程（尚硅谷、狂神说等等都可以），以保证学习内容的连续以及体验上的一致。 学这些技术的时候，一定要多记笔记，并且跟着老师写代码。原理部分不要太过纠结，先以能跟着敲出代码、写出可运行的项目为主，有些东西做出来也能帮助你更好地理解理论。 学习顺序挺重要的，建议不要一上手就学 SpringBoot。只有先学习下自己整合框架的方法，才能帮你理解 SpringBoot 解决的问题，感受到它的方便和高效。 Maven / Gradle 当工具用就好，面试基本不问，跟着框架教程去用就行了，先不用花太多时间去深入学。</p>
 </blockquote>
 <h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><p><strong>视频（按顺序看）</strong></p>
 <ul>
@@ -2220,7 +2220,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>尚硅谷 - SpringSecurity 框架教程：<a href="https://www.bilibili.com/video/BV15a411A7kP">https://www.bilibili.com/video/BV15a411A7kP</a></li>
 </ul>
 <h1 id="开发规范（3-天）"><a href="#开发规范（3-天）" class="headerlink" title="开发规范（3 天）"></a>开发规范（3 天）</h1><blockquote>
-<p>开发不规范，同事两行泪。 开发规范是团队开发中必须遵守的，有利于提高项目的开发效率、降低维护成本。</p>
+<p>开发不规范，同事两行泪。<br>开发规范是团队开发中必须遵守的，有利于提高项目的开发效率、降低维护成本。</p>
 </blockquote>
 <h2 id="知识-2"><a href="#知识-2" class="headerlink" title="知识"></a>知识</h2><ol>
 <li>代码规范<ul>
@@ -2265,7 +2265,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源-3"><a href="#资源-3" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>视频<ul>
-<li>⭐【尚硅谷】5h打通Git全套教程丨2021最新IDEA版 <a href="https://www.bilibili.com/video/BV1vy4y1s7k6">https://www.bilibili.com/video/BV1vy4y1s7k6</a></li>
+<li>⭐【尚硅谷】5h打通Git全套教程丨2021最新IDEA版 <a href="https://www.bilibili.com/video/BV1vy4y1s7k6">https://www.bilibili.com/video/BV1vy4y1s7k6</a></li>
 </ul>
 </li>
 <li>书籍<ul>
@@ -2516,7 +2516,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </li>
 </ul>
 <h1 id="微服务（60-天）"><a href="#微服务（60-天）" class="headerlink" title="微服务（60 天）"></a>微服务（60 天）</h1><blockquote>
-<p>随着互联网的发展，项目越来越复杂，单机且庞大的巨石项目已无法满足开发、运维、并发、可靠性等需求。 因此，后台架构不断演进，可以将庞大的项目拆分成一个个职责明确、功能独立的细小模块，模块可以部署在多台服务器上，相互配合协作，提供完整的系统能力。 换言之，想做大型项目，这块儿一定要好好学！</p>
+<p>随着互联网的发展，项目越来越复杂，单机项目已无法满足开发、运维、并发、可靠性等需求。 后台架构不断演进，可以将庞大的项目拆分成一个个职责明确、功能独立的细小模块，模块可以部署在多台服务器上，相互配合协作，提供完整的系统能力。 想做大型项目，这块儿一定要好好学。</p>
 </blockquote>
 <h2 id="知识-3"><a href="#知识-3" class="headerlink" title="知识"></a>知识</h2><ul>
 <li><strong>Dubbo</strong><ul>
@@ -2565,12 +2565,12 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <h2 id="资源-3"><a href="#资源-3" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
 <li>⭐ 尚硅谷 Dubbo 教程：<a href="https://www.bilibili.com/video/BV1ns411c7jV">https://www.bilibili.com/video/BV1ns411c7jV</a></li>
-<li>⭐ 尚硅谷 SpringCloud（H版&amp;alibaba）框架开发教程（微服务分布式架构）：<a href="https://www.bilibili.com/video/BV18E411x7eT">https://www.bilibili.com/video/BV18E411x7eT</a>（把国外的 Spring Cloud 和国内的 Spring Cloud Alibaba 结合在一起对比着去讲，主流技术栈、知识点都讲到了，真心不错！）</li>
+<li>⭐ 尚硅谷 SpringCloud（H版&amp;alibaba）框架开发教程（微服务分布式架构）：<a href="https://www.bilibili.com/video/BV18E411x7eT">https://www.bilibili.com/video/BV18E411x7eT</a>（把国外的 Spring Cloud 和国内的 Spring Cloud Alibaba 结合在一起对比着去讲，主流技术栈、知识点都讲到了）</li>
 </ul>
 </li>
 <li><strong>文档</strong><ul>
 <li>Apache Dubbo 官方文档：<a href="https://dubbo.apache.org/zh/">https://dubbo.apache.org/zh/</a></li>
-<li>Spring Cloud Alibaba 官方文档：<a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></li>
+<li>Spring Cloud Alibaba 官方文档：<a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></li>
 <li>⭐ Swagger 教学文档：<a href="https://doc.xiaominfo.com/">https://doc.xiaominfo.com/</a>（跟着快速开始直接用就好了）<h1 id="Docker、k8s（7-天）"><a href="#Docker、k8s（7-天）" class="headerlink" title="Docker、k8s（7 天）"></a>Docker、k8s（7 天）</h1><blockquote>
 <p>将应用和环境进行封装，相互隔离、独立部署、便于移植，提高安全性、提高开发和维护效率。 便于实现微服务、持续集成和交付。</p>
 </blockquote>
@@ -2662,11 +2662,11 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <p>综合所学技术从 0 到 1 开发和上线一个全面、有特色的、可以写进简历的个人项目。</p>
 </blockquote>
 <h1 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h1><blockquote>
-<p>其实在之前的框架学习视频中应该就做过几个项目了，但相对不够完整和体系化。 有想法的同学可以做任何自己想做的项目，推荐参加一些作品类竞赛，练手、拿奖、收获项目经历一举三得。 暂时没想法的朋友，建议先跟着专门带做项目的视频教程做 1 - 2 套 Java 完整项目，一定要从 0 到 1 自己手写！ 有能力的朋友也可以试着用 GitHub 上的源码来学习~ 做一个完整的项目的确很不容易，建议大家根据自己的** 时间、兴趣 **选择 <strong>较新的、有配套源码的</strong> 教程，保持耐心。 下面推荐一些优质的、较新的项目实战视频教程 + 50 套项目源码。</p>
+<p>其实在之前的框架学习视频中应该就做过几个项目了，但相对不够完整和体系化。 有想法的同学可以做任何自己想做的项目，推荐参加一些作品类竞赛，练手、拿奖、收获项目经历一举三得。 暂时没想法的，建议先跟着专门带做项目的视频教程做 1 - 2 套 Java 完整项目，一定要从 0 到 1 自己手写！ 有能力的也可以试着用 GitHub 上的源码来学习~ 做一个完整的项目的确很不容易，建议大家根据自己的时间和兴趣选择 <strong>较新的、有配套源码的</strong> 教程，保持耐心。 </p>
 </blockquote>
 <h1 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h1><ul>
 <li>尚硅谷 - 谷粒学院 - 微服务 + 全栈 - 在线教育实战项目：<a href="https://www.bilibili.com/video/BV1dQ4y1A75e">https://www.bilibili.com/video/BV1dQ4y1A75e</a>（全栈项目，前后端讲得都很全面）</li>
-<li>尚硅谷 - 尚筹网 - Java项目实战开发教程 - SSM 框架 + 微服务架构：<a href="https://www.bilibili.com/video/BV1bE411T7oZ">https://www.bilibili.com/video/BV1bE411T7oZ</a>（500 多集，包含完整的用户权限管理，功能丰富、讲得很细致全面）</li>
+<li>尚硅谷 - 尚筹网 - Java项目实战开发教程 - SSM 框架 + 微服务架构：<a href="https://www.bilibili.com/video/BV1bE411T7oZ">https://www.bilibili.com/video/BV1bE411T7oZ</a>（500 多集，包含完整的用户权限管理，功能丰富、细致全面）</li>
 <li>黑马 - 24 小时搞定 Java 毕设电商项目：<a href="https://www.bilibili.com/video/BV13f4y1r7fS">https://www.bilibili.com/video/BV13f4y1r7fS</a></li>
 <li>黑马程序员 Java 项目《传智健康》，超完整的企业级医疗行业项目：<a href="https://www.bilibili.com/video/BV1Bo4y117zV">https://www.bilibili.com/video/BV1Bo4y117zV</a></li>
 <li>黑马程序员 Java 项目《万信金融》企业级开发实战，互联网金融行业解决方案：<a href="https://www.bilibili.com/video/BV1Ub4y1f7rk">https://www.bilibili.com/video/BV1Ub4y1f7rk</a></li>
@@ -2718,7 +2718,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 <h2 id="开发平台"><a href="#开发平台" class="headerlink" title="开发平台"></a>开发平台</h2><ul>
 <li><a href="%5Bhttps://github.com/2014shijina2014/open-capacity-platform%5D(https://github.com/2014shijina2014/open-capacity-platform)">open-capacity-platform</a>：微服务能力开发平台</li>
-<li><a href="%5Bhttps://github.com/zhangdaiscott/jeecg-boot%5D(https://github.com/zhangdaiscott/jeecg-boot)">jeecg-boot</a>：JeecgBoot是一款基于BPM的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发！</li>
+<li><a href="%5Bhttps://github.com/zhangdaiscott/jeecg-boot%5D(https://github.com/zhangdaiscott/jeecg-boot)">jeecg-boot</a>：JeecgBoot是一款基于BPM的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发。</li>
 </ul>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li><a href="%5Bhttps://github.com/mindskip/xzs%5D(https://github.com/mindskip/xzs)">学之思在线考试系统</a>：一款 java + vue 的前后端分离的考试系统</li>
@@ -2767,7 +2767,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>CAS</li>
 </ul>
 <h2 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
-<p>并发编程入门不难，依然是 <strong>先学会使用</strong>基础的 Java 并发包， 再通过大量地实践和测试，了解一些原理，才能真正掌握何时使用、如何更合理地使用并发编程。</p>
+<p>并发编程入门不难，依然是 <strong>先学会使用</strong> 基础的 Java 并发包， 再通过大量地实践和测试，了解一些原理，才能真正掌握何时使用、如何更合理地使用并发编程。</p>
 </blockquote>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
@@ -2820,7 +2820,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
-<li>⭐ 尚硅谷宋红康 - JVM 全套教程详解：<a href="https://www.bilibili.com/video/BV1PJ411n7xZ">https://www.bilibili.com/video/BV1PJ411n7xZ</a>（讲得相当全面！附有实操）</li>
+<li>⭐ 尚硅谷宋红康 - JVM 全套教程详解：<a href="https://www.bilibili.com/video/BV1PJ411n7xZ">https://www.bilibili.com/video/BV1PJ411n7xZ</a>（讲得相当全面，附有实操）</li>
 <li>【狂神说Java】JVM快速入门篇：<a href="https://www.bilibili.com/video/BV1iJ411d7jS">https://www.bilibili.com/video/BV1iJ411d7jS</a>（讲得有点浅，但都是面试重点，时间紧的小伙伴可以直接看这个）</li>
 </ul>
 </li>
@@ -2871,7 +2871,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li><strong>分布式消息队列</strong><ul>
 <li>RabbitMQ</li>
 <li>Kafka</li>
-<li>rocketmq</li>
+<li>rocketmq</li>
 </ul>
 </li>
 <li><strong>分布式日志收集</strong><ul>
@@ -2887,7 +2887,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>Apache SkyWalking</li>
 </ul>
 </li>
-<li><strong>分布式配置中心</strong><ul>
+<li><strong>分布式配置中心</strong><ul>
 <li>Apollo</li>
 <li>Nacos</li>
 </ul>
@@ -2967,7 +2967,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 </li>
 <li><strong>缓存</strong><ul>
-<li>Redis    </li>
+<li>Redis</li>
 </ul>
 </li>
 <li><strong>队列</strong><ul>
