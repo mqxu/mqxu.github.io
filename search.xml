@@ -1,72 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mac下安装多个版本的JDK并随意切换</title>
-    <url>/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/</url>
-    <content><![CDATA[<blockquote>
-<p>JDK 版本已经更新到了 17，我们需要学习 JDK 的一些新特性，但是日常使用基本上都是基于 JDK8，因此，需要在 Mac 环境下安装多个版本的 JDK，并且确保能够随意切换。</p>
-</blockquote>
-<h1 id="JDK-下载"><a href="#JDK-下载" class="headerlink" title="JDK 下载"></a>JDK 下载</h1><blockquote>
-<p>通过下方链接或网盘下载相应版本和平台的 JDK</p>
-</blockquote>
-<ul>
-<li><a href="https://www.oracle.com/java/technologies/downloads/">OracleJDK</a></li>
-<li><a href="https://adoptopenjdk.net/releases.html">OpenJDK</a></li>
-<li><a href="https://pan.baidu.com/s/1DPfrhlfpXTVYN9q2xv2Suw">百度网盘</a> 提取码：2nmw</li>
-</ul>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote>
-<p>这里我安装了 OracleJDK 的 8、11、17 三个 LTS 版本</p>
-</blockquote>
-<p>在/Library/Java/JavaVirtualMachines 目录下会出现三个目录：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.22.41.2rm68xysutg0.png" alt="三个版本的JDK"></p>
-<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><blockquote>
-<p>Mac 下通过 bash_profile 文件来对环境信息进行配置。执行以下命令打开配置文件：</p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>如果原本没有.bash_profile 文件，在运行 vim ~/.bash_profile 命令时会创建该文件。<br>根据环境变量信息新增 JDK 几个版本的相关内容：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Java Config : Java家配置</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA8_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA11_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA17_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">${<span class="token environment constant">PATH</span>}</span><span class="token builtin class-name">:</span><span class="token variable">${JAVA_HOME}</span>/bin
-
-<span class="token comment"># config alias: 配置别名</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk8</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA8_HOME</span>"</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk11</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA11_HOME</span>"</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk17</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA17_HOME</span>"</span>
-
-<span class="token comment"># config default :jdk 配置默认JDK</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span><span class="token variable">$JAVA8_HOME</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token variable">$JAVA_HOME</span>:<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>修改保存上述配置，对 bash_profile 进行编译生效</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>如果使用的是 zshrc,则使用以下命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>然后在终端执行 <code>java -version</code> 会发现 jdk 版本正常显示为 jdk8<br><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.30.08.5vfa7jf3tys0.png" alt="显示默认的JDK8版本"></p>
-<h1 id="任意切换-Java-环境"><a href="#任意切换-Java-环境" class="headerlink" title="任意切换 Java 环境"></a>任意切换 Java 环境</h1><blockquote>
-<p>如需要将 jdk 版本切换为 jdk11，直接输入 JDK11 环境变量的别名：jdk11 即可,然后查看版本</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.32.17.9r8jdkga49w.png" alt="切换成其他JDK版本"></p>
-<h1 id="IDEA-中添加-JDK"><a href="#IDEA-中添加-JDK" class="headerlink" title="IDEA 中添加 JDK"></a>IDEA 中添加 JDK</h1><blockquote>
-<p>在 IDEA 的 Project Structure 设置中新增 JDK 的配置，便可使用新增的 JDK 进行开发了</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.35.38.28s8ykm36dc0.png" alt="IDEA添加JDK"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.36.32.59lcdpmz5r80.png" alt="多个JDK可按需选择"></p>
-<p>若项目是多模块的，可以为每个模块指定不同的 JDK 版本<br><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.38.44.6q518j7nr7w0.png" alt="不同模块指定不同JDK"></p>
-]]></content>
-      <categories>
-        <category>环境</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-        <tag>JDK</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CentOS 8.2开发环境</title>
     <url>/2021/08/14/centos-8.2-kai-fa-huan-jing/</url>
     <content><![CDATA[<blockquote>
@@ -82,15 +16,15 @@
 <ul>
 <li>备份</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> /etc/yum.repos.d/
-<span class="token function">mkdir</span> bak
-<span class="token function">mv</span> *.repo bak/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd /etc/yum.repos.d/
+mkdir bak
+mv *.repo bak/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>下载新的 yum 源</li>
 </ul>
 <p>当前目录为：**/etc/yum.repos.d/**</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> https://mirrors.aliyun.com/repo/Centos-8.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https://mirrors.aliyun.com/repo/Centos-8.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>查看</p>
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714154542495.png" style="zoom:50%;margin-left:0;">
@@ -113,68 +47,68 @@
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714155423362.png" style="zoom:50%;margin-left:0;">
 
 <h3 id="2-gcc-和-make-插件"><a href="#2-gcc-和-make-插件" class="headerlink" title="2) gcc 和 make 插件"></a>2) gcc 和 make 插件</h3><p>GCC 代表: <strong>the GNU Compiler Collection</strong>，表示 C 语言编译器的合集， g++则是 GCC 的 c++编译器。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum <span class="token function">install</span> gcc gcc-c++
-yum -y <span class="token function">install</span> gcc automake autoconf libtool <span class="token function">make</span>
-yum groupinstall -y <span class="token string">'Development Tools'</span>
-yum <span class="token function">install</span> -y gcc openssl-devel bzip2-devel libffi-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum install gcc gcc-c++
+yum -y install gcc automake autoconf libtool make
+yum groupinstall -y 'Development Tools'
+yum install -y gcc openssl-devel bzip2-devel libffi-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="1-OpenJDK-安装和配置"><a href="#1-OpenJDK-安装和配置" class="headerlink" title="1. OpenJDK 安装和配置"></a>1. OpenJDK 安装和配置</h2><h3 id="1-查看-yum-源"><a href="#1-查看-yum-源" class="headerlink" title="1) 查看 yum 源"></a>1) 查看 yum 源</h3><p>先查看 yum 源中有什么版本（JDK 关键字标红）：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum search java <span class="token operator">|</span> <span class="token function">grep</span> -i --color JDK<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum search java | grep -i --color JDK<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714155948648.png" style="zoom:40%;margin-left:0;">
 
 <h3 id="2-安装-openjdk1-8"><a href="#2-安装-openjdk1-8" class="headerlink" title="2) 安装 openjdk1.8"></a>2) 安装 openjdk1.8</h3><p>命令如下:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum <span class="token function">install</span> java-1.8.0-openjdk  java-1.8.0-openjdk-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum install java-1.8.0-openjdk  java-1.8.0-openjdk-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714160247638.png" style="zoom:30%;margin-left:0;">
 
 <p>默认安装位置为：**/usr/lib/jvm/**</p>
 <h3 id="3-配置环境"><a href="#3-配置环境" class="headerlink" title="3) 配置环境"></a>3) 配置环境</h3><p>然后编辑.bashrc 文件，在最后添加 JAVA_HOME 配置等，退出生效</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">vim</span> ~/.bashrc
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
-<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=.:$JAVA_HOME/bin:$PATH
+source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>查看是否生效</p>
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714160549887.png" style="zoom:50%;margin-left:0;">
 
-<h2 id="2-Maven-安装和配置"><a href="#2-Maven-安装和配置" class="headerlink" title="2. Maven 安装和配置"></a>2. Maven 安装和配置</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1) 下载"></a>1) 下载</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 创建tools目录</span>
-<span class="token function">mkdir</span> /home/tools
-<span class="token builtin class-name">cd</span> /home/tools
-<span class="token comment"># 使用wget下载,如果443就多试两次</span>
-<span class="token function">wget</span> https://www-us.apache.org/dist/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-Maven-安装和配置"><a href="#2-Maven-安装和配置" class="headerlink" title="2. Maven 安装和配置"></a>2. Maven 安装和配置</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1) 下载"></a>1) 下载</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 创建tools目录
+mkdir /home/tools
+cd /home/tools
+# 使用wget下载,如果443就多试两次
+wget https://www-us.apache.org/dist/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><a href="https://maven.apache.org/download.cgi">这里</a> 是 maven 的最新版下载页面，如果在线下载很慢的话，可以手动下载 maven 的压缩包后上传到/home/tools</p>
 <h3 id="2-解压"><a href="#2-解压" class="headerlink" title="2) 解压"></a>2) 解压</h3><p>下载完成或者手动上传完成后，解压到<code>/opt</code>目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">tar</span> xf /home/tools/apache-maven-3.8.1-bin.tar.gz -C /opt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo tar xf /home/tools/apache-maven-3.8.1-bin.tar.gz -C /opt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="3-创建虚拟链接"><a href="#3-创建虚拟链接" class="headerlink" title="3) 创建虚拟链接"></a>3) 创建虚拟链接</h3><p>创建一个虚拟链接<code>maven</code>指向 Maven 安装目录，方便控制 Maven 版本和升级</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">ln</span> -s /opt/apache-maven-3.8.1 /opt/maven<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo ln -s /opt/apache-maven-3.8.1 /opt/maven<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="4-设置环境变量"><a href="#4-设置环境变量" class="headerlink" title="4) 设置环境变量"></a>4) 设置环境变量</h3><p>在<code>/etc/profile.d/</code>目录下创建一个名为 <code>mavenenv.sh</code>的新文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">nano</span> /etc/profile.d/maven.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo nano /etc/profile.d/maven.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>粘贴以下内容：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el8_4.x86_64
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">M2_HOME</span><span class="token operator">=</span>/opt/maven
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">MAVEN_HOME</span><span class="token operator">=</span>/opt/maven
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">${M2_HOME}</span>/bin:<span class="token variable">${<span class="token environment constant">PATH</span>}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el8_4.x86_64
+export M2_HOME=/opt/maven
+export MAVEN_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714162001450.png" style="zoom:33%;margin-left:0;">
 
 <p>然后按 Y，回车退出 nano，这个脚本将会在 shell 启动时执行</p>
 <p>运行 <code>chmod</code>命令，使脚本可执行：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">chmod</span> +x /etc/profile.d/maven.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo chmod +x /etc/profile.d/maven.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>使用<code>source</code>命令加载环境变量：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">source</span> /etc/profile.d/maven.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">source /etc/profile.d/maven.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="4-验证安装"><a href="#4-验证安装" class="headerlink" title="4) 验证安装"></a>4) 验证安装</h3><p>输入以下命令验证 maven 是否安装成功</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mvn -version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714162715150.png"></p>
-<h3 id="5-配置-Maven-镜像"><a href="#5-配置-Maven-镜像" class="headerlink" title="5) 配置 Maven 镜像"></a>5) 配置 Maven 镜像</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">vim</span> /opt/maven/conf/settings.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="5-配置-Maven-镜像"><a href="#5-配置-Maven-镜像" class="headerlink" title="5) 配置 Maven 镜像"></a>5) 配置 Maven 镜像</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /opt/maven/conf/settings.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>配置 mirrors 节点：</p>
 <pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrors</span><span class="token punctuation">&gt;</span></span>
@@ -187,22 +121,22 @@ yum <span class="token function">install</span> -y gcc openssl-devel bzip2-devel
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrors</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>编辑完成保存退出即可</p>
-<h2 id="3-Git-安装和配置"><a href="#3-Git-安装和配置" class="headerlink" title="3. Git 安装和配置"></a>3. Git 安装和配置</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1) 安装"></a>1) 安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum <span class="token function">install</span> -y <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="3-Git-安装和配置"><a href="#3-Git-安装和配置" class="headerlink" title="3. Git 安装和配置"></a>3. Git 安装和配置</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1) 安装"></a>1) 安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum install -y git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>查看版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714163859205.png" style="zoom:50%;margin-left:0;">
 
-<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2) 配置"></a>2) 配置</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> config --global user.name <span class="token string">"你的用户名"</span>
-<span class="token function">git</span> config --global user.email <span class="token string">"你的邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2) 配置"></a>2) 配置</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git config --global user.name "你的用户名"
+git config --global user.email "你的邮箱"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>查看配置</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> config --list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git config --list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="4-Python-安装和配置"><a href="#4-Python-安装和配置" class="headerlink" title="4. Python 安装和配置"></a>4. Python 安装和配置</h2><h3 id="1-安装-1"><a href="#1-安装-1" class="headerlink" title="1) 安装"></a>1) 安装</h3><p>在 /home 下创建一个目录如 tools，进入该目录</p>
 <p>依次运行以下命令，用于安装 Python3.8、设置软链接、升级 pip3（如果第一步因为网络问题 wget 下载失败，多试几次，或手动下载后上传）</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgztar -zxvf Python-3.8.1.tgzmkdir /usr/local/python3 <span class="token builtin class-name">cd</span> Python-3.8.1./configure --prefix<span class="token operator">=</span>/usr/local/python3 --enable-optimizations --with-ssl <span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> installln -s /usr/local/python3/bin/python3 /usr/local/bin/python3ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3pip3 <span class="token function">install</span> --upgrade pip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgztar -zxvf Python-3.8.1.tgzmkdir /usr/local/python3 cd Python-3.8.1./configure --prefix=/usr/local/python3 --enable-optimizations --with-ssl make &amp;&amp; make installln -s /usr/local/python3/bin/python3 /usr/local/bin/python3ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3pip3 install --upgrade pip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714171335462.png" style="zoom:40%;margin-left:0;">
 
@@ -214,36 +148,36 @@ pip3 -V<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <h2 id="5-Docker"><a href="#5-Docker" class="headerlink" title="5. Docker"></a>5. Docker</h2><h3 id="1-Docker-安装"><a href="#1-Docker-安装" class="headerlink" title="1) Docker 安装"></a>1) Docker 安装</h3><ul>
 <li>卸载老版本</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum remove docker  docker-client  docker-client-latest <span class="token punctuation">\</span>  docker-common <span class="token punctuation">\</span> docker-latest <span class="token punctuation">\</span>               docker-latest-logrotate <span class="token punctuation">\</span>                docker-logrotate <span class="token punctuation">\</span>  docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum remove docker  docker-client  docker-client-latest \  docker-common \ docker-latest \               docker-latest-logrotate \                docker-logrotate \  docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>安装 docker 基础包</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum <span class="token function">install</span> -y yum-utils device-mapper-persistent-data lvm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum install -y yum-utils device-mapper-persistent-data lvm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>设置稳定仓库</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum-config-manager <span class="token punctuation">\</span>    --add-repo <span class="token punctuation">\</span>    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum-config-manager \    --add-repo \    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>安装 Docker Engine - Community</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># step1： 查看版本</span>
-yum list docker-ce --showduplicates <span class="token operator">|</span> <span class="token function">sort</span> -r
-<span class="token comment"># step2： 安装指定版本，这里安装20.10.7-3.el8版本</span>
-<span class="token function">sudo</span> yum <span class="token function">install</span> docker-ce-20.10.7-3.el8 docker-ce-cli-20.10.7-3.el8 containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># step1： 查看版本
+yum list docker-ce --showduplicates | sort -r
+# step2： 安装指定版本，这里安装20.10.7-3.el8版本
+sudo yum install docker-ce-20.10.7-3.el8 docker-ce-cli-20.10.7-3.el8 containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>启动与测试</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">sudo</span> systemctl start docker  <span class="token comment"># 开机启动</span>
-dockerdocker version         <span class="token comment"># 查看版本docker</span>
-run hello-world              <span class="token comment"># 测试，如果出443的问题，多试几次</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo systemctl start docker  # 开机启动
+dockerdocker version         # 查看版本docker
+run hello-world              # 测试，如果出443的问题，多试几次<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714173155782.png" style="zoom:35%;margin-left:0;">
 
-<h3 id="2-Docker-国内镜像配置"><a href="#2-Docker-国内镜像配置" class="headerlink" title="2) Docker 国内镜像配置"></a>2) Docker 国内镜像配置</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">vim</span> /etc/docker/daemon.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-Docker-国内镜像配置"><a href="#2-Docker-国内镜像配置" class="headerlink" title="2) Docker 国内镜像配置"></a>2) Docker 国内镜像配置</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vim /etc/docker/daemon.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>粘贴以下内容：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
@@ -258,42 +192,42 @@ run hello-world              <span class="token comment"># 测试，如果出443
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>保存退出后重启 docker 即可</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">sudo</span> systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="3-Docker-compose-安装"><a href="#3-Docker-compose-安装" class="headerlink" title="3) Docker-compose 安装"></a>3) Docker-compose 安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 安装</span>
-<span class="token function">sudo</span> <span class="token function">curl</span> -L <span class="token string">"https://github.com/docker/compose/releases/download/1.27.4/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -s<span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>"</span> -o /usr/local/bin/ docker-compose
-<span class="token comment"># 修改权限</span>
-<span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose
-<span class="token comment"># 创建软链</span>
-<span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-<span class="token comment"># 测试是否安装成功</span>
+<h3 id="3-Docker-compose-安装"><a href="#3-Docker-compose-安装" class="headerlink" title="3) Docker-compose 安装"></a>3) Docker-compose 安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 安装
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/ docker-compose
+# 修改权限
+sudo chmod +x /usr/local/bin/docker-compose
+# 创建软链
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+# 测试是否安装成功
 docker-compose --version
-<span class="token comment"># 输出：</span>
-docker-compose version <span class="token number">1.27</span>.4, build xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 输出：
+docker-compose version 1.27.4, build xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="6-docker-安装-MySQL"><a href="#6-docker-安装-MySQL" class="headerlink" title="6. docker 安装 MySQL"></a>6. docker 安装 MySQL</h2><h3 id="1-拉取-MySQL-镜像"><a href="#1-拉取-MySQL-镜像" class="headerlink" title="1) 拉取 MySQL 镜像"></a>1) 拉取 MySQL 镜像</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker pull mysql:8.0.25<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="2-运行"><a href="#2-运行" class="headerlink" title="2) 运行"></a>2) 运行</h3><p>创建/home/mysql 目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> /homemkdir /mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd /homemkdir /mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>运行以下命令，将密码替换为自己需要的</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d --name myMysql -p <span class="token number">9506</span>:3306 -v /home/mysql:/var/lib/mysql -e <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span> mysql:8.0.25<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d --name myMysql -p 9506:3306 -v /home/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.25<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>参数解析：</strong><br><code>-d</code>: 后台运行容器，并返回容器 ID<br><code>--name myMysql</code>: 为容器指定一个名称<br><code>-p</code>: 指定端口映射，格式为：主机(宿主)端口:容器端口，这里宿主机用 9506 端口，容器用 3306 端口<br><code>-v</code>: 绑定一个卷，主机的目录/data/mysql ，映射到容器的 /var/lib/mysql<br><code>-e MYSQL_ROOT_PASSWORD=123456</code>: 设置环境变量，密码设置为 123456<br><code>mysql:8.0.25</code>：使用镜像 mysql:8.0.25</p>
 <h3 id="3-修改数据库密码"><a href="#3-修改数据库密码" class="headerlink" title="3) 修改数据库密码"></a>3) 修改数据库密码</h3><p>此时运行 <code>docker ps</code> 可以看到容器正在运行</p>
 <p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714175938755.png"></p>
 <p>进入到容器命令为：<code>docker exec -it [容器ID] /bin/bash</code></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 将容器ID替换为上图中的</span>
-docker <span class="token builtin class-name">exec</span> -it 1c94c6403fd4 /bin/bash
-<span class="token comment"># 使用mysql账号密码登录</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 将容器ID替换为上图中的
+docker exec -it 1c94c6403fd4 /bin/bash
+# 使用mysql账号密码登录
 mysql -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714180245070.png" style="zoom:35%;margin-left:0;">
 
 <p>在 mysql 命令行分别执行：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">show databases<span class="token punctuation">;</span>use mysql<span class="token punctuation">;</span>
-ALTER <span class="token environment constant">USER</span> <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="token string">'新密码'</span><span class="token punctuation">;</span>
-flush privileges<span class="token punctuation">;</span><span class="token builtin class-name">exit</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">show databases;use mysql;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';
+flush privileges;exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714181136355.png" style="zoom:40%;margin-left:0;">
 
@@ -306,7 +240,7 @@ flush privileges<span class="token punctuation">;</span><span class="token built
 <h2 id="7-docker-安装-Redis"><a href="#7-docker-安装-Redis" class="headerlink" title="7. docker 安装 Redis"></a>7. docker 安装 Redis</h2><h3 id="1-拉取最新镜像"><a href="#1-拉取最新镜像" class="headerlink" title="1) 拉取最新镜像"></a>1) 拉取最新镜像</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker pull redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="2-运行-1"><a href="#2-运行-1" class="headerlink" title="2) 运行"></a>2) 运行</h3><p>默认会在 <code>6379</code> 端口启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run --name mqxu-redis -d -p <span class="token number">6379</span>:6379 redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run --name mqxu-redis -d -p 6379:6379 redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>使用桌面连接工具测试连接情况</p>
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714183011051.png" alt="image-20210714183011051" style="zoom:33%;margin-left:0;">
@@ -316,19 +250,19 @@ flush privileges<span class="token punctuation">;</span><span class="token built
 <h2 id="8-Nacos"><a href="#8-Nacos" class="headerlink" title="8. Nacos"></a>8. Nacos</h2><blockquote>
 <p>官方文档：<a href="https://nacos.io/zh-cn/docs/quick-start.html">https://nacos.io/zh-cn/docs/quick-start.html</a></p>
 </blockquote>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 进入 /home/tools目录</span>
-<span class="token builtin class-name">cd</span> /home/tools
-<span class="token comment"># 下载release包,亲测这个要快点</span>
-<span class="token function">wget</span> https://github.com/alibaba/nacos/releases/download/2.0.2/nacos-server-2.0.2.tar.gz
-<span class="token function">tar</span> -xvf nacos-server-2.0.2.tar.gz
-<span class="token comment"># 如果要修改nacos的启动端口，可以编辑nacos/conf/application.properties，修改server.port=自己想要的端口</span>
-<span class="token function">vim</span> nacos/conf/application.properties
-<span class="token comment"># 启动nacos</span>
-<span class="token builtin class-name">cd</span> nacos/bin
-<span class="token comment"># 单机运行</span>
-<span class="token function">sh</span> startup.sh -m standalone
-<span class="token comment"># 关闭服务器</span>
-<span class="token function">sh</span> shutdown.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 进入 /home/tools目录
+cd /home/tools
+# 下载release包,亲测这个要快点
+wget https://github.com/alibaba/nacos/releases/download/2.0.2/nacos-server-2.0.2.tar.gz
+tar -xvf nacos-server-2.0.2.tar.gz
+# 如果要修改nacos的启动端口，可以编辑nacos/conf/application.properties，修改server.port=自己想要的端口
+vim nacos/conf/application.properties
+# 启动nacos
+cd nacos/bin
+# 单机运行
+sh startup.sh -m standalone
+# 关闭服务器
+sh shutdown.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210714185649885.png" alt="1" style="zoom:40%;margin-left:0;">
 
@@ -338,20 +272,20 @@ flush privileges<span class="token punctuation">;</span><span class="token built
 <h2 id="9-Sentinel"><a href="#9-Sentinel" class="headerlink" title="9. Sentinel"></a>9. Sentinel</h2><blockquote>
 <p>官方文档：<a href="https://sentinelguard.io/zh-cn/">https://sentinelguard.io/zh-cn/</a></p>
 </blockquote>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 进入 /home/tools目录</span>
-<span class="token builtin class-name">cd</span> /home/tools
-<span class="token comment"># 下载最新稳定版sentinel-dashboard-1.8.2,慢的话就手动下载上传</span>
-<span class="token function">wget</span> https://github.com/alibaba/Sentinel/releases/download/1.8.2/sentinel-dashboard-1.8.2.jar
-<span class="token comment"># 指定启动端口为8088，后台启动，注意修改服务器地址</span>
-<span class="token function">nohup</span> java -Dserver.port<span class="token operator">=</span><span class="token number">8088</span> -Dcsp.sentinel.dashboard.server<span class="token operator">=</span><span class="token number">47</span>.**.**.33:8088 -jar sentinel-dashboard-1.8.2.jar <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 进入 /home/tools目录
+cd /home/tools
+# 下载最新稳定版sentinel-dashboard-1.8.2,慢的话就手动下载上传
+wget https://github.com/alibaba/Sentinel/releases/download/1.8.2/sentinel-dashboard-1.8.2.jar
+# 指定启动端口为8088，后台启动，注意修改服务器地址
+nohup java -Dserver.port=8088 -Dcsp.sentinel.dashboard.server=47.**.**.33:8088 -jar sentinel-dashboard-1.8.2.jar &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="10-Seata"><a href="#10-Seata" class="headerlink" title="10. Seata"></a>10. Seata</h2><p>进入 /home/tools 目录下载 seata，或手动上传</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> https://github.com/seata/seata/releases/download/v1.4.2/seata-server-1.4.2.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https://github.com/seata/seata/releases/download/v1.4.2/seata-server-1.4.2.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="11-RocketMQ"><a href="#11-RocketMQ" class="headerlink" title="11. RocketMQ"></a>11. RocketMQ</h2><p>进入 /home/tools 目录，依次执行：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> clone  https://github.com/foxiswho/docker-rocketmq.git
-<span class="token builtin class-name">cd</span> docker-rocketmq
-<span class="token builtin class-name">cd</span> rmqchmod +x
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git clone  https://github.com/foxiswho/docker-rocketmq.git
+cd docker-rocketmq
+cd rmqchmod +x
 start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>访问浏览器：你的 IP 地址:8180</p>
@@ -597,6 +531,72 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac下安装多个版本的JDK并随意切换</title>
+    <url>/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/</url>
+    <content><![CDATA[<blockquote>
+<p>JDK 版本已经更新到了 17，我们需要学习 JDK 的一些新特性，但是日常使用基本上都是基于 JDK8，因此，需要在 Mac 环境下安装多个版本的 JDK，并且确保能够随意切换。</p>
+</blockquote>
+<h1 id="JDK-下载"><a href="#JDK-下载" class="headerlink" title="JDK 下载"></a>JDK 下载</h1><blockquote>
+<p>通过下方链接或网盘下载相应版本和平台的 JDK</p>
+</blockquote>
+<ul>
+<li><a href="https://www.oracle.com/java/technologies/downloads/">OracleJDK</a></li>
+<li><a href="https://adoptopenjdk.net/releases.html">OpenJDK</a></li>
+<li><a href="https://pan.baidu.com/s/1DPfrhlfpXTVYN9q2xv2Suw">百度网盘</a> 提取码：2nmw</li>
+</ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote>
+<p>这里我安装了 OracleJDK 的 8、11、17 三个 LTS 版本</p>
+</blockquote>
+<p>在/Library/Java/JavaVirtualMachines 目录下会出现三个目录：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.22.41.2rm68xysutg0.png" alt="三个版本的JDK"></p>
+<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><blockquote>
+<p>Mac 下通过 bash_profile 文件来对环境信息进行配置。执行以下命令打开配置文件：</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果原本没有.bash_profile 文件，在运行 vim ~/.bash_profile 命令时会创建该文件。<br>根据环境变量信息新增 JDK 几个版本的相关内容：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Java Config : Java家配置</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA8_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA11_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA17_HOME</span><span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">${<span class="token environment constant">PATH</span>}</span><span class="token builtin class-name">:</span><span class="token variable">${JAVA_HOME}</span>/bin
+
+<span class="token comment"># config alias: 配置别名</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk8</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA8_HOME</span>"</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk11</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA11_HOME</span>"</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">jdk17</span><span class="token operator">=</span><span class="token string">"export JAVA_HOME=<span class="token variable">$JAVA17_HOME</span>"</span>
+
+<span class="token comment"># config default :jdk 配置默认JDK</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span><span class="token variable">$JAVA8_HOME</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"<span class="token variable">$JAVA_HOME</span>:<span class="token environment constant">$PATH</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>修改保存上述配置，对 bash_profile 进行编译生效</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果使用的是 zshrc,则使用以下命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后在终端执行 <code>java -version</code> 会发现 jdk 版本正常显示为 jdk8<br><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.30.08.5vfa7jf3tys0.png" alt="显示默认的JDK8版本"></p>
+<h1 id="任意切换-Java-环境"><a href="#任意切换-Java-环境" class="headerlink" title="任意切换 Java 环境"></a>任意切换 Java 环境</h1><blockquote>
+<p>如需要将 jdk 版本切换为 jdk11，直接输入 JDK11 环境变量的别名：jdk11 即可,然后查看版本</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.32.17.9r8jdkga49w.png" alt="切换成其他JDK版本"></p>
+<h1 id="IDEA-中添加-JDK"><a href="#IDEA-中添加-JDK" class="headerlink" title="IDEA 中添加 JDK"></a>IDEA 中添加 JDK</h1><blockquote>
+<p>在 IDEA 的 Project Structure 设置中新增 JDK 的配置，便可使用新增的 JDK 进行开发了</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.35.38.28s8ykm36dc0.png" alt="IDEA添加JDK"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.36.32.59lcdpmz5r80.png" alt="多个JDK可按需选择"></p>
+<p>若项目是多模块的，可以为每个模块指定不同的 JDK 版本<br><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/iShot2021-09-20-15.38.44.6q518j7nr7w0.png" alt="不同模块指定不同JDK"></p>
+]]></content>
+      <categories>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>
@@ -1824,6 +1824,78 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </categories>
       <tags>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>检查并优化 Flutter App 整体性能</title>
+    <url>/2022/12/03/jian-cha-bing-you-hua-flutter-app-zheng-ti-xing-neng/</url>
+    <content><![CDATA[<h1 id="检查并优化-Flutter-App-整体性能"><a href="#检查并优化-Flutter-App-整体性能" class="headerlink" title="检查并优化 Flutter App 整体性能"></a>检查并优化 Flutter App 整体性能</h1><p>除了代码逻辑 Bug 和视觉异常这些功能层面的问题之外，移动应用另一类常见的问题是性能问题，比如滑动操作不流畅、页面出现卡顿丢帧现象等。这些问题虽然不至于让移动应用完全不可用，但也很容易引起用户反感，从而对应用质量产生质疑，甚至失去耐心。</p>
+<p><strong>如果应用渲染并不流畅，出现了性能问题，我们该如何检测，又该从哪里着手处理呢？</strong></p>
+<p>在 Flutter 中，性能问题可以分为 <strong>GPU 线程问题</strong>和 UI 线程（CPU）问题两类。这些问题的确认都需要先通过性能图层进行初步分析，而一旦确认问题存在，接下来就需要利用 Flutter 提供的各类分析工具来定位问题了。</p>
+<h2 id="一、如何使用性能图层？"><a href="#一、如何使用性能图层？" class="headerlink" title="一、如何使用性能图层？"></a>一、如何使用性能图层？</h2><p>要解决问题，我们首先得了解如何去度量问题，性能分析也不例外。Flutter 提供了度量性能问题的工具和手段，来帮助我们快速定位代码中的性能问题，而性能图层就是帮助我们确认问题影响范围的利器。</p>
+<p><strong>为了使用性能图层，我们首先需要以分析（Profile）模式启动应用。</strong>与调试代码可以通过模拟器在调试模式下找到代码逻辑 Bug 不同，性能问题需要在发布模式下使用真机进行检测。</p>
+<p>相比发布模式而言，调试模式增加了很多额外的检查（比如断言），这些检查可能会耗费很多资源；更重要的是，调试模式使用 JIT 模式运行应用，代码执行效率较低。这就使得调试模式运行的应用，无法真实反映出它的性能问题。</p>
+<p>另一方面，模拟器使用的指令集为 x86，而真机使用的指令集是 ARM。这两种方式的二进制代码执行行为完全不同，因此模拟器与真机的性能差异较大：一些 x86 指令集擅长的操作模拟器会比真机快，而另一些操作则会比真机慢。这也使得我们无法使用模拟器来评估真机才能出现的性能问题。</p>
+<p><strong>为了调试性能问题，我们需要在发布模式的基础之上，为分析工具提供少量必要的应用追踪信息，这就是分析模式。</strong>除了一些调试性能问题必须的追踪方法之外，Flutter 应用的分析模式和发布模式的编译和运行是类似的，只是启动参数变成了 profile 而已：我们既可以在 Android Studio 中通过菜单栏点击 Run-&gt;Profile ‘main.dart’ 选项启动应用，也可以通过命令行参数 flutter run –profile 运行 Flutter 应用。</p>
+<h2 id="二、分析渲染问题"><a href="#二、分析渲染问题" class="headerlink" title="二、分析渲染问题"></a>二、分析渲染问题</h2><blockquote>
+<p>我们可以利用 Flutter 提供的渲染问题分析工具，即性能图层（Performance Overlay），来分析渲染问题。</p>
+</blockquote>
+<p>性能图层会在当前应用的最上层，以 Flutter 引擎自绘的方式展示 GPU 与 UI 线程的执行图表，而其中每一张图表都代表当前线程最近 300 帧的表现，如果 UI 产生了卡顿（跳帧），这些图表可以帮助我们分析并找到原因。</p>
+<p>下图演示了性能图层的展现样式。其中，GPU 线程的性能情况在上面，UI 线程的情况显示在下面，蓝色垂直的线条表示已执行的正常帧，绿色的线条代表的是当前帧：</p>
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iib8p4unj30v90eiq4a.jpg" alt="img" style="zoom:50%;">
+
+<p>为了保持 60Hz 的刷新频率，GPU 线程与 UI 线程中执行每一帧耗费的时间都应该小于 16ms（1/60 秒）。在这其中有一帧处理时间过长，就会导致界面卡顿，图表中就会展示出一个红色竖条。下图演示了应用出现渲染和绘制耗时的情况下，性能图层的展示样式：</p>
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iibogmj3j30v90flt9y.jpg" alt="img" style="zoom:50%;">
+
+<p>如果红色竖条出现在 GPU 线程图表，意味着渲染的图形太复杂，导致无法快速渲染；而如果是出现在了 UI 线程图表，则表示 Dart 代码消耗了大量资源，需要优化代码执行时间。</p>
+<h2 id="三、GPU-问题定位"><a href="#三、GPU-问题定位" class="headerlink" title="三、GPU 问题定位"></a>三、GPU 问题定位</h2><p>GPU 问题主要集中在底层渲染耗时上。有时候 Widget 树虽然构造起来容易，但在 GPU 线程下的渲染却很耗时。涉及 Widget 裁剪、蒙层这类多视图叠加渲染，或是由于缺少缓存导致静态图像的反复绘制，都会明显拖慢 GPU 的渲染速度。</p>
+<p>可以使用性能图层提供的两项参数，即检查多视图叠加的视图渲染开关 checkerboardOffscreenLayers，和检查缓存的图像开关 checkerboardRasterCacheImages，来检查这两种情况。</p>
+<h3 id="checkerboardOffscreenLayers"><a href="#checkerboardOffscreenLayers" class="headerlink" title="checkerboardOffscreenLayers"></a>checkerboardOffscreenLayers</h3><p>多视图叠加通常会用到 Canvas 里的 savaLayer 方法，这个方法在实现一些特定的效果（比如半透明）时非常有用，但由于其底层实现会在 GPU 渲染上涉及多图层的反复绘制，因此会带来较大的性能问题。</p>
+<p>对于 saveLayer 方法使用情况的检查，我们只要在 MaterialApp 的初始化方法中，将 checkerboardOffscreenLayers 开关设置为 true，分析工具就会自动帮我们检测多视图叠加的情况了：使用了 saveLayer 的 Widget 会自动显示为棋盘格式，并随着页面刷新而闪烁。</p>
+<p>不过 saveLayer 是一个较为底层的绘制方法，因此我们一般不会直接使用它，而是会通过一些功能性 Widget，在涉及需要剪切或半透明蒙层的场景中间接地使用。所以一旦遇到这种情况，我们需要思考一下是否一定要这么做，能不能通过其他方式来实现。</p>
+<p>比如下面的例子中，我们使用 CupertinoPageScaffold 与 CupertinoNavigationBar 实现了一个动态模糊的效果。</p>
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iidpyftkg308c0i2hdw.gif" alt="img" style="zoom:100%;">
+
+<p>由于视图滚动过程中频繁涉及视图蒙层效果的更新，因此 checkerboardOffscreenLayers 检测图层也感受到了对 GPU 的渲染压力，频繁刷新闪烁。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iieg9gt4g308c0i2hdy.gif" alt="img"></p>
+<p>如果没有对动态模糊效果的特殊需求，可以使用不带模糊效果的 Scaffold 和白色的 AppBar 实现同样的产品功能，来解决这个性能问题。</p>
+<p>可以运行代码查看，在去掉了动态模糊效果之后，GPU 的渲染压力得到了缓解后，checkerboardOffscreenLayers 检测图层就不再频繁闪烁了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iifk5kuhg308c0i21kz.gif" alt="img"></p>
+<h3 id="checkerboardRasterCacheImages"><a href="#checkerboardRasterCacheImages" class="headerlink" title="checkerboardRasterCacheImages"></a>checkerboardRasterCacheImages</h3><p>从资源的角度看，另一类非常消耗性能的操作是，渲染图像。这是因为图像的渲染涉及 I/O、GPU 存储，以及不同通道的数据格式转换，因此渲染过程的构建需要消耗大量资源。为了缓解 GPU 的压力，Flutter 提供了多层次的缓存快照，这样 Widget 重建时就无需重新绘制静态图像了。</p>
+<p>与检查多视图叠加渲染的 checkerboardOffscreenLayers 参数类似，Flutter 也提供了检查缓存图像的开关 checkerboardRasterCacheImages，来检测在界面重绘时频繁闪烁的图像（即没有静态缓存）。</p>
+<p>我们可以把需要静态缓存的图像加到 RepaintBoundary 中，RepaintBoundary 可以确定 Widget 树的重绘边界，如果图像足够复杂，Flutter 引擎会自动将其缓存，避免重复刷新。当然，因为缓存资源有限，如果引擎认为图像不够复杂，也可能会忽略 RepaintBoundary。</p>
+<p>如下代码展示了通过 RepaintBoundary，将一个静态复合 Widget 加入缓存的具体用法。可以看到，RepaintBoundary 在使用上与普通 Widget 并无区别：</p>
+<pre class="line-numbers language-dart" data-language="dart"><code class="language-dart">
+<span class="token class-name">RepaintBoundary</span><span class="token punctuation">(</span><span class="token comment">//设置静态缓存图像</span>
+  child<span class="token punctuation">:</span> <span class="token class-name">Center</span><span class="token punctuation">(</span>
+    child<span class="token punctuation">:</span> <span class="token class-name">Container</span><span class="token punctuation">(</span>
+      color<span class="token punctuation">:</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>black<span class="token punctuation">,</span>
+      height<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">,</span>
+      width<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、UI-线程问题定位"><a href="#四、UI-线程问题定位" class="headerlink" title="四、UI 线程问题定位"></a>四、UI 线程问题定位</h2><p>如果说 GPU 线程问题定位的是渲染引擎底层渲染异常，那么 UI 线程问题发现的则是应用的性能瓶颈。比如在视图构建时，在 build 方法中使用了一些复杂的运算，或是在主 Isolate 中进行了同步的 I/O 操作。这些问题，都会明显增加 CPU 的处理时间，拖慢应用的响应速度。</p>
+<p>我们可以使用 Flutter 提供的 Performance 工具，来记录应用的执行轨迹。Performance 是一个强大的性能分析工具，能够以时间轴的方式展示 CPU 的调用栈和执行时间，去检查代码中可疑的方法调用。</p>
+<p>示例：通过一个在 ListView 中计算 MD5 的例子，来演示 Performance 的具体分析过程。考虑到在 build 函数中进行渲染信息的组装是一个常见的操作，为了演示这个知识点，我们故意放大计算 MD5 的耗时，让循环迭代去进行 1 万次MD5加密。</p>
+<p>在开发者工具面板，手动点击“Record”按钮去主动触发，在完成信息的抽样采集后，点击“Stop”按钮结束录制。这时，就可以得到在这期间应用的执行情况了。</p>
+<p>Performance 记录的应用执行情况叫做 CPU 帧图，又被称为火焰图。火焰图是基于记录代码执行结果所产生的图片，用来展示 CPU 的调用栈，表示的是 CPU 的繁忙程度。其中，y 轴表示调用栈，其每一层都是一个函数。调用栈越深，火焰就越高，底部就是正在执行的函数，上方都是它的父函数；x 轴表示单位时间，一个函数在 x 轴占据的宽度越宽，就表示它被采样到的次数越多，即执行时间越长。</p>
+<p>所以要检测 CPU 耗时问题，可以查看火焰图底部的哪个函数占据的宽度最大。只要有“平顶”，就表示该函数可能存在性能问题。</p>
+<p>在找到了问题之后，我们就可以<strong>使用 Isolate（或 compute）将这些耗时的操作挪到并发主 Isolate 之外去完成</strong></p>
+<h2 id="五、小结"><a href="#五、小结" class="headerlink" title="五、小结"></a>五、小结</h2><p>在 Flutter 中，性能分析过程可以分为 GPU 线程问题定位和 UI 线程（CPU）问题定位，而它们都需要在真机上以分析模式（Profile）启动应用，并通过性能图层分析大致的渲染问题范围。一旦确认问题存在，接下来就需要利用 Flutter 所提供的分析工具来定位问题原因了。</p>
+<p>关于 GPU 线程渲染问题，我们可以重点检查应用中是否存在多视图叠加渲染，或是静态图像反复刷新的现象。而 UI 线程渲染问题，则是通过 Performance 工具记录的火焰图（CPU 帧图），分析代码耗时，找出应用执行瓶颈。</p>
+<p>通常来说，由于 Flutter 采用基于声明式的 UI 设计理念，以数据驱动渲染，并采用 <strong>Widget-&gt;Element-&gt;RenderObject</strong> 三层结构，屏蔽了无谓的界面刷新，能够保证绝大多数情况下我们构建的应用都是高性能的，所以在使用分析工具检测出性能问题之后，通常我们并不需要做太多的细节优化工作，只需要在改造过程中避开一些常见的坑，就可以获得优异的性能。比如：</p>
+<ul>
+<li>控制 build 方法耗时，将 Widget 拆小，避免直接返回一个巨大的 Widget，这样 Widget 会享有更细粒度的重建和复用；</li>
+<li>尽量不要为 Widget 设置半透明效果，而是考虑用图片的形式代替，这样被遮挡的 Widget 部分区域就不需要绘制了；</li>
+<li>对列表采用懒加载而不是直接一次性创建所有的子 Widget，这样视图的初始化时间就减少了；</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Flutter</category>
+      </categories>
+      <tags>
+        <tag>优化</tag>
       </tags>
   </entry>
 </search>

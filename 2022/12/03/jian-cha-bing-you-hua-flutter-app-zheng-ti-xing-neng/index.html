@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaFX起步, InfinityX">
+    <meta name="keywords" content="检查并优化 Flutter App 整体性能, InfinityX">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaFX起步 | InfinityX</title>
+    <title>检查并优化 Flutter App 整体性能 | InfinityX</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -388,12 +388,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img165.5y83zifgblk0.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.staticaly.com/gh/mqxu/wiki-image@master/banner/img3.7bp4lfdlqis0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaFX起步</h1>
+                    <h1 class="description center-align post-title">检查并优化 Flutter App 整体性能</h1>
                 </div>
             </div>
         </div>
@@ -509,8 +509,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JavaFX/">
-                                <span class="chip bg-color">JavaFX</span>
+                            <a href="/tags/%E4%BC%98%E5%8C%96/">
+                                <span class="chip bg-color">优化</span>
                             </a>
                         
                     </div>
@@ -521,8 +521,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/Flutter/" class="post-category">
+                                Flutter
                             </a>
                         
                     </div>
@@ -534,28 +534,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-19
+                    2022-12-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-23
+                    2022-12-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    739
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    10 分
                 </div>
                 
 
@@ -573,133 +573,67 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>要求：</p>
-<ol>
-<li>JDK11 以上</li>
-<li>Maven 环境已正确配置</li>
-</ol>
+                <h1 id="检查并优化-Flutter-App-整体性能"><a href="#检查并优化-Flutter-App-整体性能" class="headerlink" title="检查并优化 Flutter App 整体性能"></a>检查并优化 Flutter App 整体性能</h1><p>除了代码逻辑 Bug 和视觉异常这些功能层面的问题之外，移动应用另一类常见的问题是性能问题，比如滑动操作不流畅、页面出现卡顿丢帧现象等。这些问题虽然不至于让移动应用完全不可用，但也很容易引起用户反感，从而对应用质量产生质疑，甚至失去耐心。</p>
+<p><strong>如果应用渲染并不流畅，出现了性能问题，我们该如何检测，又该从哪里着手处理呢？</strong></p>
+<p>在 Flutter 中，性能问题可以分为 <strong>GPU 线程问题</strong>和 UI 线程（CPU）问题两类。这些问题的确认都需要先通过性能图层进行初步分析，而一旦确认问题存在，接下来就需要利用 Flutter 提供的各类分析工具来定位问题了。</p>
+<h2 id="一、如何使用性能图层？"><a href="#一、如何使用性能图层？" class="headerlink" title="一、如何使用性能图层？"></a>一、如何使用性能图层？</h2><p>要解决问题，我们首先得了解如何去度量问题，性能分析也不例外。Flutter 提供了度量性能问题的工具和手段，来帮助我们快速定位代码中的性能问题，而性能图层就是帮助我们确认问题影响范围的利器。</p>
+<p><strong>为了使用性能图层，我们首先需要以分析（Profile）模式启动应用。</strong>与调试代码可以通过模拟器在调试模式下找到代码逻辑 Bug 不同，性能问题需要在发布模式下使用真机进行检测。</p>
+<p>相比发布模式而言，调试模式增加了很多额外的检查（比如断言），这些检查可能会耗费很多资源；更重要的是，调试模式使用 JIT 模式运行应用，代码执行效率较低。这就使得调试模式运行的应用，无法真实反映出它的性能问题。</p>
+<p>另一方面，模拟器使用的指令集为 x86，而真机使用的指令集是 ARM。这两种方式的二进制代码执行行为完全不同，因此模拟器与真机的性能差异较大：一些 x86 指令集擅长的操作模拟器会比真机快，而另一些操作则会比真机慢。这也使得我们无法使用模拟器来评估真机才能出现的性能问题。</p>
+<p><strong>为了调试性能问题，我们需要在发布模式的基础之上，为分析工具提供少量必要的应用追踪信息，这就是分析模式。</strong>除了一些调试性能问题必须的追踪方法之外，Flutter 应用的分析模式和发布模式的编译和运行是类似的，只是启动参数变成了 profile 而已：我们既可以在 Android Studio 中通过菜单栏点击 Run-&gt;Profile ‘main.dart’ 选项启动应用，也可以通过命令行参数 flutter run –profile 运行 Flutter 应用。</p>
+<h2 id="二、分析渲染问题"><a href="#二、分析渲染问题" class="headerlink" title="二、分析渲染问题"></a>二、分析渲染问题</h2><blockquote>
+<p>我们可以利用 Flutter 提供的渲染问题分析工具，即性能图层（Performance Overlay），来分析渲染问题。</p>
 </blockquote>
-<h1 id="一、项目初始化"><a href="#一、项目初始化" class="headerlink" title="一、项目初始化"></a>一、项目初始化</h1><ol>
-<li>IDEA 新建项目，如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/9I3e1G.png" alt="新建项目"></p>
-<ol start="2">
-<li>选择依赖，如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/aq1RaA.png" alt="选择依赖"></p>
-<ol start="3">
-<li>项目结构和运行效果如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/0dDOLR.png" alt="项目结构和运行效果"></p>
-<h1 id="二、程序结构"><a href="#二、程序结构" class="headerlink" title="二、程序结构"></a>二、程序结构</h1><blockquote>
-<p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
-</blockquote>
-<h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token class-name">Stage</span> stage<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-    <span class="token class-name">FXMLLoader</span> fxmlLoader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FXMLLoader</span><span class="token punctuation">(</span><span class="token class-name">HelloApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"hello-view.fxml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">Scene</span> scene <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scene</span><span class="token punctuation">(</span>fxmlLoader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">240</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">setScene</span><span class="token punctuation">(</span>scene<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>性能图层会在当前应用的最上层，以 Flutter 引擎自绘的方式展示 GPU 与 UI 线程的执行图表，而其中每一张图表都代表当前线程最近 300 帧的表现，如果 UI 产生了卡顿（跳帧），这些图表可以帮助我们分析并找到原因。</p>
+<p>下图演示了性能图层的展现样式。其中，GPU 线程的性能情况在上面，UI 线程的情况显示在下面，蓝色垂直的线条表示已执行的正常帧，绿色的线条代表的是当前帧：</p>
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iib8p4unj30v90eiq4a.jpg" alt="img" style="zoom:50%;">
 
-<p><strong>主要步骤解释</strong></p>
+<p>为了保持 60Hz 的刷新频率，GPU 线程与 UI 线程中执行每一帧耗费的时间都应该小于 16ms（1/60 秒）。在这其中有一帧处理时间过长，就会导致界面卡顿，图表中就会展示出一个红色竖条。下图演示了应用出现渲染和绘制耗时的情况下，性能图层的展示样式：</p>
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iibogmj3j30v90flt9y.jpg" alt="img" style="zoom:50%;">
+
+<p>如果红色竖条出现在 GPU 线程图表，意味着渲染的图形太复杂，导致无法快速渲染；而如果是出现在了 UI 线程图表，则表示 Dart 代码消耗了大量资源，需要优化代码执行时间。</p>
+<h2 id="三、GPU-问题定位"><a href="#三、GPU-问题定位" class="headerlink" title="三、GPU 问题定位"></a>三、GPU 问题定位</h2><p>GPU 问题主要集中在底层渲染耗时上。有时候 Widget 树虽然构造起来容易，但在 GPU 线程下的渲染却很耗时。涉及 Widget 裁剪、蒙层这类多视图叠加渲染，或是由于缺少缓存导致静态图像的反复绘制，都会明显拖慢 GPU 的渲染速度。</p>
+<p>可以使用性能图层提供的两项参数，即检查多视图叠加的视图渲染开关 checkerboardOffscreenLayers，和检查缓存的图像开关 checkerboardRasterCacheImages，来检查这两种情况。</p>
+<h3 id="checkerboardOffscreenLayers"><a href="#checkerboardOffscreenLayers" class="headerlink" title="checkerboardOffscreenLayers"></a>checkerboardOffscreenLayers</h3><p>多视图叠加通常会用到 Canvas 里的 savaLayer 方法，这个方法在实现一些特定的效果（比如半透明）时非常有用，但由于其底层实现会在 GPU 渲染上涉及多图层的反复绘制，因此会带来较大的性能问题。</p>
+<p>对于 saveLayer 方法使用情况的检查，我们只要在 MaterialApp 的初始化方法中，将 checkerboardOffscreenLayers 开关设置为 true，分析工具就会自动帮我们检测多视图叠加的情况了：使用了 saveLayer 的 Widget 会自动显示为棋盘格式，并随着页面刷新而闪烁。</p>
+<p>不过 saveLayer 是一个较为底层的绘制方法，因此我们一般不会直接使用它，而是会通过一些功能性 Widget，在涉及需要剪切或半透明蒙层的场景中间接地使用。所以一旦遇到这种情况，我们需要思考一下是否一定要这么做，能不能通过其他方式来实现。</p>
+<p>比如下面的例子中，我们使用 CupertinoPageScaffold 与 CupertinoNavigationBar 实现了一个动态模糊的效果。</p>
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iidpyftkg308c0i2hdw.gif" alt="img" style="zoom:100%;">
+
+<p>由于视图滚动过程中频繁涉及视图蒙层效果的更新，因此 checkerboardOffscreenLayers 检测图层也感受到了对 GPU 的渲染压力，频繁刷新闪烁。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iieg9gt4g308c0i2hdy.gif" alt="img"></p>
+<p>如果没有对动态模糊效果的特殊需求，可以使用不带模糊效果的 Scaffold 和白色的 AppBar 实现同样的产品功能，来解决这个性能问题。</p>
+<p>可以运行代码查看，在去掉了动态模糊效果之后，GPU 的渲染压力得到了缓解后，checkerboardOffscreenLayers 检测图层就不再频繁闪烁了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7iifk5kuhg308c0i21kz.gif" alt="img"></p>
+<h3 id="checkerboardRasterCacheImages"><a href="#checkerboardRasterCacheImages" class="headerlink" title="checkerboardRasterCacheImages"></a>checkerboardRasterCacheImages</h3><p>从资源的角度看，另一类非常消耗性能的操作是，渲染图像。这是因为图像的渲染涉及 I/O、GPU 存储，以及不同通道的数据格式转换，因此渲染过程的构建需要消耗大量资源。为了缓解 GPU 的压力，Flutter 提供了多层次的缓存快照，这样 Widget 重建时就无需重新绘制静态图像了。</p>
+<p>与检查多视图叠加渲染的 checkerboardOffscreenLayers 参数类似，Flutter 也提供了检查缓存图像的开关 checkerboardRasterCacheImages，来检测在界面重绘时频繁闪烁的图像（即没有静态缓存）。</p>
+<p>我们可以把需要静态缓存的图像加到 RepaintBoundary 中，RepaintBoundary 可以确定 Widget 树的重绘边界，如果图像足够复杂，Flutter 引擎会自动将其缓存，避免重复刷新。当然，因为缓存资源有限，如果引擎认为图像不够复杂，也可能会忽略 RepaintBoundary。</p>
+<p>如下代码展示了通过 RepaintBoundary，将一个静态复合 Widget 加入缓存的具体用法。可以看到，RepaintBoundary 在使用上与普通 Widget 并无区别：</p>
+<pre class="line-numbers language-dart" data-language="dart"><code class="language-dart">
+<span class="token class-name">RepaintBoundary</span><span class="token punctuation">(</span><span class="token comment">//设置静态缓存图像</span>
+  child<span class="token punctuation">:</span> <span class="token class-name">Center</span><span class="token punctuation">(</span>
+    child<span class="token punctuation">:</span> <span class="token class-name">Container</span><span class="token punctuation">(</span>
+      color<span class="token punctuation">:</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>black<span class="token punctuation">,</span>
+      height<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">,</span>
+      width<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、UI-线程问题定位"><a href="#四、UI-线程问题定位" class="headerlink" title="四、UI 线程问题定位"></a>四、UI 线程问题定位</h2><p>如果说 GPU 线程问题定位的是渲染引擎底层渲染异常，那么 UI 线程问题发现的则是应用的性能瓶颈。比如在视图构建时，在 build 方法中使用了一些复杂的运算，或是在主 Isolate 中进行了同步的 I/O 操作。这些问题，都会明显增加 CPU 的处理时间，拖慢应用的响应速度。</p>
+<p>我们可以使用 Flutter 提供的 Performance 工具，来记录应用的执行轨迹。Performance 是一个强大的性能分析工具，能够以时间轴的方式展示 CPU 的调用栈和执行时间，去检查代码中可疑的方法调用。</p>
+<p>示例：通过一个在 ListView 中计算 MD5 的例子，来演示 Performance 的具体分析过程。考虑到在 build 函数中进行渲染信息的组装是一个常见的操作，为了演示这个知识点，我们故意放大计算 MD5 的耗时，让循环迭代去进行 1 万次MD5加密。</p>
+<p>在开发者工具面板，手动点击“Record”按钮去主动触发，在完成信息的抽样采集后，点击“Stop”按钮结束录制。这时，就可以得到在这期间应用的执行情况了。</p>
+<p>Performance 记录的应用执行情况叫做 CPU 帧图，又被称为火焰图。火焰图是基于记录代码执行结果所产生的图片，用来展示 CPU 的调用栈，表示的是 CPU 的繁忙程度。其中，y 轴表示调用栈，其每一层都是一个函数。调用栈越深，火焰就越高，底部就是正在执行的函数，上方都是它的父函数；x 轴表示单位时间，一个函数在 x 轴占据的宽度越宽，就表示它被采样到的次数越多，即执行时间越长。</p>
+<p>所以要检测 CPU 耗时问题，可以查看火焰图底部的哪个函数占据的宽度最大。只要有“平顶”，就表示该函数可能存在性能问题。</p>
+<p>在找到了问题之后，我们就可以<strong>使用 Isolate（或 compute）将这些耗时的操作挪到并发主 Isolate 之外去完成</strong></p>
+<h2 id="五、小结"><a href="#五、小结" class="headerlink" title="五、小结"></a>五、小结</h2><p>在 Flutter 中，性能分析过程可以分为 GPU 线程问题定位和 UI 线程（CPU）问题定位，而它们都需要在真机上以分析模式（Profile）启动应用，并通过性能图层分析大致的渲染问题范围。一旦确认问题存在，接下来就需要利用 Flutter 所提供的分析工具来定位问题原因了。</p>
+<p>关于 GPU 线程渲染问题，我们可以重点检查应用中是否存在多视图叠加渲染，或是静态图像反复刷新的现象。而 UI 线程渲染问题，则是通过 Performance 工具记录的火焰图（CPU 帧图），分析代码耗时，找出应用执行瓶颈。</p>
+<p>通常来说，由于 Flutter 采用基于声明式的 UI 设计理念，以数据驱动渲染，并采用 <strong>Widget-&gt;Element-&gt;RenderObject</strong> 三层结构，屏蔽了无谓的界面刷新，能够保证绝大多数情况下我们构建的应用都是高性能的，所以在使用分析工具检测出性能问题之后，通常我们并不需要做太多的细节优化工作，只需要在改造过程中避开一些常见的坑，就可以获得优异的性能。比如：</p>
 <ul>
-<li>载入资源目录的布局文件</li>
-<li>创建指定大小的 scene（场景）</li>
-<li>将 scene 加入 stage（舞台），并设置标题和可见性</li>
+<li>控制 build 方法耗时，将 Widget 拆小，避免直接返回一个巨大的 Widget，这样 Widget 会享有更细粒度的重建和复用；</li>
+<li>尽量不要为 Widget 设置半透明效果，而是考虑用图片的形式代替，这样被遮挡的 Widget 部分区域就不需要绘制了；</li>
+<li>对列表采用懒加载而不是直接一次性创建所有的子 Widget，这样视图的初始化时间就减少了；</li>
 </ul>
-<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
-<p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
-</blockquote>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-
-<span class="token prolog">&lt;?import javafx.geometry.Insets?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.control.Label?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.layout.VBox?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.control.Button?&gt;</span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VBox</span> <span class="token attr-name">alignment</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>CENTER<span class="token punctuation">"</span></span> <span class="token attr-name">spacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>fx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://javafx.com/fxml<span class="token punctuation">"</span></span>
-      <span class="token attr-name"><span class="token namespace">fx:</span>controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>top.mqxu.jfxdemo.HelloController<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>padding</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Insets</span> <span class="token attr-name">bottom</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>padding</span><span class="token punctuation">&gt;</span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span> <span class="token attr-name"><span class="token namespace">fx:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>welcomeText<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hello!<span class="token punctuation">"</span></span> <span class="token attr-name">onAction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#onHelloButtonClick<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VBox</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>代码解释</strong></p>
-<ul>
-<li>头部主要是导入本例中用到的 javafx 的组件</li>
-<li>根布局组件为 VBox——垂直布局（从上到下排列子组件）</li>
-<li>声明 VBox 的对齐方式为居中，每个子组件的间距为 20，对应 HelloController 控制器</li>
-<li>padding 用来声明 VBox 的内边距，用 Insets 的四个属性来表示四个方向的距离</li>
-<li>Label 为文本组件，绑定 id 用于在控制器中访问</li>
-<li>Button 为按钮组建，初始化默认文本，绑定点击事件</li>
-</ul>
-<h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
-<p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@FXML</span>
-    <span class="token keyword">private</span> <span class="token class-name">Label</span> welcomeText<span class="token punctuation">;</span>
-
-    <span class="token annotation punctuation">@FXML</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onHelloButtonClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        welcomeText<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"Welcome to JavaFX Application!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
-<p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
-</blockquote>
-<ol>
-<li>项目结构修改如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/AgAF8O.png" alt="修改resource资源目录"></p>
-<ol start="2">
-<li>布局文件修改如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/8NSLjn.png" alt="布局绑定样式"></p>
-<ol start="3">
-<li>样式文件</li>
-</ol>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*根组件样式*/</span>
-<span class="token selector">.root</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
-  <span class="token comment">/*背景图设置，注意相对路径*/</span>
-  <span class="token property">-fx-background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>../images/bg.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
-  <span class="token property">-fx-background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*标签文本色*/</span>
-<span class="token selector">.label</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> #bcb3d7<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*按钮背景色和文本色*/</span>
-<span class="token selector">.button</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #a06cc9<span class="token punctuation">;</span>
-  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*鼠标悬停按钮色*/</span>
-<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #7bb4d7<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="4">
-<li>应用主程序修改（布局文件路径改变了）</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/DuzVD0.png" alt="修改fxml路径"></p>
-<ol start="5">
-<li>改变后的运行效果</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/run.gif" alt="运行效果"></p>
-<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>通过以上 demo 初步认识了 JavaFX，其结构比较清晰易懂，并且视图、样式、行为分离，和 Android 开发、Web 前端 HTML、CSS、JS 各司其职的思想都比较相似，写起来体验还算 OK。</p>
 
                 
             </div>
@@ -714,8 +648,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JavaFX/">
-                                    <span class="chip bg-color">JavaFX</span>
+                                <a href="/tags/%E4%BC%98%E5%8C%96/">
+                                    <span class="chip bg-color">优化</span>
                                 </a>
                             
                         </div>
@@ -1035,16 +969,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/20/mac-xia-an-zhuang-duo-ge-ban-ben-de-jdk-bing-sui-yi-qie-huan/">
+                <a href="/2022/12/03/jian-cha-bing-you-hua-flutter-app-zheng-ti-xing-neng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/md/801baf41cf12662f59557ecd10fad6e5.76gynyi9ai40.jpg" class="responsive-img" alt="Mac下安装多个版本的JDK并随意切换">
+                        <img src="https://cdn.staticaly.com/gh/mqxu/wiki-image@master/banner/img3.7bp4lfdlqis0.jpg" class="responsive-img" alt="检查并优化 Flutter App 整体性能">
                         
-                        <span class="card-title">Mac下安装多个版本的JDK并随意切换</span>
+                        <span class="card-title">检查并优化 Flutter App 整体性能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1054,30 +989,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%8E%AF%E5%A2%83/" class="post-category">
-                                    环境
+                            <a href="/categories/Flutter/" class="post-category">
+                                    Flutter
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Mac/">
-                        <span class="chip bg-color">Mac</span>
-                    </a>
-                    
-                    <a href="/tags/JDK/">
-                        <span class="chip bg-color">JDK</span>
+                    <a href="/tags/%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">优化</span>
                     </a>
                     
                 </div>
@@ -1091,12 +1023,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/18/markmap/">
+                <a href="/2021/09/30/ji-jian-javafx-xiang-mu-jiao-shou-jia/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/img170.7ixd8xo2qi40.jpeg" class="responsive-img" alt="Markdown笔记转思维导图工具你值得拥有">
+                        <img src="https://cdn.staticaly.com/gh/mqxu/wiki-image@master/banner/img3.7bp4lfdlqis0.jpg" class="responsive-img" alt="极简JavaFX项目脚手架">
                         
-                        <span class="card-title">Markdown笔记转思维导图工具你值得拥有</span>
+                        <span class="card-title">极简JavaFX项目脚手架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1107,14 +1039,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -1124,8 +1056,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/JavaFX/">
+                        <span class="chip bg-color">JavaFX</span>
                     </a>
                     
                 </div>
