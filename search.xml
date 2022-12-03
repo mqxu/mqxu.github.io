@@ -1899,7 +1899,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </tags>
   </entry>
   <entry>
-    <title>检查并优化 Flutter App 整体性能</title>
+    <title>阶段1：JavaSE</title>
     <url>/2022/12/03/jie-duan-1-javase/</url>
     <content><![CDATA[<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ol>
 <li>能打字的笔记本<br>推荐网站 - 菜鸟工具：<a href="https://c.runoob.com/compile/10">https://c.runoob.com/compile/10</a></li>
@@ -1990,10 +1990,10 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 ]]></content>
       <categories>
-        <category>Flutter</category>
+        <category>Java全栈学习路线</category>
       </categories>
       <tags>
-        <tag>优化</tag>
+        <tag>阶段1</tag>
       </tags>
   </entry>
 </search>
