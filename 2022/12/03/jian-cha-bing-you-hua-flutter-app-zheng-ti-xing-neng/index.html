@@ -366,7 +366,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tva1.sinaimg.cn/large/e6c9d24egy1h5t78wt16mj20sg0e8756.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://niit-soft.oss-cn-hangzhou.aliyuncs.com/blog/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -519,7 +519,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-03
+                    2024-03-09
                 </div>
                 
 
@@ -599,7 +599,7 @@
 
 <h2 id="四、UI-线程问题定位"><a href="#四、UI-线程问题定位" class="headerlink" title="四、UI 线程问题定位"></a>四、UI 线程问题定位</h2><p>如果说 GPU 线程问题定位的是渲染引擎底层渲染异常，那么 UI 线程问题发现的则是应用的性能瓶颈。比如在视图构建时，在 build 方法中使用了一些复杂的运算，或是在主 Isolate 中进行了同步的 I/O 操作。这些问题，都会明显增加 CPU 的处理时间，拖慢应用的响应速度。</p>
 <p>我们可以使用 Flutter 提供的 Performance 工具，来记录应用的执行轨迹。Performance 是一个强大的性能分析工具，能够以时间轴的方式展示 CPU 的调用栈和执行时间，去检查代码中可疑的方法调用。</p>
-<p>示例：通过一个在 ListView 中计算 MD5 的例子，来演示 Performance 的具体分析过程。考虑到在 build 函数中进行渲染信息的组装是一个常见的操作，为了演示这个知识点，我们故意放大计算 MD5 的耗时，让循环迭代去进行 1 万次MD5加密。</p>
+<p>示例：通过一个在 ListView 中计算 MD5 的例子，来演示 Performance 的具体分析过程。考虑到在 build 函数中进行渲染信息的组装是一个常见的操作，为了演示这个知识点，我们故意放大计算 MD5 的耗时，让循环迭代去进行 1 万次 MD5 加密。</p>
 <p>在开发者工具面板，手动点击“Record”按钮去主动触发，在完成信息的抽样采集后，点击“Stop”按钮结束录制。这时，就可以得到在这期间应用的执行情况了。</p>
 <p>Performance 记录的应用执行情况叫做 CPU 帧图，又被称为火焰图。火焰图是基于记录代码执行结果所产生的图片，用来展示 CPU 的调用栈，表示的是 CPU 的繁忙程度。其中，y 轴表示调用栈，其每一层都是一个函数。调用栈越深，火焰就越高，底部就是正在执行的函数，上方都是它的父函数；x 轴表示单位时间，一个函数在 x 轴占据的宽度越宽，就表示它被采样到的次数越多，即执行时间越长。</p>
 <p>所以要检测 CPU 耗时问题，可以查看火焰图底部的哪个函数占据的宽度最大。只要有“平顶”，就表示该函数可能存在性能问题。</p>
@@ -1029,7 +1029,7 @@
                 <a href="/2021/09/30/ji-jian-javafx-xiang-mu-jiao-shou-jia/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.staticaly.com/gh/mqxu/wiki-image@master/banner/img3.7bp4lfdlqis0.jpg" class="responsive-img" alt="极简JavaFX项目脚手架">
+                        <img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/blog/2.jpg" class="responsive-img" alt="极简JavaFX项目脚手架">
                         
                         <span class="card-title">极简JavaFX项目脚手架</span>
                     </div>

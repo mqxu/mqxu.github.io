@@ -438,7 +438,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
   <entry>
     <title>JavaStudy学习仓库维护</title>
     <url>/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/</url>
-    <content><![CDATA[<h1 id="JavaStudy-学习仓库维护"><a href="#JavaStudy-学习仓库维护" class="headerlink" title="JavaStudy 学习仓库维护"></a>JavaStudy 学习仓库维护</h1><h2 id="前提条件（重要）"><a href="#前提条件（重要）" class="headerlink" title="前提条件（重要）"></a>前提条件（重要）</h2><p>检查你的IDEA的全局配置，保证 Maven 的运行环境 JDK 版本如图</p>
+    <content><![CDATA[<h1 id="JavaStudy-学习仓库维护"><a href="#JavaStudy-学习仓库维护" class="headerlink" title="JavaStudy 学习仓库维护"></a>JavaStudy 学习仓库维护</h1><h2 id="前提条件（重要）"><a href="#前提条件（重要）" class="headerlink" title="前提条件（重要）"></a>前提条件（重要）</h2><p>检查你的 IDEA 的全局配置，保证 Maven 的运行环境 JDK 版本如图</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165135334.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/image-20210923165210890.png"></p>
 <h2 id="新建仓库目录"><a href="#新建仓库目录" class="headerlink" title="新建仓库目录"></a>新建仓库目录</h2><p>电脑上找个自己习惯存放代码的地方，新建一个文件夹，如图</p>
@@ -1010,7 +1010,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
   <entry>
     <title>超美的文字</title>
     <url>/2021/09/21/chao-mei-de-wen-zi/</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/post/%E5%8F%A5%E5%AD%90.5zq611p97s40.jpeg"></p>
+    <content><![CDATA[<p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/blog/img1.jpg"></p>
 <p>1、岁月不饶人，我亦未曾绕过岁月。</p>
 <p>2、剑未佩妥，出门已是江湖；酒尚余温，入口不识乾坤。</p>
 <p>3、枕上诗书闲处好，门前风景雨来佳。</p>
@@ -1877,7 +1877,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 
 <h2 id="四、UI-线程问题定位"><a href="#四、UI-线程问题定位" class="headerlink" title="四、UI 线程问题定位"></a>四、UI 线程问题定位</h2><p>如果说 GPU 线程问题定位的是渲染引擎底层渲染异常，那么 UI 线程问题发现的则是应用的性能瓶颈。比如在视图构建时，在 build 方法中使用了一些复杂的运算，或是在主 Isolate 中进行了同步的 I/O 操作。这些问题，都会明显增加 CPU 的处理时间，拖慢应用的响应速度。</p>
 <p>我们可以使用 Flutter 提供的 Performance 工具，来记录应用的执行轨迹。Performance 是一个强大的性能分析工具，能够以时间轴的方式展示 CPU 的调用栈和执行时间，去检查代码中可疑的方法调用。</p>
-<p>示例：通过一个在 ListView 中计算 MD5 的例子，来演示 Performance 的具体分析过程。考虑到在 build 函数中进行渲染信息的组装是一个常见的操作，为了演示这个知识点，我们故意放大计算 MD5 的耗时，让循环迭代去进行 1 万次MD5加密。</p>
+<p>示例：通过一个在 ListView 中计算 MD5 的例子，来演示 Performance 的具体分析过程。考虑到在 build 函数中进行渲染信息的组装是一个常见的操作，为了演示这个知识点，我们故意放大计算 MD5 的耗时，让循环迭代去进行 1 万次 MD5 加密。</p>
 <p>在开发者工具面板，手动点击“Record”按钮去主动触发，在完成信息的抽样采集后，点击“Stop”按钮结束录制。这时，就可以得到在这期间应用的执行情况了。</p>
 <p>Performance 记录的应用执行情况叫做 CPU 帧图，又被称为火焰图。火焰图是基于记录代码执行结果所产生的图片，用来展示 CPU 的调用栈，表示的是 CPU 的繁忙程度。其中，y 轴表示调用栈，其每一层都是一个函数。调用栈越深，火焰就越高，底部就是正在执行的函数，上方都是它的父函数；x 轴表示单位时间，一个函数在 x 轴占据的宽度越宽，就表示它被采样到的次数越多，即执行时间越长。</p>
 <p>所以要检测 CPU 耗时问题，可以查看火焰图底部的哪个函数占据的宽度最大。只要有“平顶”，就表示该函数可能存在性能问题。</p>
@@ -2054,7 +2054,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </li>
 <li>书籍<ul>
 <li>《编码》</li>
-<li>《30天自制操作系统》</li>
+<li>《30 天自制操作系统》</li>
 <li>《现代操作系统》（难度较大，不推荐新手看）</li>
 <li>《深入理解计算机系统》（难度较大，不推荐新手看）</li>
 </ul>
@@ -2066,7 +2066,9 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>UDP / TCP 协议</li>
 <li>网络安全</li>
 <li>DNS</li>
-<li>《图解 HTTP》<h2 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h2></li>
+<li>《图解 HTTP》</li>
+</ul>
+<h2 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>视频<ul>
 <li>《计算机网络微课堂》：<a href="https://www.bilibili.com/video/BV1c4411d7jb">https://www.bilibili.com/video/BV1c4411d7jb</a></li>
 </ul>
@@ -2093,7 +2095,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
     <content><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><blockquote>
 <p>面向薪资编程，学习实际工作要用的技术，并能 <strong>独立</strong> 做出一个具有完整功能的 Java Web 项目。</p>
 </blockquote>
-<h1 id="MySQL-数据库（1周）"><a href="#MySQL-数据库（1周）" class="headerlink" title="MySQL 数据库（1周）"></a>MySQL 数据库（1周）</h1><blockquote>
+<h1 id="MySQL-数据库（1-周）"><a href="#MySQL-数据库（1-周）" class="headerlink" title="MySQL 数据库（1 周）"></a>MySQL 数据库（1 周）</h1><blockquote>
 <p>企业中大部分业务数据都是用关系型数据库存储的，因此数据库是后台开发同学的必备技能，其中 MySQL 数据库是目前的主流，也是面试时的重点。</p>
 </blockquote>
 <h2 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h2><ul>
@@ -2111,8 +2113,8 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>视频<ul>
-<li>⭐ 老杜 - mysql入门基础 + 数据库实战：<a href="https://www.bilibili.com/video/BV1Vy4y1z7EX">https://www.bilibili.com/video/BV1Vy4y1z7EX</a>（较新、内容相对精炼，有习题）</li>
-<li>尚硅谷 - MySQL基础教程：<a href="https://www.bilibili.com/video/BV1xW411u7ax">https://www.bilibili.com/video/BV1xW411u7ax</a>（小姐姐讲课，但感觉音质一般</li>
+<li>⭐ 老杜 - mysql 入门基础 + 数据库实战：<a href="https://www.bilibili.com/video/BV1Vy4y1z7EX">https://www.bilibili.com/video/BV1Vy4y1z7EX</a>（较新、内容相对精炼，有习题）</li>
+<li>尚硅谷 - MySQL 基础教程：<a href="https://www.bilibili.com/video/BV1xW411u7ax">https://www.bilibili.com/video/BV1xW411u7ax</a>（小姐姐讲课，但感觉音质一般</li>
 </ul>
 </li>
 <li>在线练习<ul>
@@ -2127,7 +2129,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </li>
 </ul>
 <h1 id="开发框架（2-个月）"><a href="#开发框架（2-个月）" class="headerlink" title="开发框架（2 个月）"></a>开发框架（2 个月）</h1><blockquote>
-<p>Java 之所以能成为主流的企业开发语言，很大一部分原因是它完善的框架生态，用好框架，不仅能够大大提升开发效率，还能提高项目的稳定性、减少维护成本。 开发框架是后台开发工作中不可或缺的，也是面试考察的重点，一定要好好学。 不知道 Java 能做什么的朋友们，学完开发框架，就会有答案啦。 </p>
+<p>Java 之所以能成为主流的企业开发语言，很大一部分原因是它完善的框架生态，用好框架，不仅能够大大提升开发效率，还能提高项目的稳定性、减少维护成本。 开发框架是后台开发工作中不可或缺的，也是面试考察的重点，一定要好好学。 不知道 Java 能做什么的朋友们，学完开发框架，就会有答案啦。</p>
 </blockquote>
 <h2 id="知识-1"><a href="#知识-1" class="headerlink" title="知识"></a>知识</h2><ul>
 <li><strong>Java Web</strong><ul>
@@ -2157,7 +2159,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>请求与响应</li>
 <li>Restful API</li>
 <li>拦截器</li>
-<li>配置</li>
+<li>配置 </li>
 <li>执行过程</li>
 </ul>
 </li>
@@ -2211,7 +2213,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><p><strong>视频（按顺序看）</strong></p>
 <ul>
 <li>⭐ 尚硅谷最新版 JavaWeb 全套教程：<a href="https://www.bilibili.com/video/BV1Y7411K7zz">https://www.bilibili.com/video/BV1Y7411K7zz</a>（前端部分最好也看下）</li>
-<li>⭐ 尚硅谷 - Spring 5 框架最新版教程（idea版）：<a href="https://www.bilibili.com/video/BV1Vf4y127N5">https://www.bilibili.com/video/BV1Vf4y127N5</a></li>
+<li>⭐ 尚硅谷 - Spring 5 框架最新版教程（idea 版）：<a href="https://www.bilibili.com/video/BV1Vf4y127N5">https://www.bilibili.com/video/BV1Vf4y127N5</a></li>
 <li>⭐ 尚硅谷 - SpringMVC 2021 最新教程：<a href="https://www.bilibili.com/video/BV1Ry4y1574R">https://www.bilibili.com/video/BV1Ry4y1574R</a></li>
 <li>⭐ 尚硅谷 - MyBatis 实战教程全套完整版：<a href="https://www.bilibili.com/video/BV1mW411M737">https://www.bilibili.com/video/BV1mW411M737</a></li>
 <li>⭐ 尚硅谷 - MyBatisPlus 教程：<a href="https://www.bilibili.com/video/BV1Ds411E76Y">https://www.bilibili.com/video/BV1Ds411E76Y</a></li>
@@ -2236,11 +2238,11 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>书籍<ul>
-<li>⭐ 阿里巴巴 Java 开发手册：<a href="https://developer.aliyun.com/graph/java">https://developer.aliyun.com/graph/java</a>（搜索《Java开发手册》）</li>
+<li>⭐ 阿里巴巴 Java 开发手册：<a href="https://developer.aliyun.com/graph/java">https://developer.aliyun.com/graph/java</a>（搜索《Java 开发手册》）</li>
 </ul>
 </li>
 <li>视频<ul>
-<li>华山版《Java开发手册》独家讲解：<a href="https://developer.aliyun.com/live/1201">https://developer.aliyun.com/live/1201</a></li>
+<li>华山版《Java 开发手册》独家讲解：<a href="https://developer.aliyun.com/live/1201">https://developer.aliyun.com/live/1201</a></li>
 </ul>
 </li>
 <li>文档<ul>
@@ -2265,7 +2267,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源-3"><a href="#资源-3" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>视频<ul>
-<li>⭐【尚硅谷】5h打通Git全套教程丨2021最新IDEA版 <a href="https://www.bilibili.com/video/BV1vy4y1s7k6">https://www.bilibili.com/video/BV1vy4y1s7k6</a></li>
+<li>⭐【尚硅谷】5h 打通 Git 全套教程丨 2021 最新 IDEA 版 <a href="https://www.bilibili.com/video/BV1vy4y1s7k6">https://www.bilibili.com/video/BV1vy4y1s7k6</a></li>
 </ul>
 </li>
 <li>书籍<ul>
@@ -2282,7 +2284,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </ul>
 </li>
 </ul>
-<h1 id="Linux（2周）"><a href="#Linux（2周）" class="headerlink" title="Linux（2周）"></a>Linux（2周）</h1><blockquote>
+<h1 id="Linux（2-周）"><a href="#Linux（2-周）" class="headerlink" title="Linux（2 周）"></a>Linux（2 周）</h1><blockquote>
 <p>企业中的很多前后台项目都是部署在 Linux 服务器上的，因此很有必要熟悉 Linux 的操作和脚本的编写。后面学微服务、学架构都是在多台。</p>
 </blockquote>
 <h2 id="知识-4"><a href="#知识-4" class="headerlink" title="知识"></a>知识</h2><ul>
@@ -2308,7 +2310,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源-4"><a href="#资源-4" class="headerlink" title="资源"></a>资源</h2><ul>
 <li>视频<ul>
-<li>⭐ 2021 韩顺平 一周学会Linux <a href="https://www.bilibili.com/video/BV1Sv411r7vd">https://www.bilibili.com/video/BV1Sv411r7vd</a>（基于 CentOS 7.6 ）</li>
+<li>⭐ 2021 韩顺平 一周学会 Linux <a href="https://www.bilibili.com/video/BV1Sv411r7vd">https://www.bilibili.com/video/BV1Sv411r7vd</a>（基于 CentOS 7.6 ）</li>
 </ul>
 </li>
 <li>书籍<ul>
@@ -2425,7 +2427,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>应用场景</li>
 </ul>
 </li>
-<li><strong>RabbitMQ、RocketMQ、Kafka消息队列</strong><ul>
+<li><strong>RabbitMQ、RocketMQ、Kafka 消息队列</strong><ul>
 <li>消息队列的作用</li>
 <li>生产消费模型</li>
 <li>交换机模型</li>
@@ -2498,7 +2500,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
-<li>⭐ 尚硅谷Netty教程：<a href="https://www.bilibili.com/video/BV1DJ411m7NR">https://www.bilibili.com/video/BV1DJ411m7NR</a></li>
+<li>⭐ 尚硅谷 Netty 教程：<a href="https://www.bilibili.com/video/BV1DJ411m7NR">https://www.bilibili.com/video/BV1DJ411m7NR</a></li>
 <li>Netty 技术演讲（中文字幕版）：<a href="https://www.youtube.com/watch?v=I8yy2Cy7dDI">https://www.youtube.com/watch?v=I8yy2Cy7dDI</a></li>
 </ul>
 </li>
@@ -2555,29 +2557,29 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </li>
 <li><strong>接口管理</strong><ul>
 <li>Swagger 接口文档</li>
-<li>Postman 接口测试<h2 id="学习建议-3"><a href="#学习建议-3" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
+<li>Postman 接口测试</li>
+</ul>
+</li>
+</ul>
+<h2 id="学习建议-3"><a href="#学习建议-3" class="headerlink" title="学习建议"></a>学习建议</h2><blockquote>
 <p>时间不急的话，建议先从 Dubbo 学起，对分布式、RPC、微服务有些基本的了解，再去食用 Spring Cloud 全家桶会更香。 这部分内容的学习，原理 + 实践都很重要，也不要被各种高大上的词汇唬住了，都是上层（应用层）的东西，基本没有什么算法，跟着视频教程学，其实还是很好理解的。 分布式相关知识非常多，但这里不用刻意去背，先通过视频教程实战使用一些微服务框架，也能对其中的概念有基本的了解。</p>
 </blockquote>
-</li>
-</ul>
-</li>
-</ul>
 <h2 id="资源-3"><a href="#资源-3" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
 <li>⭐ 尚硅谷 Dubbo 教程：<a href="https://www.bilibili.com/video/BV1ns411c7jV">https://www.bilibili.com/video/BV1ns411c7jV</a></li>
-<li>⭐ 尚硅谷 SpringCloud（H版&amp;alibaba）框架开发教程（微服务分布式架构）：<a href="https://www.bilibili.com/video/BV18E411x7eT">https://www.bilibili.com/video/BV18E411x7eT</a>（把国外的 Spring Cloud 和国内的 Spring Cloud Alibaba 结合在一起对比着去讲，主流技术栈、知识点都讲到了）</li>
+<li>⭐ 尚硅谷 SpringCloud（H 版&amp;alibaba）框架开发教程（微服务分布式架构）：<a href="https://www.bilibili.com/video/BV18E411x7eT">https://www.bilibili.com/video/BV18E411x7eT</a>（把国外的 Spring Cloud 和国内的 Spring Cloud Alibaba 结合在一起对比着去讲，主流技术栈、知识点都讲到了）</li>
 </ul>
 </li>
 <li><strong>文档</strong><ul>
 <li>Apache Dubbo 官方文档：<a href="https://dubbo.apache.org/zh/">https://dubbo.apache.org/zh/</a></li>
 <li>Spring Cloud Alibaba 官方文档：<a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md">https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md</a></li>
-<li>⭐ Swagger 教学文档：<a href="https://doc.xiaominfo.com/">https://doc.xiaominfo.com/</a>（跟着快速开始直接用就好了）<h1 id="Docker、k8s（7-天）"><a href="#Docker、k8s（7-天）" class="headerlink" title="Docker、k8s（7 天）"></a>Docker、k8s（7 天）</h1><blockquote>
+<li>⭐ Swagger 教学文档：<a href="https://doc.xiaominfo.com/">https://doc.xiaominfo.com/</a>（跟着快速开始直接用就好了）</li>
+</ul>
+</li>
+</ul>
+<h1 id="Docker、k8s（7-天）"><a href="#Docker、k8s（7-天）" class="headerlink" title="Docker、k8s（7 天）"></a>Docker、k8s（7 天）</h1><blockquote>
 <p>将应用和环境进行封装，相互隔离、独立部署、便于移植，提高安全性、提高开发和维护效率。 便于实现微服务、持续集成和交付。</p>
 </blockquote>
-</li>
-</ul>
-</li>
-</ul>
 <h2 id="知识-4"><a href="#知识-4" class="headerlink" title="知识"></a>知识</h2><ul>
 <li><strong>Docker</strong><ul>
 <li>容器概念</li>
@@ -2638,7 +2640,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源-5"><a href="#资源-5" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
-<li>⭐【狂神说】CI/CD到底是什么？十分钟理解企业级DevOps：<a href="https://www.bilibili.com/video/BV1zf4y127vu">https://www.bilibili.com/video/BV1zf4y127vu</a>（讲得非常棒，带你快速理解 CI / CD 的作用和部分原理）</li>
+<li>⭐【狂神说】CI/CD 到底是什么？十分钟理解企业级 DevOps：<a href="https://www.bilibili.com/video/BV1zf4y127vu">https://www.bilibili.com/video/BV1zf4y127vu</a>（讲得非常棒，带你快速理解 CI / CD 的作用和部分原理）</li>
 <li>尚硅谷 - Jenkins 持续集成工具教程：<a href="https://www.bilibili.com/video/BV1GW411w7pn">https://www.bilibili.com/video/BV1GW411w7pn</a>（实在要用到 Jenkins 再去学）</li>
 </ul>
 </li>
@@ -2662,11 +2664,11 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <p>综合所学技术从 0 到 1 开发和上线一个全面、有特色的、可以写进简历的个人项目。</p>
 </blockquote>
 <h1 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h1><blockquote>
-<p>其实在之前的框架学习视频中应该就做过几个项目了，但相对不够完整和体系化。 有想法的同学可以做任何自己想做的项目，推荐参加一些作品类竞赛，练手、拿奖、收获项目经历一举三得。 暂时没想法的，建议先跟着专门带做项目的视频教程做 1 - 2 套 Java 完整项目，一定要从 0 到 1 自己手写！ 有能力的也可以试着用 GitHub 上的源码来学习~ 做一个完整的项目的确很不容易，建议大家根据自己的时间和兴趣选择 <strong>较新的、有配套源码的</strong> 教程，保持耐心。 </p>
+<p>其实在之前的框架学习视频中应该就做过几个项目了，但相对不够完整和体系化。 有想法的同学可以做任何自己想做的项目，推荐参加一些作品类竞赛，练手、拿奖、收获项目经历一举三得。 暂时没想法的，建议先跟着专门带做项目的视频教程做 1 - 2 套 Java 完整项目，一定要从 0 到 1 自己手写！ 有能力的也可以试着用 GitHub 上的源码来学习~ 做一个完整的项目的确很不容易，建议大家根据自己的时间和兴趣选择 <strong>较新的、有配套源码的</strong> 教程，保持耐心。</p>
 </blockquote>
 <h1 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h1><ul>
 <li>尚硅谷 - 谷粒学院 - 微服务 + 全栈 - 在线教育实战项目：<a href="https://www.bilibili.com/video/BV1dQ4y1A75e">https://www.bilibili.com/video/BV1dQ4y1A75e</a>（全栈项目，前后端讲得都很全面）</li>
-<li>尚硅谷 - 尚筹网 - Java项目实战开发教程 - SSM 框架 + 微服务架构：<a href="https://www.bilibili.com/video/BV1bE411T7oZ">https://www.bilibili.com/video/BV1bE411T7oZ</a>（500 多集，包含完整的用户权限管理，功能丰富、细致全面）</li>
+<li>尚硅谷 - 尚筹网 - Java 项目实战开发教程 - SSM 框架 + 微服务架构：<a href="https://www.bilibili.com/video/BV1bE411T7oZ">https://www.bilibili.com/video/BV1bE411T7oZ</a>（500 多集，包含完整的用户权限管理，功能丰富、细致全面）</li>
 <li>黑马 - 24 小时搞定 Java 毕设电商项目：<a href="https://www.bilibili.com/video/BV13f4y1r7fS">https://www.bilibili.com/video/BV13f4y1r7fS</a></li>
 <li>黑马程序员 Java 项目《传智健康》，超完整的企业级医疗行业项目：<a href="https://www.bilibili.com/video/BV1Bo4y117zV">https://www.bilibili.com/video/BV1Bo4y117zV</a></li>
 <li>黑马程序员 Java 项目《万信金融》企业级开发实战，互联网金融行业解决方案：<a href="https://www.bilibili.com/video/BV1Ub4y1f7rk">https://www.bilibili.com/video/BV1Ub4y1f7rk</a></li>
@@ -2686,7 +2688,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li>mall-swarm：<a href="https://github.com/macrozheng/mall-swarm">https://github.com/macrozheng/mall-swarm</a>（一套微服务商城系统，采用了 Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch 等核心技术，同时提供了基于 Vue 的管理后台方便快速搭建系统）</li>
 <li>onemall：<a href="https://github.com/YunaiV/onemall">https://github.com/YunaiV/onemall</a>（mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba）</li>
 <li>litemall：<a href="https://github.com/linlinjava/litemall">https://github.com/linlinjava/litemall</a>（又一个小商城，litemall = Spring Boot 后端 + Vue 管理员前端 + 微信小程序用户前端 + Vue 用户移动端）</li>
-<li>xmall：<a href="https://github.com/Exrick/xmall">https://github.com/Exrick/xmall </a>（基于SOA架构的分布式电商购物商城 前后端分离 前台商城:Vue全家桶 后台管理系统）</li>
+<li>xmall：<a href="https://github.com/Exrick/xmall">https://github.com/Exrick/xmall </a>（基于 SOA 架构的分布式电商购物商城 前后端分离 前台商城:Vue 全家桶 后台管理系统）</li>
 <li>miaosha：<a href="https://github.com/qiurunze123/miaosha">https://github.com/qiurunze123/miaosha</a> （秒杀系统设计与实现）</li>
 <li>SecKill：<a href="https://github.com/hfbin/Seckill">https://github.com/hfbin/Seckill</a>（基于 SpringBoot+Mybatis+Redis+RabbitMQ 秒杀系统）</li>
 </ul>
@@ -2697,8 +2699,8 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li><a href="%5Bhttps://github.com/lenve/vhr%5D(https://github.com/lenve/vhr)">vhr</a>：微人事是一个前后端分离的人力资源管理系统，项目采用 SpringBoot+Vue 开发。</li>
 <li><a href="%5Bhttps://github.com/cloudfavorites/favorites-web%5D(https://github.com/cloudfavorites/favorites-web)">favorites-web</a>:云收藏 Spring Boot 2.X 开源项目。云收藏是一个使用 Spring Boot 构建的开源网站，可以让用户在线随时随地收藏的一个网站，在网站上分类整理收藏的网站或者文章。</li>
 <li><a href="%5Bhttps://github.com/codedrinker/community%5D(https://github.com/codedrinker/community)">community</a>：码问，开源论坛、问答系统，现有功能提问、回复、通知、最新、最热、消除零回复功能。技术栈 Spring、Spring Boot、MyBatis、MySQL/H2、Bootstrap</li>
-<li><a href="%5Bhttps://github.com/yourkevin/NiterForum%5D(https://github.com/yourkevin/NiterForum)">NiterForum</a>：尼特社区-NiterForum-一个论坛/社区程序。后端Springboot/MyBatis/Maven/MySQL，前端Thymeleaf/Layui。可供初学者，学习、交流使用。</li>
-<li><a href="%5Bhttps://github.com/lenve/VBlog%5D(https://github.com/lenve/VBlog)">VBlog</a>：V部落，Vue+SpringBoot实现的多用户博客管理平台!</li>
+<li><a href="%5Bhttps://github.com/yourkevin/NiterForum%5D(https://github.com/yourkevin/NiterForum)">NiterForum</a>：尼特社区-NiterForum-一个论坛/社区程序。后端 Springboot/MyBatis/Maven/MySQL，前端 Thymeleaf/Layui。可供初学者，学习、交流使用。</li>
+<li><a href="%5Bhttps://github.com/lenve/VBlog%5D(https://github.com/lenve/VBlog)">VBlog</a>：V 部落，Vue+SpringBoot 实现的多用户博客管理平台!</li>
 <li><a href="%5Bhttps://github.com/damoqiongqiu/NiceFish%5D(https://github.com/damoqiongqiu/NiceFish)">NiceFish</a>：SpringBoot/SpringCloud 前后端分离项目</li>
 <li><a href="%5Bhttps://github.com/ZHENFENG13/My-Blog%5D(https://github.com/ZHENFENG13/My-Blog)">My-Blog</a>： My Blog 是由 SpringBoot + Mybatis + Thymeleaf 等技术实现的 Java 博客系统，页面美观、功能齐全、部署简单及完善的代码，一定会给使用者无与伦比的体验。</li>
 <li><a href="%5Bhttps://github.com/ZHENFENG13/My-Blog-layui%5D(https://github.com/ZHENFENG13/My-Blog-layui)">My-Blog-layui</a>：layui 版本的 My-Blog : A simple &amp; beautiful blogging system implemented with spring-boot &amp; layui &amp; thymeleaf &amp; mybatis My Blog 是由 SpringBoot + Layui + Mybatis + Thymeleaf 等技术实现的 Java 博客系统，页面美观、功能齐全、部署简单及完善的代码，一定会给使用者无与伦比的体验</li>
@@ -2707,27 +2709,27 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <h2 id="管理系统"><a href="#管理系统" class="headerlink" title="管理系统"></a>管理系统</h2><ul>
 <li><a href="%5Bhttps://github.com/wxiaoqi/Spring-Cloud-Admin%5D(https://github.com/wxiaoqi/Spring-Cloud-Admin)">Spring-Cloud-Admin</a>：Cloud-Admin 是国内首个基于 Spring Cloud 微服务化开发平台，具有统一授权、认证后台管理系统，其中包含具备用户管理、资源权限管理、网关 API 管理等多个模块，支持多业务系统并行开发，可以作为后端服务的开发脚手架。代码简洁，架构清晰，适合学习和直接项目中使用。核心技术采用 Spring Boot2 以及 Spring Cloud Gateway 相关核心组件，前端采用 vue-element-admin 组件。</li>
 <li><a href="%5Bhttps://github.com/tomsun28/bootshiro%5D(https://github.com/tomsun28/bootshiro)">bootshiro</a>：基于 springboot+shiro+jwt 的资源无状态认证权限管理系统后端</li>
-<li><a href="%5Bhttps://github.com/72crm/72crm-java%5D(https://github.com/72crm/72crm-java)">悟空CRM</a>：基于jfinal+vue+ElementUI的前后端分离CRM系统</li>
+<li><a href="%5Bhttps://github.com/72crm/72crm-java%5D(https://github.com/72crm/72crm-java)">悟空 CRM</a>：基于 jfinal+vue+ElementUI 的前后端分离 CRM 系统</li>
 <li><a href="%5Bhttps://github.com/elunez/eladmin%5D(https://github.com/elunez/eladmin)">EL-ADMIN</a>：基于 SpringBoot 的后台管理系统</li>
 <li><a href="%5Bhttps://gitee.com/log4j/pig%5D(https://gitee.com/log4j/pig)">pig</a>：基于 Spring Boot 2.2、 Spring Cloud Hoxton &amp; Alibaba、 OAuth2 的 RBAC 权限管理系统。</li>
 <li><a href="%5Bhttps://github.com/wuyouzhuguli/FEBS-Shiro%5D(https://github.com/wuyouzhuguli/FEBS-Shiro)">FEBS-Shiro</a>：Spring Boot 2.1.3，Shiro1.4.0 &amp; Layui 2.5.4 权限管理系统。</li>
-<li><a href="%5Bhttps://github.com/Heeexy/SpringBoot-Shiro-Vue%5D(https://github.com/Heeexy/SpringBoot-Shiro-Vue)">Spring Boot-Shiro-Vue</a>：基于Spring Boot-Shiro-Vue 的权限管理</li>
-<li><a href="%5Bhttps://github.com/ZeroWdd/studentmanager%5D(https://github.com/ZeroWdd/studentmanager)">studentmanager</a>：基于springboot+mybatis学生管理系统</li>
-<li><a href="%5Bhttps://github.com/jishenghua/jshERP%5D(https://github.com/jishenghua/jshERP)">jshERP</a>：华夏ERP基于SpringBoot框架和SaaS模式，立志为中小企业提供开源好用的ERP软件，目前专注进销存+财务功能。主要模块有零售管理、采购管理、销售管理、仓库管理、财务管理、报表查询、系统管理等。支持预付款、收入支出、仓库调拨、组装拆卸、订单等特色功能。拥有库存状况、出入库统计等报表。同时对角色和权限进行了细致全面控制，精确到每个按钮和菜单。</li>
-<li><a href="%5Bhttps://github.com/misterchaos/HotelSystem%5D(https://github.com/misterchaos/HotelSystem)">HotelSystem</a>：酒店管理系统 Java,tomcat,mysql,servlet,jsp实现，没有使用任何框架</li>
+<li><a href="%5Bhttps://github.com/Heeexy/SpringBoot-Shiro-Vue%5D(https://github.com/Heeexy/SpringBoot-Shiro-Vue)">Spring Boot-Shiro-Vue</a>：基于 Spring Boot-Shiro-Vue 的权限管理</li>
+<li><a href="%5Bhttps://github.com/ZeroWdd/studentmanager%5D(https://github.com/ZeroWdd/studentmanager)">studentmanager</a>：基于 springboot+mybatis 学生管理系统</li>
+<li><a href="%5Bhttps://github.com/jishenghua/jshERP%5D(https://github.com/jishenghua/jshERP)">jshERP</a>：华夏 ERP 基于 SpringBoot 框架和 SaaS 模式，立志为中小企业提供开源好用的 ERP 软件，目前专注进销存+财务功能。主要模块有零售管理、采购管理、销售管理、仓库管理、财务管理、报表查询、系统管理等。支持预付款、收入支出、仓库调拨、组装拆卸、订单等特色功能。拥有库存状况、出入库统计等报表。同时对角色和权限进行了细致全面控制，精确到每个按钮和菜单。</li>
+<li><a href="%5Bhttps://github.com/misterchaos/HotelSystem%5D(https://github.com/misterchaos/HotelSystem)">HotelSystem</a>：酒店管理系统 Java,tomcat,mysql,servlet,jsp 实现，没有使用任何框架</li>
 </ul>
 <h2 id="开发平台"><a href="#开发平台" class="headerlink" title="开发平台"></a>开发平台</h2><ul>
 <li><a href="%5Bhttps://github.com/2014shijina2014/open-capacity-platform%5D(https://github.com/2014shijina2014/open-capacity-platform)">open-capacity-platform</a>：微服务能力开发平台</li>
-<li><a href="%5Bhttps://github.com/zhangdaiscott/jeecg-boot%5D(https://github.com/zhangdaiscott/jeecg-boot)">jeecg-boot</a>：JeecgBoot是一款基于BPM的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发。</li>
+<li><a href="%5Bhttps://github.com/zhangdaiscott/jeecg-boot%5D(https://github.com/zhangdaiscott/jeecg-boot)">jeecg-boot</a>：JeecgBoot 是一款基于 BPM 的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发。</li>
 </ul>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li><a href="%5Bhttps://github.com/mindskip/xzs%5D(https://github.com/mindskip/xzs)">学之思在线考试系统</a>：一款 java + vue 的前后端分离的考试系统</li>
 <li><a href="%5Bhttps://github.com/Jackson0714/PassJava-Platform%5D(https://github.com/Jackson0714/PassJava-Platform)">PassJava-Platform</a>：一款面试刷题的 Spring Cloud 开源系统</li>
-<li><a href="%5Bhttps://github.com/kekingcn/kkFileView%5D(https://github.com/kekingcn/kkFileView)">kkFileView</a>：使用spring boot打造文件文档在线预览项目</li>
-<li><a href="%5Bhttps://github.com/baomidou/dynamic-datasource-spring-boot-starter%5D(https://github.com/baomidou/dynamic-datasource-spring-boot-starter)">dynamic-datasource</a>：一个基于springboot的快速集成多数据源的启动器</li>
+<li><a href="%5Bhttps://github.com/kekingcn/kkFileView%5D(https://github.com/kekingcn/kkFileView)">kkFileView</a>：使用 spring boot 打造文件文档在线预览项目</li>
+<li><a href="%5Bhttps://github.com/baomidou/dynamic-datasource-spring-boot-starter%5D(https://github.com/baomidou/dynamic-datasource-spring-boot-starter)">dynamic-datasource</a>：一个基于 springboot 的快速集成多数据源的启动器</li>
 <li><a href="%5Bhttps://github.com/373675032/moti-cloud%5D(https://github.com/373675032/moti-cloud)">moti-cloud</a>：莫提网盘，基于 SpringBoot+MyBatis+ThymeLeaf+BootStrap，适合初学者</li>
 <li><a href="%5Bhttps://github.com/qiurunze123/threadandjuc%5D(https://github.com/qiurunze123/threadandjuc)">threadandjuc</a>：three-high-import 高可用\高可靠\高性能，三高多线程导入系统（该项目意义为理论贯通)</li>
-<li><a href="%5Bhttps://github.com/proxyee-down-org/proxyee-down%5D(https://github.com/proxyee-down-org/proxyee-down)">proxyee-down</a>：http下载工具，基于http代理，支持多连接分块下载</li>
+<li><a href="%5Bhttps://github.com/proxyee-down-org/proxyee-down%5D(https://github.com/proxyee-down-org/proxyee-down)">proxyee-down</a>：http 下载工具，基于 http 代理，支持多连接分块下载</li>
 <li><a href="%5Bhttps://github.com/sfturing/hosp_order%5D(https://github.com/sfturing/hosp_order)">hosp_order</a>：医院预约挂号系统，基于 SSM 框架</li>
 <li><a href="%5Bhttps://how2j.cn/module/170.html%5D(https://how2j.cn/module/170.html)">趋势投资 SpringCloud</a></li>
 <li><a href="%5Bhttps://how2j.cn/module/176.html%5D(https://how2j.cn/module/176.html)">DiyTomcat</a></li>
@@ -2771,12 +2773,12 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 </blockquote>
 <h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
-<li>⭐【尚硅谷】大厂必备技术之JUC并发编程2021最新版：<a href="https://www.bilibili.com/video/BV1Kw411Z7dF">https://www.bilibili.com/video/BV1Kw411Z7dF</a>（特点是短、精、新）</li>
-<li>黑马程序员全面深入学习Java并发编程：<a href="https://www.bilibili.com/video/BV16J411h7Rd">https://www.bilibili.com/video/BV16J411h7Rd</a>（讲得很细、全面深入）</li>
+<li>⭐【尚硅谷】大厂必备技术之 JUC 并发编程 2021 最新版：<a href="https://www.bilibili.com/video/BV1Kw411Z7dF">https://www.bilibili.com/video/BV1Kw411Z7dF</a>（特点是短、精、新）</li>
+<li>黑马程序员全面深入学习 Java 并发编程：<a href="https://www.bilibili.com/video/BV16J411h7Rd">https://www.bilibili.com/video/BV16J411h7Rd</a>（讲得很细、全面深入）</li>
 </ul>
 </li>
 <li><strong>书籍</strong><ul>
-<li>⭐《Java并发编程实战》（国外的经典）</li>
+<li>⭐《Java 并发编程实战》（国外的经典）</li>
 <li>⭐《Java 并发编程艺术》（国人写的，理论思想内容较多，有时间建议反复看）</li>
 </ul>
 </li>
@@ -2821,7 +2823,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><ul>
 <li><strong>视频</strong><ul>
 <li>⭐ 尚硅谷宋红康 - JVM 全套教程详解：<a href="https://www.bilibili.com/video/BV1PJ411n7xZ">https://www.bilibili.com/video/BV1PJ411n7xZ</a>（讲得相当全面，附有实操）</li>
-<li>【狂神说Java】JVM快速入门篇：<a href="https://www.bilibili.com/video/BV1iJ411d7jS">https://www.bilibili.com/video/BV1iJ411d7jS</a>（讲得有点浅，但都是面试重点，时间紧的小伙伴可以直接看这个）</li>
+<li>【狂神说 Java】JVM 快速入门篇：<a href="https://www.bilibili.com/video/BV1iJ411d7jS">https://www.bilibili.com/video/BV1iJ411d7jS</a>（讲得有点浅，但都是面试重点，时间紧的小伙伴可以直接看这个）</li>
 </ul>
 </li>
 <li><strong>书籍</strong><ul>
@@ -2861,7 +2863,7 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li><strong>分布式数据库</strong></li>
 <li><strong>分布式文件系统</strong></li>
 <li><strong>分布式协调</strong><ul>
-<li>Zookeeper    </li>
+<li>Zookeeper</li>
 </ul>
 </li>
 <li><strong>分布式监控</strong><ul>
