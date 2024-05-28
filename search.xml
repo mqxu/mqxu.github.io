@@ -298,6 +298,144 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </tags>
   </entry>
   <entry>
+    <title>JavaFX起步</title>
+    <url>/2021/09/19/javafx-qi-bu/</url>
+    <content><![CDATA[<blockquote>
+<p>要求：</p>
+<ol>
+<li>JDK11 以上</li>
+<li>Maven 环境已正确配置</li>
+</ol>
+</blockquote>
+<h1 id="一、项目初始化"><a href="#一、项目初始化" class="headerlink" title="一、项目初始化"></a>一、项目初始化</h1><ol>
+<li>IDEA 新建项目，如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/9I3e1G.png" alt="新建项目"></p>
+<ol start="2">
+<li>选择依赖，如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/aq1RaA.png" alt="选择依赖"></p>
+<ol start="3">
+<li>项目结构和运行效果如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/0dDOLR.png" alt="项目结构和运行效果"></p>
+<h1 id="二、程序结构"><a href="#二、程序结构" class="headerlink" title="二、程序结构"></a>二、程序结构</h1><blockquote>
+<p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
+</blockquote>
+<h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token class-name">Stage</span> stage<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
+    <span class="token class-name">FXMLLoader</span> fxmlLoader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FXMLLoader</span><span class="token punctuation">(</span><span class="token class-name">HelloApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"hello-view.fxml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Scene</span> scene <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scene</span><span class="token punctuation">(</span>fxmlLoader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">240</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stage<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stage<span class="token punctuation">.</span><span class="token function">setScene</span><span class="token punctuation">(</span>scene<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stage<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>主要步骤解释</strong></p>
+<ul>
+<li>载入资源目录的布局文件</li>
+<li>创建指定大小的 scene（场景）</li>
+<li>将 scene 加入 stage（舞台），并设置标题和可见性</li>
+</ul>
+<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
+<p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
+</blockquote>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="token prolog">&lt;?import javafx.geometry.Insets?&gt;</span>
+<span class="token prolog">&lt;?import javafx.scene.control.Label?&gt;</span>
+<span class="token prolog">&lt;?import javafx.scene.layout.VBox?&gt;</span>
+<span class="token prolog">&lt;?import javafx.scene.control.Button?&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VBox</span> <span class="token attr-name">alignment</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>CENTER<span class="token punctuation">"</span></span> <span class="token attr-name">spacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>fx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://javafx.com/fxml<span class="token punctuation">"</span></span>
+      <span class="token attr-name"><span class="token namespace">fx:</span>controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>top.mqxu.jfxdemo.HelloController<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>padding</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Insets</span> <span class="token attr-name">bottom</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>padding</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span> <span class="token attr-name"><span class="token namespace">fx:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>welcomeText<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hello!<span class="token punctuation">"</span></span> <span class="token attr-name">onAction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#onHelloButtonClick<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VBox</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>代码解释</strong></p>
+<ul>
+<li>头部主要是导入本例中用到的 javafx 的组件</li>
+<li>根布局组件为 VBox——垂直布局（从上到下排列子组件）</li>
+<li>声明 VBox 的对齐方式为居中，每个子组件的间距为 20，对应 HelloController 控制器</li>
+<li>padding 用来声明 VBox 的内边距，用 Insets 的四个属性来表示四个方向的距离</li>
+<li>Label 为文本组件，绑定 id 用于在控制器中访问</li>
+<li>Button 为按钮组建，初始化默认文本，绑定点击事件</li>
+</ul>
+<h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
+<p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@FXML</span>
+    <span class="token keyword">private</span> <span class="token class-name">Label</span> welcomeText<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@FXML</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onHelloButtonClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        welcomeText<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"Welcome to JavaFX Application!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
+<p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
+</blockquote>
+<ol>
+<li>项目结构修改如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/AgAF8O.png" alt="修改resource资源目录"></p>
+<ol start="2">
+<li>布局文件修改如图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/8NSLjn.png" alt="布局绑定样式"></p>
+<ol start="3">
+<li>样式文件</li>
+</ol>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*根组件样式*/</span>
+<span class="token selector">.root</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token comment">/*背景图设置，注意相对路径*/</span>
+  <span class="token property">-fx-background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>../images/bg.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">-fx-background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*标签文本色*/</span>
+<span class="token selector">.label</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> #bcb3d7<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*按钮背景色和文本色*/</span>
+<span class="token selector">.button</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #a06cc9<span class="token punctuation">;</span>
+  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*鼠标悬停按钮色*/</span>
+<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #7bb4d7<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>应用主程序修改（布局文件路径改变了）</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/DuzVD0.png" alt="修改fxml路径"></p>
+<ol start="5">
+<li>改变后的运行效果</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/run.gif" alt="运行效果"></p>
+<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>通过以上 demo 初步认识了 JavaFX，其结构比较清晰易懂，并且视图、样式、行为分离，和 Android 开发、Web 前端 HTML、CSS、JS 各司其职的思想都比较相似，写起来体验还算 OK。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>JavaFX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaStudy学习仓库维护</title>
     <url>/2021/09/23/javastudy-xue-xi-cang-ku-wei-hu/</url>
     <content><![CDATA[<h1 id="JavaStudy-学习仓库维护"><a href="#JavaStudy-学习仓库维护" class="headerlink" title="JavaStudy 学习仓库维护"></a>JavaStudy 学习仓库维护</h1><h2 id="前提条件（重要）"><a href="#前提条件（重要）" class="headerlink" title="前提条件（重要）"></a>前提条件（重要）</h2><p>检查你的 IDEA 的全局配置，保证 Maven 的运行环境 JDK 版本如图</p>
@@ -462,141 +600,32 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </tags>
   </entry>
   <entry>
-    <title>JavaFX起步</title>
-    <url>/2021/09/19/javafx-qi-bu/</url>
+    <title>Markdown笔记转思维导图工具你值得拥有</title>
+    <url>/2021/09/18/markmap/</url>
     <content><![CDATA[<blockquote>
-<p>要求：</p>
-<ol>
-<li>JDK11 以上</li>
-<li>Maven 环境已正确配置</li>
-</ol>
+<p>Markdown 的好处是专注码字的同时还能兼顾排版，缺点就是可视化能力很弱，毕竟人对于图像化内容的接收程度要强于文本。</p>
 </blockquote>
-<h1 id="一、项目初始化"><a href="#一、项目初始化" class="headerlink" title="一、项目初始化"></a>一、项目初始化</h1><ol>
-<li>IDEA 新建项目，如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/9I3e1G.png" alt="新建项目"></p>
-<ol start="2">
-<li>选择依赖，如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/aq1RaA.png" alt="选择依赖"></p>
-<ol start="3">
-<li>项目结构和运行效果如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/0dDOLR.png" alt="项目结构和运行效果"></p>
-<h1 id="二、程序结构"><a href="#二、程序结构" class="headerlink" title="二、程序结构"></a>二、程序结构</h1><blockquote>
-<p>这是由 IDEA 为我们生成的一个 JavaFX 应用程序的结构。</p>
+<p>可视化表达方面，思维导图就很不错。它作为一种图象化工具，通过层级式发散式地组织主题，帮助我们更好的记忆、学习和思考。</p>
+<p>但在过去，这两类工具是各自独立的，也就是你写完 Markdown 文本，想要可视化地传达一些重点给读者，就需要重新录入下思维导图，比较繁琐。</p>
+<blockquote>
+<p>markmap 是一款能够直接将 Markdown 笔记转换成思维导图的工具。使用 Markdown 记录想法，在需要的时候又能直接转换成思维导图，香不香？</p>
 </blockquote>
-<h2 id="应用主程序"><a href="#应用主程序" class="headerlink" title="应用主程序"></a>应用主程序</h2><p>需要继承 Application 类，实现 start 方法，然后 main 方法负责启动本类。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token class-name">Stage</span> stage<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span> <span class="token punctuation">{</span>
-    <span class="token class-name">FXMLLoader</span> fxmlLoader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FXMLLoader</span><span class="token punctuation">(</span><span class="token class-name">HelloApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token string">"hello-view.fxml"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token class-name">Scene</span> scene <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scene</span><span class="token punctuation">(</span>fxmlLoader<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">240</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">setTitle</span><span class="token punctuation">(</span><span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">setScene</span><span class="token punctuation">(</span>scene<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    stage<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>主要步骤解释</strong></p>
+<p><img src="https://www.pianshen.com/images/314/4f90da2004c96d8535f18db56cd19d72.png"></p>
+<h2 id="在线版"><a href="#在线版" class="headerlink" title="在线版"></a>在线版</h2><p><a href="https://markmap.js.org/repl">试用网址</a><br>左边录入 Markdown 文本，右边会实时展示出思维导图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/fBIEY1.png"></p>
+<h2 id="离线版"><a href="#离线版" class="headerlink" title="离线版"></a>离线版</h2><p>在 Visual Studio Code 上安装<br><a href="https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode">https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/I8YPxM.png"></p>
+<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/Fmw8Fw.png"></p>
 <ul>
-<li>载入资源目录的布局文件</li>
-<li>创建指定大小的 scene（场景）</li>
-<li>将 scene 加入 stage（舞台），并设置标题和可见性</li>
+<li>可以点击右下角「export」按钮导出动态的 html 文件。</li>
+<li>～ markdown 一次书写，到处使用。</li>
 </ul>
-<h2 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h2><blockquote>
-<p>JavaFX 采用 xml 文件来布局界面，和 Android 类似。所以掌握常见的布局和组件，是必要的。</p>
-</blockquote>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-
-<span class="token prolog">&lt;?import javafx.geometry.Insets?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.control.Label?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.layout.VBox?&gt;</span>
-<span class="token prolog">&lt;?import javafx.scene.control.Button?&gt;</span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VBox</span> <span class="token attr-name">alignment</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>CENTER<span class="token punctuation">"</span></span> <span class="token attr-name">spacing</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>fx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://javafx.com/fxml<span class="token punctuation">"</span></span>
-      <span class="token attr-name"><span class="token namespace">fx:</span>controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>top.mqxu.jfxdemo.HelloController<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>padding</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Insets</span> <span class="token attr-name">bottom</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">left</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span> <span class="token attr-name">top</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20.0<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>padding</span><span class="token punctuation">&gt;</span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Label</span> <span class="token attr-name"><span class="token namespace">fx:</span>id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>welcomeText<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Button</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hello!<span class="token punctuation">"</span></span> <span class="token attr-name">onAction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#onHelloButtonClick<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>VBox</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>代码解释</strong></p>
-<ul>
-<li>头部主要是导入本例中用到的 javafx 的组件</li>
-<li>根布局组件为 VBox——垂直布局（从上到下排列子组件）</li>
-<li>声明 VBox 的对齐方式为居中，每个子组件的间距为 20，对应 HelloController 控制器</li>
-<li>padding 用来声明 VBox 的内边距，用 Insets 的四个属性来表示四个方向的距离</li>
-<li>Label 为文本组件，绑定 id 用于在控制器中访问</li>
-<li>Button 为按钮组建，初始化默认文本，绑定点击事件</li>
-</ul>
-<h2 id="控制器文件"><a href="#控制器文件" class="headerlink" title="控制器文件"></a>控制器文件</h2><blockquote>
-<p>用@FXML 注解和布局文件中指定 id 的组件对应<br>实现按钮绑定的点击事件</p>
-</blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@FXML</span>
-    <span class="token keyword">private</span> <span class="token class-name">Label</span> welcomeText<span class="token punctuation">;</span>
-
-    <span class="token annotation punctuation">@FXML</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">onHelloButtonClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        welcomeText<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"Welcome to JavaFX Application!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h1><blockquote>
-<p>以上结构显然还不够完整，比如借鉴 Web 开发的经验，我们一般需要为项目维护一个单独的样式文件，和布局文件分离，也必然会使用到一些图片资源等，这些可以在 resource 目录分开存放。</p>
-</blockquote>
-<ol>
-<li>项目结构修改如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/AgAF8O.png" alt="修改resource资源目录"></p>
-<ol start="2">
-<li>布局文件修改如图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/8NSLjn.png" alt="布局绑定样式"></p>
-<ol start="3">
-<li>样式文件</li>
-</ol>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*根组件样式*/</span>
-<span class="token selector">.root</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
-  <span class="token comment">/*背景图设置，注意相对路径*/</span>
-  <span class="token property">-fx-background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>../images/bg.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
-  <span class="token property">-fx-background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*标签文本色*/</span>
-<span class="token selector">.label</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> #bcb3d7<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*按钮背景色和文本色*/</span>
-<span class="token selector">.button</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #a06cc9<span class="token punctuation">;</span>
-  <span class="token property">-fx-text-fill</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">/*鼠标悬停按钮色*/</span>
-<span class="token selector">.button:hover</span> <span class="token punctuation">{</span>
-  <span class="token property">-fx-background-color</span><span class="token punctuation">:</span> #7bb4d7<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="4">
-<li>应用主程序修改（布局文件路径改变了）</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/DuzVD0.png" alt="修改fxml路径"></p>
-<ol start="5">
-<li>改变后的运行效果</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/run.gif" alt="运行效果"></p>
-<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>通过以上 demo 初步认识了 JavaFX，其结构比较清晰易懂，并且视图、样式、行为分离，和 Android 开发、Web 前端 HTML、CSS、JS 各司其职的思想都比较相似，写起来体验还算 OK。</p>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>工具</category>
       </categories>
       <tags>
-        <tag>JavaFX</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -1357,35 +1386,6 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </tags>
   </entry>
   <entry>
-    <title>Markdown笔记转思维导图工具你值得拥有</title>
-    <url>/2021/09/18/markmap/</url>
-    <content><![CDATA[<blockquote>
-<p>Markdown 的好处是专注码字的同时还能兼顾排版，缺点就是可视化能力很弱，毕竟人对于图像化内容的接收程度要强于文本。</p>
-</blockquote>
-<p>可视化表达方面，思维导图就很不错。它作为一种图象化工具，通过层级式发散式地组织主题，帮助我们更好的记忆、学习和思考。</p>
-<p>但在过去，这两类工具是各自独立的，也就是你写完 Markdown 文本，想要可视化地传达一些重点给读者，就需要重新录入下思维导图，比较繁琐。</p>
-<blockquote>
-<p>markmap 是一款能够直接将 Markdown 笔记转换成思维导图的工具。使用 Markdown 记录想法，在需要的时候又能直接转换成思维导图，香不香？</p>
-</blockquote>
-<p><img src="https://www.pianshen.com/images/314/4f90da2004c96d8535f18db56cd19d72.png"></p>
-<h2 id="在线版"><a href="#在线版" class="headerlink" title="在线版"></a>在线版</h2><p><a href="https://markmap.js.org/repl">试用网址</a><br>左边录入 Markdown 文本，右边会实时展示出思维导图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/fBIEY1.png"></p>
-<h2 id="离线版"><a href="#离线版" class="headerlink" title="离线版"></a>离线版</h2><p>在 Visual Studio Code 上安装<br><a href="https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode">https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/I8YPxM.png"></p>
-<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="https://cdn.jsdelivr.net/gh/mqxu/wiki-image@master/uPic/Fmw8Fw.png"></p>
-<ul>
-<li>可以点击右下角「export」按钮导出动态的 html 文件。</li>
-<li>～ markdown 一次书写，到处使用。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>开到荼蘼</title>
     <url>/2021/08/11/kai-dao-tu-mi/</url>
     <content><![CDATA[<blockquote>
@@ -1402,6 +1402,215 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </categories>
       <tags>
         <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文本绘图工具 PlantUML</title>
+    <url>/2024/05/28/ben-hui-tu-ju-plantuml/</url>
+    <content><![CDATA[<h1 id="PlantUML"><a href="#PlantUML" class="headerlink" title="PlantUML"></a>PlantUML</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PlantUML 简直是神作，直接使⽤代码脚本绘制图形。特别容易上⼿，且表达能⼒很强，绘制的图形，可读性也很⾼。</p>
+<ul>
+<li>PlantUML 是⼀个开源项⽬，是一个可以快速编写 UML 图的⼯具；</li>
+<li>⽀持编码的⽅式来⽣成图形；</li>
+<li>可以⽤来画时序图、UML ⽤例图、类图、思维导图、E-R 图等等。</li>
+</ul>
+<p>官网：<a href="https://plantuml.com/zh/">https://plantuml.com/zh/</a><br>⼿册⼿册：PlantUML_Language_Reference_Guide_zh.pdf</p>
+<h2 id="在线体验"><a href="#在线体验" class="headerlink" title="在线体验"></a>在线体验</h2><p><a href="https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000">https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000</a><br>默认示例如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716871580563-5c6fa209-8203-43f4-924a-c304667d3d0d.png" alt="image.png"><br>尝试修改一下内容（标点符号都要求是英文模式)。</p>
+<pre class="line-numbers language-none"><code class="language-none">@startuml
+用户 -&gt; 认证中心:登录操作
+认证中心  -&gt; 缓存:存放token
+
+用户 &lt;- 认证中心:认证成功返回token
+用户 -&gt; 认证中心:下次访问请求头携带token
+认证中心 &lt;- 缓存:获取token
+其他服务 &lt;- 认证中心:存在并校验成功，就跳转到用户请求的其他服务
+其他服务 -&gt; 用户:信息
+@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>粘贴上面的内容到网页中，效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716871843215-7ca986c8-837b-4e62-8369-ecfd9fe6b603.png" alt="image.png"><br>点击图片上方的 PNG 、SVG 可以在浏览器打开不同格式图片（SVG 效果较好）。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716871970401-19f28c7f-2894-4e59-8ff7-2f8315640159.png" alt="image.png"><br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872013126-39d02a05-620e-458d-99a2-82ab339b1941.png" alt="image.png"></p>
+<h1 id="在-IDEA-中使用-PlantUML"><a href="#在-IDEA-中使用-PlantUML" class="headerlink" title="在 IDEA 中使用 PlantUML"></a>在 IDEA 中使用 PlantUML</h1><h2 id="安装-PlantUML-Integration-插件"><a href="#安装-PlantUML-Integration-插件" class="headerlink" title="安装 PlantUML Integration 插件"></a>安装 PlantUML Integration 插件</h2><p>插件市场搜索 PlantUML Integration，安装。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872163888-17cc616e-4585-4e85-9130-6377792ce0d1.png" alt="image.png"></p>
+<h2 id="安装-Graphviz"><a href="#安装-Graphviz" class="headerlink" title="安装 Graphviz"></a>安装 Graphviz</h2><blockquote>
+<p>Graphviz 是⼀个开源的图可视化⼯具，⾮常适合绘制结构化的图标和⽹络；<br>Graphviz 使⽤⼀种 叫 DOT 的语⾔来表示图形。</p>
+</blockquote>
+<p>根据相应平台下载：<br><a href="https://graphviz.org/download/#windows">https://graphviz.org/download/#windows</a><br><a href="https://graphviz.org/download/#mac">https://graphviz.org/download/#mac</a></p>
+<h2 id="在-IDEA-中绘图"><a href="#在-IDEA-中绘图" class="headerlink" title="在 IDEA 中绘图"></a>在 IDEA 中绘图</h2><p>新建⼀个 Empty Project，取名 PlantUML，如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872318082-aea1432b-1f0c-4ac7-9611-2d914225259b.png" alt="image.png"><br>然后新建 PlantUML ⽂件，如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872390112-40a253fc-c89e-4b93-9ede-08b9113191a4.png" alt="image.png"><br>输⼊⽂件名如：用户登录时序图，选择⼀种图形（如时序图 Sequence），然后双击完成创建。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872439697-2b07e72c-f4d5-48a1-98d2-694ab88aee91.png" alt="image.png" style="zoom:50%;"><br>效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872458066-169ec2a7-cf59-44c0-b398-0916a73cc3ff.png" alt="image.png"><br>复制之前在线的绘图内容，替换掉默认内容，效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872544454-269c4d54-b13e-4dbe-9045-7e374c6cf45a.png" alt="image.png"><br>可以⽅便地保存为图⽚。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872612038-b11b37d2-e0de-40fa-a680-5ee731b80a17.png" alt="image.png"><br>图片保存到了项目根目录，打开如图所示。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872678179-b33f213f-4ec0-47d3-8907-c357d9b29a52.png" alt="image.png"></p>
+<h2 id="常⻅图形示例"><a href="#常⻅图形示例" class="headerlink" title="常⻅图形示例"></a>常⻅图形示例</h2><p>分别创建不同类型的图例，粘贴代码，观察效果。</p>
+<h3 id="⽤例图"><a href="#⽤例图" class="headerlink" title="⽤例图"></a>⽤例图</h3><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872756193-9b57d9e9-e921-42c1-ade5-ea0c72a998ed.png" alt="image.png" style="zoom:50%;">
+
+<pre class="line-numbers language-none"><code class="language-none">@startuml
+left to right direction
+actor User
+actor Admin
+User --&gt; (查看商品)
+User --&gt; (添加商品到购物⻋)
+User --&gt; (结算购物⻋)
+Admin --&gt; (添加商品)
+Admin --&gt; (编辑商品信息)
+Admin --&gt; (删除商品)
+(查看商品) --&gt; (浏览商品列表)
+(查看商品) --&gt; (查看商品详情)
+(添加商品到购物⻋) --&gt; (购物⻋)
+(结算购物⻋) --&gt; (⽀付)
+(结算购物⻋) --&gt; (⽣成订单)
+(添加商品) --&gt; (输⼊商品信息)
+(添加商品) --&gt; (保存商品信息)
+(编辑商品信息) --&gt; (选择商品)
+(编辑商品信息) --&gt; (修改商品信息)
+(删除商品) --&gt; (选择商品)
+(删除商品) --&gt; (确认删除)
+@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872798433-648444c3-e3f6-4323-9a11-b468924d09e1.png" alt="image.png"></p>
+<h3 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h3><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872852292-a0b5e1af-1733-49b9-8c22-31ace22a4322.png" alt="image.png" style="zoom:50%;">
+
+<pre class="line-numbers language-none"><code class="language-none">@startuml
+autonumber
+hide footbox
+title **访问⻚⾯**
+actor "⽤户" as User
+participant "浏览器" as Browser
+participant "服务端" as Server #orange
+activate User
+User -[#blue]&gt; Browser: 输⼊ URL
+activate Browser
+Browser -&gt; Server: 请求服务器
+activate Server #orange
+Server -&gt; Server: 模板渲染
+note right of Server: 记录访问⽇志
+Server -&gt; Browser: 返回 HTML
+...
+Browser -&gt; Server: 请求静态资源 JS/CSS
+deactivate Server
+|||
+Browser -&gt; Browser: 排版 + 渲染
+Browser --&gt; User
+@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872885205-10167532-e6f1-4f93-b00d-85b46922a777.png" alt="image.png"><br>时序图 2</p>
+<pre class="line-numbers language-none"><code class="language-none">@startuml
+title Oauth2令牌颁发之授权码模式
+actor User as user
+participant "User Agent" as userAgent
+participant "Client" as client
+participant "Auth Login" as login
+participant "Auth Server" as server
+autonumber
+user-&gt;userAgent:访问客户端
+activate userAgent
+userAgent-&gt;login:重定向到授权⻚⾯+clientId+redirectUrl
+activate login
+login-&gt;server:⽤户名+密码+clientId+redirectUrl
+activate server
+server--&gt;login:返回授权码
+login--&gt;userAgent:重定向到redirectUrl+授权码code
+deactivate login
+userAgent-&gt;client:使⽤授权码code换取令牌
+activate client
+client-&gt;server:授权码code+clientId+clientSecret
+server--&gt;client:颁发访问令牌accessToken+refreshToken
+deactivate server
+client--&gt;userAgent:返回访问和刷新令牌
+deactivate client
+userAgent--&gt; user:令牌颁发完成
+deactivate userAgent
+@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872952315-350322b5-f5bb-4d29-9633-b4847e43f3f9.png" alt="image.png"></p>
+<h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716872980046-addb75ad-118a-43bf-8216-974668f57f5c.png" alt="image.png" style="zoom:50%;">
+
+<pre class="line-numbers language-none"><code class="language-none">@startuml
+class Person {
+ - name: String
+ - age: int
+ + getName(): String
+ + getAge(): int
+ + setName(name: String): void
+ + setAge(age: int): void
+}
+class Student {
+ - studentId: String
+ + getStudentId(): String
+ + setStudentId(studentId: String): void
+}
+Person &lt;|-- Student
+@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873008085-d379402c-49e2-4d64-a052-e915ace3f424.png" alt="image.png"></p>
+<h3 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h3><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873035006-dc8e65ce-3e3c-41f9-bfb7-2ccfbc0a0d44.png" alt="image.png" style="zoom:50%;">
+
+<pre class="line-numbers language-none"><code class="language-none">@startuml
+title ⽣成确认单流程
+start
+:获取购物⻋信息并计算好优惠;
+:从ums_member_receive_address表中\n获取会员收货地址列表;
+:获取该会员所有优惠券信息;
+switch(根据use_type判断每个优惠券是否可⽤)
+case(0)
+ :全场通⽤;
+ if (判断所有商品总⾦额是否\n满⾜使⽤起点⾦额) then (否)
+ :得到⽤户不可⽤优惠券列表;
+ stop
+ endif
+case(-1)
+ :指定分类;
+ if (判断指定分类商品总⾦额\n是否满⾜使⽤起点⾦额) then (否)
+ :得到⽤户不可⽤优惠券列表;
+ stop
+ endif
+case(-2)
+ :判断指定商品总⾦额是否满⾜使⽤起点⾦额;
+ if (判断指定分类商品总⾦额\n是否满⾜使⽤起点⾦额) then (否)
+ :得到⽤户不可⽤优惠券列表;
+ stop
+ endif
+endswitch
+:得到⽤户可⽤优惠券列表;
+:获取⽤户积分;
+:获取积分使⽤规则;
+:计算总⾦额，活动优惠，应付⾦额;
+stop
+@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873087990-544e7fda-74bf-477b-8aac-26fcd6713752.png" alt="image.png"></p>
+<h3 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h3><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873130842-7695eb9f-be52-4bdc-a4e0-068237d636e5.png" alt="image.png" style="zoom:50%;">
+
+<pre class="line-numbers language-none"><code class="language-none">@startmindmap
++[#17ADF1] mall学习路线
+++[#lightgreen] 推荐资料
+++[#lightblue] 后端技术栈
++++_ 项⽬框架
++++_ 数据存储
++++_ 运维部署
++++_ 其他
+++[#orange] 搭建项⽬⻣架
+++[#1DBAAF] 项⽬部署
++++_ Windows下的部署
++++_ Linux下使⽤Docker部署
++++_ Linux下使⽤Docker Compose部署
++++_ Linux下使⽤Jenkins⾃动化部署
+--[#1DBAAF] 电商业务
+---_ 权限管理模块
+---_ 商品模块
+---_ 订单模块
+---_ 营销模块
+--[#orange] 技术要点
+--[#lightblue] 前端技术栈
+--[#lightgreen] 进阶微服务
+---_ Spring Cloud技术栈
+---_ 项⽬部署
+---_ 技术要点
+--[#yellow] 开发⼯具
+--[#lightgrey] 扩展学习
+@endmindmap<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果如下。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873163629-22f05b18-bbe9-44da-bcd6-81a9cbd08acb.png" alt="image.png"></p>
+<h2 id="结合-ChatGPT-使⽤"><a href="#结合-ChatGPT-使⽤" class="headerlink" title="结合 ChatGPT 使⽤"></a>结合 ChatGPT 使⽤</h2><p>尽量描述清楚，问完 CV ，稍加修改即可。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873291196-1eaec2b5-05b4-4040-9b1f-9e867492a508.png" alt="image.png"><br>yyds！<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873349984-d9ce2df4-4cc5-4c0b-889b-85c2ad26ca66.png" alt="image.png"></p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>这就完了吗？作为一个颜值控，怎么能没有各种花里(bu) 胡哨(shi)的主题呢？<br>这很简单，有手就行。如图，添加主题引⽤即可，一秒变炫酷。<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873485350-51428e19-6574-477e-8145-97e33b55768a.png" alt="image.png"><br>官⽅主题⼀览：<br><a href="https://the-lum.github.io/puml-themes-gallery/">https://the-lum.github.io/puml-themes-gallery/</a><br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873555393-de81ec36-1e27-4ba5-a3b3-2a3241519838.png" alt="image.png"><br>换个不停<br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716873585065-20d76b3f-9525-49e7-9dfb-7fbd8c8113b4.png" alt="image.png"><br><img src="https://mqxu-upload.oss-cn-hangzhou.aliyuncs.com/md/1716874507567-6d44ce98-ab4b-4576-8709-726a519d2131.png" alt="image.png"><br>好了，到这里，你的想法是？</p>
+]]></content>
+      <categories>
+        <category>程序员</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -1436,210 +1645,6 @@ start.sh./start.sh<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </categories>
       <tags>
         <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文本绘图工具 PlantUML</title>
-    <url>/2024/05/28/ben-hui-tu-ju-plantuml/</url>
-    <content><![CDATA[<h1 id="PlantUML"><a href="#PlantUML" class="headerlink" title="PlantUML"></a>PlantUML</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PlantUML 简直是神作，直接使⽤代码脚本绘制图形。特别容易上⼿，且表达能⼒很强，绘制的图形，可读性也很⾼。</p>
-<ul>
-<li>PlantUML 是⼀个开源项⽬，是一个可以快速编写 UML 图的⼯具；</li>
-<li>⽀持编码的⽅式来⽣成图形；</li>
-<li>可以⽤来画时序图、UML ⽤例图、类图、思维导图、E-R 图等等。</li>
-</ul>
-<p>官网：<a href="https://plantuml.com/zh/">https://plantuml.com/zh/</a><br>⼿册⼿册：PlantUML_Language_Reference_Guide_zh.pdf</p>
-<h2 id="在线体验"><a href="#在线体验" class="headerlink" title="在线体验"></a>在线体验</h2><p><a href="https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000">https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000</a><br>默认示例如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716871580563-5c6fa209-8203-43f4-924a-c304667d3d0d.png#averageHue=%23fbfafa&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=771&amp;id=u41862142&amp;originHeight=1542&amp;originWidth=2386&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=208173&amp;status=done&amp;style=shadow&amp;taskId=uc6c45909-ab15-4b0b-9a62-72107747ab2&amp;title=&amp;width=1193" alt="image.png"><br>尝试修改一下内容（标点符号都要求是英文模式）。</p>
-<pre class="line-numbers language-none"><code class="language-none">@startuml
-用户 -&gt; 认证中心:登录操作
-认证中心  -&gt; 缓存:存放token
-
-用户 &lt;- 认证中心:认证成功返回token
-用户 -&gt; 认证中心:下次访问请求头携带token
-认证中心 &lt;- 缓存:获取token
-其他服务 &lt;- 认证中心:存在并校验成功，就跳转到用户请求的其他服务
-其他服务 -&gt; 用户:信息
-@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>粘贴上面的内容到网页中，效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716871843215-7ca986c8-837b-4e62-8369-ecfd9fe6b603.png#averageHue=%23f9f7f7&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=900&amp;id=u0761e87b&amp;originHeight=1800&amp;originWidth=2996&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=438361&amp;status=done&amp;style=shadow&amp;taskId=u5702094a-89a0-4ab0-898e-2d648cbc68e&amp;title=&amp;width=1498" alt="image.png"><br>点击图片上方的 PNG 、SVG 可以在浏览器打开不同格式图片（SVG 效果较好）。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716871970401-19f28c7f-2894-4e59-8ff7-2f8315640159.png#averageHue=%232e2e2e&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=754&amp;id=ua03c44fa&amp;originHeight=1508&amp;originWidth=3008&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=246177&amp;status=done&amp;style=shadow&amp;taskId=u4f04c141-7bdc-43c4-9dc1-fcf486e8625&amp;title=&amp;width=1504" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872013126-39d02a05-620e-458d-99a2-82ab339b1941.png#averageHue=%23fafafa&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=493&amp;id=u73d136dd&amp;originHeight=986&amp;originWidth=1508&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=120523&amp;status=done&amp;style=shadow&amp;taskId=u9c166efb-0f7f-48dc-ae03-14588e3fe46&amp;title=&amp;width=754" alt="image.png"></p>
-<h1 id="在-IDEA-中使用-PlantUML"><a href="#在-IDEA-中使用-PlantUML" class="headerlink" title="在 IDEA 中使用 PlantUML"></a>在 IDEA 中使用 PlantUML</h1><h2 id="安装-PlantUML-Integration-插件"><a href="#安装-PlantUML-Integration-插件" class="headerlink" title="安装 PlantUML Integration 插件"></a>安装 PlantUML Integration 插件</h2><p>插件市场搜索 PlantUML Integration，安装。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872163888-17cc616e-4585-4e85-9130-6377792ce0d1.png#averageHue=%23272a31&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=883&amp;id=SQkne&amp;originHeight=1766&amp;originWidth=2412&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=401724&amp;status=done&amp;style=shadow&amp;taskId=u9cafb5d6-b2fd-4411-b686-3581274c045&amp;title=&amp;width=1206" alt="image.png"></p>
-<h2 id="安装-Graphviz"><a href="#安装-Graphviz" class="headerlink" title="安装 Graphviz"></a>安装 Graphviz</h2><blockquote>
-<p>Graphviz 是⼀个开源的图可视化⼯具，⾮常适合绘制结构化的图标和⽹络；<br>Graphviz 使⽤⼀种 叫 DOT 的语⾔来表示图形。</p>
-</blockquote>
-<p>根据相应平台下载：<br><a href="https://graphviz.org/download/#windows">https://graphviz.org/download/#windows</a><br><a href="https://graphviz.org/download/#mac">https://graphviz.org/download/#mac</a></p>
-<h2 id="在-IDEA-中绘图"><a href="#在-IDEA-中绘图" class="headerlink" title="在 IDEA 中绘图"></a>在 IDEA 中绘图</h2><p>新建⼀个 Empty Project，取名 PlantUML，如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872318082-aea1432b-1f0c-4ac7-9611-2d914225259b.png#averageHue=%2325282f&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=640&amp;id=ubf4266a6&amp;originHeight=1280&amp;originWidth=1600&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=164001&amp;status=done&amp;style=shadow&amp;taskId=uf668b2a0-89e6-40c0-84ea-8cca109e6cd&amp;title=&amp;width=800" alt="image.png"><br>然后新建 PlantUML ⽂件，如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872390112-40a253fc-c89e-4b93-9ede-08b9113191a4.png#averageHue=%23292c32&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=789&amp;id=u1cd2ac73&amp;originHeight=1578&amp;originWidth=1724&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=614071&amp;status=done&amp;style=shadow&amp;taskId=u42a60272-50b5-432f-b940-87930cf4b67&amp;title=&amp;width=862" alt="image.png"><br>输⼊⽂件名如：用户登录时序图，选择⼀种图形（如时序图 Sequence），然后双击完成创建。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872439697-2b07e72c-f4d5-48a1-98d2-694ab88aee91.png#averageHue=%232b303a&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=312&amp;id=u71ad9512&amp;originHeight=624&amp;originWidth=830&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=119852&amp;status=done&amp;style=shadow&amp;taskId=u6908fa95-334f-43e2-8b02-77a018c2ce7&amp;title=&amp;width=415" alt="image.png"><br>效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872458066-169ec2a7-cf59-44c0-b398-0916a73cc3ff.png#averageHue=%23262a30&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=ub76b9966&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=338902&amp;status=done&amp;style=shadow&amp;taskId=u3dafe9ad-59af-4040-84de-d5a34f6f023&amp;title=&amp;width=1512" alt="image.png"><br>复制之前在线的绘图内容，替换掉默认内容，效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872544454-269c4d54-b13e-4dbe-9045-7e374c6cf45a.png#averageHue=%23282b32&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=u10596b85&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=397427&amp;status=done&amp;style=shadow&amp;taskId=u0d48731e-04eb-4b97-ba30-a2c21c6102e&amp;title=&amp;width=1512" alt="image.png"><br>可以⽅便地保存为图⽚。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872612038-b11b37d2-e0de-40fa-a680-5ee731b80a17.png#averageHue=%23272b31&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=634&amp;id=u8ed03fbb&amp;originHeight=1268&amp;originWidth=2502&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=416620&amp;status=done&amp;style=shadow&amp;taskId=uc1410a1d-ea47-4720-b8ac-16b5a7710fc&amp;title=&amp;width=1251" alt="image.png"><br>图片保存到了项目根目录，打开如图所示。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872678179-b33f213f-4ec0-47d3-8907-c357d9b29a52.png#averageHue=%23292d33&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=u8ae8da8b&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=357824&amp;status=done&amp;style=shadow&amp;taskId=u4d087e62-5d1f-46ec-b2e2-fc7d20148ba&amp;title=&amp;width=1512" alt="image.png"></p>
-<h2 id="常⻅图形示例"><a href="#常⻅图形示例" class="headerlink" title="常⻅图形示例"></a>常⻅图形示例</h2><p>分别创建不同类型的图例，粘贴代码，观察效果。</p>
-<h3 id="⽤例图"><a href="#⽤例图" class="headerlink" title="⽤例图"></a>⽤例图</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872756193-9b57d9e9-e921-42c1-ade5-ea0c72a998ed.png#averageHue=%232b2f38&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=324&amp;id=u63a5d69e&amp;originHeight=710&amp;originWidth=1004&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=140518&amp;status=done&amp;style=shadow&amp;taskId=uddb053df-18d6-4458-9590-792340fcb04&amp;title=&amp;width=458" alt="image.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">@startuml
-left to right direction
-actor User
-actor Admin
-User --&gt; (查看商品)
-User --&gt; (添加商品到购物⻋)
-User --&gt; (结算购物⻋)
-Admin --&gt; (添加商品)
-Admin --&gt; (编辑商品信息)
-Admin --&gt; (删除商品)
-(查看商品) --&gt; (浏览商品列表)
-(查看商品) --&gt; (查看商品详情)
-(添加商品到购物⻋) --&gt; (购物⻋)
-(结算购物⻋) --&gt; (⽀付)
-(结算购物⻋) --&gt; (⽣成订单)
-(添加商品) --&gt; (输⼊商品信息)
-(添加商品) --&gt; (保存商品信息)
-(编辑商品信息) --&gt; (选择商品)
-(编辑商品信息) --&gt; (修改商品信息)
-(删除商品) --&gt; (选择商品)
-(删除商品) --&gt; (确认删除)
-@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872798433-648444c3-e3f6-4323-9a11-b468924d09e1.png#averageHue=%2323262b&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=v9sUC&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=598658&amp;status=done&amp;style=shadow&amp;taskId=uf56d5510-b395-4f25-b6ab-3043e766a37&amp;title=&amp;width=1512" alt="image.png"></p>
-<h3 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872852292-a0b5e1af-1733-49b9-8c22-31ace22a4322.png#averageHue=%232b2f39&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=332&amp;id=ued02b278&amp;originHeight=714&amp;originWidth=944&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=139273&amp;status=done&amp;style=shadow&amp;taskId=u00750669-d789-41e5-95a6-34ff3877433&amp;title=&amp;width=439" alt="image.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">@startuml
-autonumber
-hide footbox
-title **访问⻚⾯**
-actor "⽤户" as User
-participant "浏览器" as Browser
-participant "服务端" as Server #orange
-activate User
-User -[#blue]&gt; Browser: 输⼊ URL
-activate Browser
-Browser -&gt; Server: 请求服务器
-activate Server #orange
-Server -&gt; Server: 模板渲染
-note right of Server: 记录访问⽇志
-Server -&gt; Browser: 返回 HTML
-...
-Browser -&gt; Server: 请求静态资源 JS/CSS
-deactivate Server
-|||
-Browser -&gt; Browser: 排版 + 渲染
-Browser --&gt; User
-@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872885205-10167532-e6f1-4f93-b00d-85b46922a777.png#averageHue=%23272a30&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=ue63ff4be&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=469145&amp;status=done&amp;style=shadow&amp;taskId=ud0d55aef-54fb-49e5-8b84-dc0bfc727ad&amp;title=&amp;width=1512" alt="image.png"><br>时序图 2</p>
-<pre class="line-numbers language-none"><code class="language-none">@startuml
-title Oauth2令牌颁发之授权码模式
-actor User as user
-participant "User Agent" as userAgent
-participant "Client" as client
-participant "Auth Login" as login
-participant "Auth Server" as server
-autonumber
-user-&gt;userAgent:访问客户端
-activate userAgent
-userAgent-&gt;login:重定向到授权⻚⾯+clientId+redirectUrl
-activate login
-login-&gt;server:⽤户名+密码+clientId+redirectUrl
-activate server
-server--&gt;login:返回授权码
-login--&gt;userAgent:重定向到redirectUrl+授权码code
-deactivate login
-userAgent-&gt;client:使⽤授权码code换取令牌
-activate client
-client-&gt;server:授权码code+clientId+clientSecret
-server--&gt;client:颁发访问令牌accessToken+refreshToken
-deactivate server
-client--&gt;userAgent:返回访问和刷新令牌
-deactivate client
-userAgent--&gt; user:令牌颁发完成
-deactivate userAgent
-@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872952315-350322b5-f5bb-4d29-9633-b4847e43f3f9.png#averageHue=%23272a30&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=ub86af76f&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=622490&amp;status=done&amp;style=shadow&amp;taskId=ubdfc7026-186a-498d-bbf9-4a8a0caa88a&amp;title=&amp;width=1512" alt="image.png"></p>
-<h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716872980046-addb75ad-118a-43bf-8216-974668f57f5c.png#averageHue=%232b2f39&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=359&amp;id=u81bdf1de&amp;originHeight=788&amp;originWidth=914&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=141798&amp;status=done&amp;style=shadow&amp;taskId=u0b78b224-4302-4b26-a942-2ae3c0fec74&amp;title=&amp;width=416" alt="image.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">@startuml
-class Person {
- - name: String
- - age: int
- + getName(): String
- + getAge(): int
- + setName(name: String): void
- + setAge(age: int): void
-}
-class Student {
- - studentId: String
- + getStudentId(): String
- + setStudentId(studentId: String): void
-}
-Person &lt;|-- Student
-@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873008085-d379402c-49e2-4d64-a052-e915ace3f424.png#averageHue=%23262930&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=u91214abc&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=405444&amp;status=done&amp;style=shadow&amp;taskId=u8f922c43-5bc1-495f-8e8d-c7c8cec7713&amp;title=&amp;width=1512" alt="image.png"></p>
-<h3 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873035006-dc8e65ce-3e3c-41f9-bfb7-2ccfbc0a0d44.png#averageHue=%232b303a&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=347&amp;id=u5eecc780&amp;originHeight=694&amp;originWidth=890&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=139517&amp;status=done&amp;style=shadow&amp;taskId=u7735ed7d-3f8a-45b0-97b4-87b2c1e3e1f&amp;title=&amp;width=445" alt="image.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">@startuml
-title ⽣成确认单流程
-start
-:获取购物⻋信息并计算好优惠;
-:从ums_member_receive_address表中\n获取会员收货地址列表;
-:获取该会员所有优惠券信息;
-switch(根据use_type判断每个优惠券是否可⽤)
-case(0)
- :全场通⽤;
- if (判断所有商品总⾦额是否\n满⾜使⽤起点⾦额) then (否)
- :得到⽤户不可⽤优惠券列表;
- stop
- endif
-case(-1)
- :指定分类;
- if (判断指定分类商品总⾦额\n是否满⾜使⽤起点⾦额) then (否)
- :得到⽤户不可⽤优惠券列表;
- stop
- endif
-case(-2)
- :判断指定商品总⾦额是否满⾜使⽤起点⾦额;
- if (判断指定分类商品总⾦额\n是否满⾜使⽤起点⾦额) then (否)
- :得到⽤户不可⽤优惠券列表;
- stop
- endif
-endswitch
-:得到⽤户可⽤优惠券列表;
-:获取⽤户积分;
-:获取积分使⽤规则;
-:计算总⾦额，活动优惠，应付⾦额;
-stop
-@enduml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873087990-544e7fda-74bf-477b-8aac-26fcd6713752.png#averageHue=%23487344&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=u38f52a45&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=623373&amp;status=done&amp;style=shadow&amp;taskId=u45e02b41-ecd8-4172-a3ce-b7156bdb954&amp;title=&amp;width=1512" alt="image.png"></p>
-<h3 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873130842-7695eb9f-be52-4bdc-a4e0-068237d636e5.png#averageHue=%232b2f39&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=320&amp;id=ub53e843c&amp;originHeight=720&amp;originWidth=966&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=143016&amp;status=done&amp;style=shadow&amp;taskId=u357fe2ff-2740-4449-899b-8c4fdeff04c&amp;title=&amp;width=429" alt="image.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">@startmindmap
-+[#17ADF1] mall学习路线
-++[#lightgreen] 推荐资料
-++[#lightblue] 后端技术栈
-+++_ 项⽬框架
-+++_ 数据存储
-+++_ 运维部署
-+++_ 其他
-++[#orange] 搭建项⽬⻣架
-++[#1DBAAF] 项⽬部署
-+++_ Windows下的部署
-+++_ Linux下使⽤Docker部署
-+++_ Linux下使⽤Docker Compose部署
-+++_ Linux下使⽤Jenkins⾃动化部署
---[#1DBAAF] 电商业务
----_ 权限管理模块
----_ 商品模块
----_ 订单模块
----_ 营销模块
---[#orange] 技术要点
---[#lightblue] 前端技术栈
---[#lightgreen] 进阶微服务
----_ Spring Cloud技术栈
----_ 项⽬部署
----_ 技术要点
---[#yellow] 开发⼯具
---[#lightgrey] 扩展学习
-@endmindmap<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>效果如下。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873163629-22f05b18-bbe9-44da-bcd6-81a9cbd08acb.png#averageHue=%2378a9b8&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=u85a99ea4&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=580361&amp;status=done&amp;style=shadow&amp;taskId=uc7e851b1-5f29-410c-937d-a0d6ac3d64c&amp;title=&amp;width=1512" alt="image.png"></p>
-<h2 id="结合-ChatGPT-使⽤"><a href="#结合-ChatGPT-使⽤" class="headerlink" title="结合 ChatGPT 使⽤"></a>结合 ChatGPT 使⽤</h2><p>尽量描述清楚，问完 CV ，稍加修改即可。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873291196-1eaec2b5-05b4-4040-9b1f-9e867492a508.png#averageHue=%23242323&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=810&amp;id=u4cc4796e&amp;originHeight=1620&amp;originWidth=2010&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=310130&amp;status=done&amp;style=shadow&amp;taskId=u9a0a39ed-e07a-4a07-b8be-a360d7b4def&amp;title=&amp;width=1005" alt="image.png"><br>yyds！<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873349984-d9ce2df4-4cc5-4c0b-889b-85c2ad26ca66.png#averageHue=%2323262b&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=u5f73f690&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=462703&amp;status=done&amp;style=shadow&amp;taskId=u98b9542a-2039-4ff7-aba5-5d511c41c56&amp;title=&amp;width=1512" alt="image.png"></p>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>这就完了吗？作为一个颜值控，怎么能没有各种花里(bu) 胡哨(shi)的主题呢？<br>这很简单，有手就行。如图，添加主题引⽤即可，一秒变炫酷。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873485350-51428e19-6574-477e-8145-97e33b55768a.png#averageHue=%23282c32&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=nTzSm&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=502216&amp;status=done&amp;style=shadow&amp;taskId=u49e9bf85-63ad-411e-a3bc-e4296ccf705&amp;title=&amp;width=1512" alt="image.png"><br>官⽅主题⼀览：<br><a href="https://the-lum.github.io/puml-themes-gallery/">https://the-lum.github.io/puml-themes-gallery/</a><br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873555393-de81ec36-1e27-4ba5-a3b3-2a3241519838.png#averageHue=%23f6f3f0&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=813&amp;id=uf108cc1d&amp;originHeight=1626&amp;originWidth=1202&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=175213&amp;status=done&amp;style=shadow&amp;taskId=u50e81505-17bd-445a-8482-4f8e8addc25&amp;title=&amp;width=601" alt="image.png"><br>换个不停<br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716873585065-20d76b3f-9525-49e7-9dfb-7fbd8c8113b4.png#averageHue=%23272a30&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=ue2c5926e&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=494518&amp;status=done&amp;style=shadow&amp;taskId=u67c46b6a-43ac-4e45-be9b-1f0855b1636&amp;title=&amp;width=1512" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/228333/1716874507567-6d44ce98-ab4b-4576-8709-726a519d2131.png#averageHue=%23282d34&amp;clientId=u17ba06ca-371a-4&amp;from=paste&amp;height=945&amp;id=u73d71401&amp;originHeight=1890&amp;originWidth=3024&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=496511&amp;status=done&amp;style=shadow&amp;taskId=u394b16a6-6fbb-42f6-8c4d-d123be0ba8d&amp;title=&amp;width=1512" alt="image.png"><br>好了，到这里，你的想法是？</p>
-]]></content>
-      <categories>
-        <category>程序员</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -2003,68 +2008,6 @@ stop
       </tags>
   </entry>
   <entry>
-    <title>超美的文字</title>
-    <url>/2021/09/21/chao-mei-de-wen-zi/</url>
-    <content><![CDATA[<p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/blog/30.jpg"></p>
-<p>1、岁月不饶人，我亦未曾绕过岁月。</p>
-<p>2、剑未佩妥，出门已是江湖；酒尚余温，入口不识乾坤。</p>
-<p>3、枕上诗书闲处好，门前风景雨来佳。</p>
-<p>4、愿你历尽千帆，归来仍是少年。</p>
-<p>5、何来人间一惊鸿，只是世间一俗人。</p>
-<p>6、愿你垂垂老矣，我可明我心。</p>
-<p>7、你踏万千星河而来，有乘舟奔赴远方。</p>
-<p>8、沧海明月，何尝不是一滴相思泪。</p>
-<p>9、人生天地间，忽如远行客。</p>
-<p>10、青丝蘸白雪，来路生云烟。</p>
-<p>11、你没有如期归来，而这正是离别的意义。</p>
-<p>12、山外青山楼外楼，江山不及你温柔。</p>
-<p>13、海底月是天上月，眼前人是心上人。</p>
-<p>14、我只愿面朝大海，春暖花开。</p>
-<p>15、愿岁月可回首，且以深情共白头。</p>
-<p>16、你是千堆雪，我是长街。怕日出一到，彼此瓦解。</p>
-<p>17、在青山绿水之间，我想牵着你的手，走过这座桥，桥上是绿叶红花，桥下是流水人家，桥的那头是青丝，桥的这头是白发。</p>
-<p>18、回首向来萧瑟处，归去，也无风雨也无晴。</p>
-<p>19、与一人琴瑟和鸣，守山青月明。</p>
-<p>20、夜阑卧听风吹雨，铁马是你，冰河也是你。</p>
-<p>21、余生还长，请多多指教。</p>
-<p>22、秋风凉，秋风忘，今夜别思量。</p>
-<p>23、我还是很喜欢你，像风走了八千里，不问归期。</p>
-<p>24、人道海水深，不抵相思半。海水尚有涯，相思渺无畔。</p>
-<p>25、心微动奈何情己远，物也非，人也非，事事非，往日不可追。</p>
-<p>26、雨水透过窗。思念传彼岸，你在我心房。</p>
-<p>27、那时我们有梦，关于文学，关于爱情，关于穿越世界的旅行。如今我们深夜饮酒，杯子碰到一起，都是梦破碎的声音。</p>
-<p>28、如今的气质里，藏着你走过的路，读过的书和爱过的人。</p>
-<p>29、鲜花怒马少年时，一日看尽长安花。</p>
-<p>30、苦酒折柳今相离，无风无月也无你。</p>
-<p>31、曲终人不散，江上数峰青。</p>
-<p>32、一个人只拥有此生此世是不够的，他还应该拥有诗意的世界。</p>
-<p>33、眼睛为她下着雨，心却为她打着伞，这就是爱情。</p>
-<p>34、当一个人不能拥有的是时候，他唯一能做的就是不要忘记。</p>
-<p>35、世界上所有的相遇都是久别重逢。</p>
-<p>36、我为你翻山越岭，却无心看风景。</p>
-<p>37、若我遇见你，事隔经年，我将如何致你，以眼泪，以沉默。</p>
-<p>38、红尘陌上，独自行走，绿萝拂过衣襟，青云打湿诺言。山和水可以两两相忘，日与月可以毫无瓜葛。那时候，只一个人的浮世清欢，一个人的细水长流。</p>
-<p>39、人性本凉薄，又何介，谁比谁更多。</p>
-<p>40、雪沫乳花浮午盏，蓼茸蒿笋试春盘，人间有味是清欢。</p>
-<p>41、我将于茫茫人海中访我唯一灵魂之伴侣。得之，我幸；不得，我命。</p>
-<p>42、深情若是一桩悲剧，必定以死来句读。</p>
-<p>43、你年轻时很美丽，身边有许多追求者，不过跟那时相比，我更喜欢你经历了沧桑的容颜。</p>
-<p>44、兴亡千古繁华梦，诗眼倦天涯。</p>
-<p>45、你还不来，我怎敢老去。</p>
-<p>46、曾踏月而来，只因你在山中。山风拂发、拂颈、拂裸露的肩膀，而月光衣我以华裳。</p>
-<p>47、遇见你之前，我没想过结婚，遇见你之后，结婚我没想过别人。</p>
-<p>48、原是今生今世已惘然，山河岁月空惆怅，而我，终将是要等着你的。</p>
-<p>49、树在，山在，大地在，岁月在，我在，你还要怎样更好的世界？</p>
-<p>50、于千万人之中遇见你所要遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧赶上了，那也没有别的话可说，惟有轻轻地问一声：“噢，你也在这里吗？</p>
-]]></content>
-      <categories>
-        <category>文艺</category>
-      </categories>
-      <tags>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>检查并优化 Flutter App 整体性能</title>
     <url>/2022/12/03/jian-cha-bing-you-hua-flutter-app-zheng-ti-xing-neng/</url>
     <content><![CDATA[<h1 id="检查并优化-Flutter-App-整体性能"><a href="#检查并优化-Flutter-App-整体性能" class="headerlink" title="检查并优化 Flutter App 整体性能"></a>检查并优化 Flutter App 整体性能</h1><p>除了代码逻辑 Bug 和视觉异常这些功能层面的问题之外，移动应用另一类常见的问题是性能问题，比如滑动操作不流畅、页面出现卡顿丢帧现象等。这些问题虽然不至于让移动应用完全不可用，但也很容易引起用户反感，从而对应用质量产生质疑，甚至失去耐心。</p>
@@ -2137,6 +2080,68 @@ stop
       </tags>
   </entry>
   <entry>
+    <title>超美的文字</title>
+    <url>/2021/09/21/chao-mei-de-wen-zi/</url>
+    <content><![CDATA[<p><img src="https://niit-soft.oss-cn-hangzhou.aliyuncs.com/blog/30.jpg"></p>
+<p>1、岁月不饶人，我亦未曾绕过岁月。</p>
+<p>2、剑未佩妥，出门已是江湖；酒尚余温，入口不识乾坤。</p>
+<p>3、枕上诗书闲处好，门前风景雨来佳。</p>
+<p>4、愿你历尽千帆，归来仍是少年。</p>
+<p>5、何来人间一惊鸿，只是世间一俗人。</p>
+<p>6、愿你垂垂老矣，我可明我心。</p>
+<p>7、你踏万千星河而来，有乘舟奔赴远方。</p>
+<p>8、沧海明月，何尝不是一滴相思泪。</p>
+<p>9、人生天地间，忽如远行客。</p>
+<p>10、青丝蘸白雪，来路生云烟。</p>
+<p>11、你没有如期归来，而这正是离别的意义。</p>
+<p>12、山外青山楼外楼，江山不及你温柔。</p>
+<p>13、海底月是天上月，眼前人是心上人。</p>
+<p>14、我只愿面朝大海，春暖花开。</p>
+<p>15、愿岁月可回首，且以深情共白头。</p>
+<p>16、你是千堆雪，我是长街。怕日出一到，彼此瓦解。</p>
+<p>17、在青山绿水之间，我想牵着你的手，走过这座桥，桥上是绿叶红花，桥下是流水人家，桥的那头是青丝，桥的这头是白发。</p>
+<p>18、回首向来萧瑟处，归去，也无风雨也无晴。</p>
+<p>19、与一人琴瑟和鸣，守山青月明。</p>
+<p>20、夜阑卧听风吹雨，铁马是你，冰河也是你。</p>
+<p>21、余生还长，请多多指教。</p>
+<p>22、秋风凉，秋风忘，今夜别思量。</p>
+<p>23、我还是很喜欢你，像风走了八千里，不问归期。</p>
+<p>24、人道海水深，不抵相思半。海水尚有涯，相思渺无畔。</p>
+<p>25、心微动奈何情己远，物也非，人也非，事事非，往日不可追。</p>
+<p>26、雨水透过窗。思念传彼岸，你在我心房。</p>
+<p>27、那时我们有梦，关于文学，关于爱情，关于穿越世界的旅行。如今我们深夜饮酒，杯子碰到一起，都是梦破碎的声音。</p>
+<p>28、如今的气质里，藏着你走过的路，读过的书和爱过的人。</p>
+<p>29、鲜花怒马少年时，一日看尽长安花。</p>
+<p>30、苦酒折柳今相离，无风无月也无你。</p>
+<p>31、曲终人不散，江上数峰青。</p>
+<p>32、一个人只拥有此生此世是不够的，他还应该拥有诗意的世界。</p>
+<p>33、眼睛为她下着雨，心却为她打着伞，这就是爱情。</p>
+<p>34、当一个人不能拥有的是时候，他唯一能做的就是不要忘记。</p>
+<p>35、世界上所有的相遇都是久别重逢。</p>
+<p>36、我为你翻山越岭，却无心看风景。</p>
+<p>37、若我遇见你，事隔经年，我将如何致你，以眼泪，以沉默。</p>
+<p>38、红尘陌上，独自行走，绿萝拂过衣襟，青云打湿诺言。山和水可以两两相忘，日与月可以毫无瓜葛。那时候，只一个人的浮世清欢，一个人的细水长流。</p>
+<p>39、人性本凉薄，又何介，谁比谁更多。</p>
+<p>40、雪沫乳花浮午盏，蓼茸蒿笋试春盘，人间有味是清欢。</p>
+<p>41、我将于茫茫人海中访我唯一灵魂之伴侣。得之，我幸；不得，我命。</p>
+<p>42、深情若是一桩悲剧，必定以死来句读。</p>
+<p>43、你年轻时很美丽，身边有许多追求者，不过跟那时相比，我更喜欢你经历了沧桑的容颜。</p>
+<p>44、兴亡千古繁华梦，诗眼倦天涯。</p>
+<p>45、你还不来，我怎敢老去。</p>
+<p>46、曾踏月而来，只因你在山中。山风拂发、拂颈、拂裸露的肩膀，而月光衣我以华裳。</p>
+<p>47、遇见你之前，我没想过结婚，遇见你之后，结婚我没想过别人。</p>
+<p>48、原是今生今世已惘然，山河岁月空惆怅，而我，终将是要等着你的。</p>
+<p>49、树在，山在，大地在，岁月在，我在，你还要怎样更好的世界？</p>
+<p>50、于千万人之中遇见你所要遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧赶上了，那也没有别的话可说，惟有轻轻地问一声：“噢，你也在这里吗？</p>
+]]></content>
+      <categories>
+        <category>文艺</category>
+      </categories>
+      <tags>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阶段1：JavaSE</title>
     <url>/2022/12/03/jie-duan-1-javase/</url>
     <content><![CDATA[<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ol>
@@ -2205,117 +2210,6 @@ stop
 </li>
 <li>项目<ul>
 <li>Java 8 小代码片段：<a href="https://github.com/biezhi/30-seconds-of-java8">https://github.com/biezhi/30-seconds-of-java8</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java全栈学习路线</category>
-      </categories>
-      <tags>
-        <tag>Java全栈学习路线</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阶段2：计算机基础</title>
-    <url>/2022/12/03/jie-duan-2-ji-suan-ji-ji-chu/</url>
-    <content><![CDATA[<h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h2><p><strong>数据结构</strong></p>
-<ul>
-<li>数组</li>
-<li>字符串</li>
-<li>队列</li>
-<li>栈</li>
-<li>链表</li>
-<li>集合</li>
-<li>哈希表</li>
-<li>二叉树</li>
-</ul>
-<p><strong>算法</strong></p>
-<ul>
-<li>排序</li>
-<li>双指针</li>
-<li>查找</li>
-<li>分治</li>
-<li>动态规划</li>
-<li>递归</li>
-<li>回溯</li>
-<li>贪心</li>
-<li>位运算</li>
-<li>DFS</li>
-<li>BFS</li>
-<li>图</li>
-</ul>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li>在线教程<ul>
-<li>⭐ LeetCode LeetBook：<a href="https://leetcode-cn.com/leetbook/">https://leetcode-cn.com/leetbook/</a></li>
-</ul>
-</li>
-<li>在线刷题<ul>
-<li>⭐ LeetCode：<a href="https://leetcode-cn.com/">https://leetcode-cn.com/</a></li>
-</ul>
-</li>
-<li>书籍<ul>
-<li>⭐《小灰的漫画算法》</li>
-<li>⭐《剑指 Offer》</li>
-<li>《程序员代码面试指南》</li>
-<li>图解算法数据结构：<a href="https://leetcode-cn.com/leetbook/detail/illustration-of-algorithm/">https://leetcode-cn.com/leetbook/detail/illustration-of-algorithm/</a></li>
-</ul>
-</li>
-<li>视频<ul>
-<li>尚硅谷 Java 数据结构与算法：<a href="https://www.bilibili.com/video/BV1E4411H73v">https://www.bilibili.com/video/BV1E4411H73v</a></li>
-<li>Leetcode 真题解析：<a href="https://www.bilibili.com/video/BV1a54y1b74k">https://www.bilibili.com/video/BV1a54y1b74k</a></li>
-</ul>
-</li>
-<li>工具<ul>
-<li>VisuAlgo 数据结构和算法动态可视化：<a href="https://visualgo.net/zh">https://visualgo.net/zh</a></li>
-<li>数据结构可视化：<a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></li>
-</ul>
-</li>
-<li>网站<ul>
-<li>五分钟学算法：<a href="https://www.cxyxiaowu.com/">https://www.cxyxiaowu.com/</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="知识-1"><a href="#知识-1" class="headerlink" title="知识"></a>知识</h2><ul>
-<li>进程、线程</li>
-<li>进程 / 线程间通讯方式</li>
-<li>进程调度算法</li>
-<li>进程 / 线程状态</li>
-<li>死锁</li>
-<li>内存管理</li>
-<li>文件管理</li>
-</ul>
-<h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><ul>
-<li>视频<ul>
-<li>《清华操作系统原理》：<a href="https://www.bilibili.com/video/BV1uW411f72n">https://www.bilibili.com/video/BV1uW411f72n</a></li>
-</ul>
-</li>
-<li>书籍<ul>
-<li>《编码》</li>
-<li>《30 天自制操作系统》</li>
-<li>《现代操作系统》（难度较大，不推荐新手看）</li>
-<li>《深入理解计算机系统》（难度较大，不推荐新手看）</li>
-</ul>
-</li>
-</ul>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="知识-2"><a href="#知识-2" class="headerlink" title="知识"></a>知识</h2><ul>
-<li>HTTP / HTTPS 协议</li>
-<li>网络模型</li>
-<li>UDP / TCP 协议</li>
-<li>网络安全</li>
-<li>DNS</li>
-<li>《图解 HTTP》</li>
-</ul>
-<h2 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h2><ul>
-<li>视频<ul>
-<li>《计算机网络微课堂》：<a href="https://www.bilibili.com/video/BV1c4411d7jb">https://www.bilibili.com/video/BV1c4411d7jb</a></li>
-</ul>
-</li>
-<li>书籍<ul>
-<li>⭐《图解 HTTP》</li>
-<li>《网络是怎样连接的》</li>
-<li>⭐《图解 TCP / IP》</li>
-<li>《计算机网络-自顶向下方法》（难度较大，不推荐新手看）</li>
 </ul>
 </li>
 </ul>
@@ -2578,6 +2472,91 @@ stop
 <li>宝塔 Linux 面板：<a href="https://www.bt.cn/">https://www.bt.cn/</a></li>
 </ul>
 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java全栈学习路线</category>
+      </categories>
+      <tags>
+        <tag>Java全栈学习路线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阶段5：项目实战</title>
+    <url>/2022/12/03/jie-duan-5-xiang-mu-shi-zhan/</url>
+    <content><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><blockquote>
+<p>综合所学技术从 0 到 1 开发和上线一个全面、有特色的、可以写进简历的个人项目。</p>
+</blockquote>
+<h1 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h1><blockquote>
+<p>其实在之前的框架学习视频中应该就做过几个项目了，但相对不够完整和体系化。 有想法的同学可以做任何自己想做的项目，推荐参加一些作品类竞赛，练手、拿奖、收获项目经历一举三得。 暂时没想法的，建议先跟着专门带做项目的视频教程做 1 - 2 套 Java 完整项目，一定要从 0 到 1 自己手写！ 有能力的也可以试着用 GitHub 上的源码来学习~ 做一个完整的项目的确很不容易，建议大家根据自己的时间和兴趣选择 <strong>较新的、有配套源码的</strong> 教程，保持耐心。</p>
+</blockquote>
+<h1 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h1><ul>
+<li>尚硅谷 - 谷粒学院 - 微服务 + 全栈 - 在线教育实战项目：<a href="https://www.bilibili.com/video/BV1dQ4y1A75e">https://www.bilibili.com/video/BV1dQ4y1A75e</a>（全栈项目，前后端讲得都很全面）</li>
+<li>尚硅谷 - 尚筹网 - Java 项目实战开发教程 - SSM 框架 + 微服务架构：<a href="https://www.bilibili.com/video/BV1bE411T7oZ">https://www.bilibili.com/video/BV1bE411T7oZ</a>（500 多集，包含完整的用户权限管理，功能丰富、细致全面）</li>
+<li>黑马 - 24 小时搞定 Java 毕设电商项目：<a href="https://www.bilibili.com/video/BV13f4y1r7fS">https://www.bilibili.com/video/BV13f4y1r7fS</a></li>
+<li>黑马程序员 Java 项目《传智健康》，超完整的企业级医疗行业项目：<a href="https://www.bilibili.com/video/BV1Bo4y117zV">https://www.bilibili.com/video/BV1Bo4y117zV</a></li>
+<li>黑马程序员 Java 项目《万信金融》企业级开发实战，互联网金融行业解决方案：<a href="https://www.bilibili.com/video/BV1Ub4y1f7rk">https://www.bilibili.com/video/BV1Ub4y1f7rk</a></li>
+<li>黑马程序员 Java 项目 SaaS 移动办公完整版《iHRM 人力资源管理系统》，跨行业 SaaS 办公整合性解决方案：<a href="https://www.bilibili.com/video/BV18A411L7UX">https://www.bilibili.com/video/BV18A411L7UX</a></li>
+<li>黑马程序员 Java 大型分布式微服务闪聚支付项目，Java 移动支付全生态系统：<a href="https://www.bilibili.com/video/BV17v411V79c">https://www.bilibili.com/video/BV17v411V79c</a></li>
+<li>黑马程序员 Java 项目《好客租房》：<a href="https://www.bilibili.com/video/BV1sZ4y1F7PD">https://www.bilibili.com/video/BV1sZ4y1F7PD</a></li>
+</ul>
+<h1 id="项目源码（50-套）"><a href="#项目源码（50-套）" class="headerlink" title="项目源码（50 套）"></a>项目源码（50 套）</h1><h2 id="电商秒杀"><a href="#电商秒杀" class="headerlink" title="电商秒杀"></a>电商秒杀</h2><ul>
+<li>天猫整站 J2EE：<a href="https://how2j.cn/module/115.html">https://how2j.cn/module/115.html</a></li>
+<li>天猫整站 SSM：<a href="https://how2j.cn/module/134.html">https://how2j.cn/module/134.html</a></li>
+<li>天猫整站 Springboot：<a href="https://how2j.cn/module/156.html">https://how2j.cn/module/156.html</a></li>
+<li>mall-learning：<a href="https://github.com/macrozheng/mall-learningmall">https://github.com/macrozheng/mall-learningmall</a>（学习教程，架构、业务、技术要点全方位解析）</li>
+<li>SpringBoot 电商商城系统 Mall4j：<a href="https://github.com/gz-yami/mall4j">https://github.com/gz-yami/mall4j</a></li>
+<li>SpringBoot 完整电商系统 Mall：<a href="https://github.com/macrozheng/mall">https://github.com/macrozheng/mall</a>（包括前台商城系统及后台管理系统，基于 SpringBoot+MyBatis 实现）</li>
+<li>newbee-mall：<a href="https://github.com/newbee-ltd/newbee-mall">https://github.com/newbee-ltd/newbee-mall</a> （一套电商系统，包括 newbee-mall 商城系统及 newbee-mall-admin 商城后台管理系统，基于 Spring Boot 2.X 及相关技术栈开发）</li>
+<li>paascloud-master：<a href="https://github.com/paascloud/paascloud-master">https://github.com/paascloud/paascloud-master</a>（基于 spring cloud + vue + oAuth2.0，前后端分离商城系统）</li>
+<li>mall-swarm：<a href="https://github.com/macrozheng/mall-swarm">https://github.com/macrozheng/mall-swarm</a>（一套微服务商城系统，采用了 Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch 等核心技术，同时提供了基于 Vue 的管理后台方便快速搭建系统）</li>
+<li>onemall：<a href="https://github.com/YunaiV/onemall">https://github.com/YunaiV/onemall</a>（mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba）</li>
+<li>litemall：<a href="https://github.com/linlinjava/litemall">https://github.com/linlinjava/litemall</a>（又一个小商城，litemall = Spring Boot 后端 + Vue 管理员前端 + 微信小程序用户前端 + Vue 用户移动端）</li>
+<li>xmall：<a href="https://github.com/Exrick/xmall">https://github.com/Exrick/xmall </a>（基于 SOA 架构的分布式电商购物商城 前后端分离 前台商城:Vue 全家桶 后台管理系统）</li>
+<li>miaosha：<a href="https://github.com/qiurunze123/miaosha">https://github.com/qiurunze123/miaosha</a> （秒杀系统设计与实现）</li>
+<li>SecKill：<a href="https://github.com/hfbin/Seckill">https://github.com/hfbin/Seckill</a>（基于 SpringBoot+Mybatis+Redis+RabbitMQ 秒杀系统）</li>
+</ul>
+<h2 id="博客论坛"><a href="#博客论坛" class="headerlink" title="博客论坛"></a>博客论坛</h2><ul>
+<li><a href="%5Bhttps://github.com/langhsu/mblog%5D(https://github.com/langhsu/mblog)">Mblog</a>：开源 Java 博客系统</li>
+<li><a href="%5Bhttps://github.com/halo-dev/halo%5D(https://github.com/halo-dev/halo)">halo</a>：一个优秀的开源博客发布应用</li>
+<li><a href="%5Bhttps://github.com/Qbian61/forum-java%5D(https://github.com/Qbian61/forum-java)">forum-java</a>：一款用 Java（spring boot） 实现的现代化社区（论坛/问答/BBS/社交网络/博客）系统平台</li>
+<li><a href="%5Bhttps://github.com/lenve/vhr%5D(https://github.com/lenve/vhr)">vhr</a>：微人事是一个前后端分离的人力资源管理系统，项目采用 SpringBoot+Vue 开发。</li>
+<li><a href="%5Bhttps://github.com/cloudfavorites/favorites-web%5D(https://github.com/cloudfavorites/favorites-web)">favorites-web</a>:云收藏 Spring Boot 2.X 开源项目。云收藏是一个使用 Spring Boot 构建的开源网站，可以让用户在线随时随地收藏的一个网站，在网站上分类整理收藏的网站或者文章。</li>
+<li><a href="%5Bhttps://github.com/codedrinker/community%5D(https://github.com/codedrinker/community)">community</a>：码问，开源论坛、问答系统，现有功能提问、回复、通知、最新、最热、消除零回复功能。技术栈 Spring、Spring Boot、MyBatis、MySQL/H2、Bootstrap</li>
+<li><a href="%5Bhttps://github.com/yourkevin/NiterForum%5D(https://github.com/yourkevin/NiterForum)">NiterForum</a>：尼特社区-NiterForum-一个论坛/社区程序。后端 Springboot/MyBatis/Maven/MySQL，前端 Thymeleaf/Layui。可供初学者，学习、交流使用。</li>
+<li><a href="%5Bhttps://github.com/lenve/VBlog%5D(https://github.com/lenve/VBlog)">VBlog</a>：V 部落，Vue+SpringBoot 实现的多用户博客管理平台!</li>
+<li><a href="%5Bhttps://github.com/damoqiongqiu/NiceFish%5D(https://github.com/damoqiongqiu/NiceFish)">NiceFish</a>：SpringBoot/SpringCloud 前后端分离项目</li>
+<li><a href="%5Bhttps://github.com/ZHENFENG13/My-Blog%5D(https://github.com/ZHENFENG13/My-Blog)">My-Blog</a>： My Blog 是由 SpringBoot + Mybatis + Thymeleaf 等技术实现的 Java 博客系统，页面美观、功能齐全、部署简单及完善的代码，一定会给使用者无与伦比的体验。</li>
+<li><a href="%5Bhttps://github.com/ZHENFENG13/My-Blog-layui%5D(https://github.com/ZHENFENG13/My-Blog-layui)">My-Blog-layui</a>：layui 版本的 My-Blog : A simple &amp; beautiful blogging system implemented with spring-boot &amp; layui &amp; thymeleaf &amp; mybatis My Blog 是由 SpringBoot + Layui + Mybatis + Thymeleaf 等技术实现的 Java 博客系统，页面美观、功能齐全、部署简单及完善的代码，一定会给使用者无与伦比的体验</li>
+<li><a href="%5Bhttps://github.com/88250/symphony%5D(https://github.com/88250/symphony)">symphony</a>：Java 实现的现代化社区</li>
+</ul>
+<h2 id="管理系统"><a href="#管理系统" class="headerlink" title="管理系统"></a>管理系统</h2><ul>
+<li><a href="%5Bhttps://github.com/wxiaoqi/Spring-Cloud-Admin%5D(https://github.com/wxiaoqi/Spring-Cloud-Admin)">Spring-Cloud-Admin</a>：Cloud-Admin 是国内首个基于 Spring Cloud 微服务化开发平台，具有统一授权、认证后台管理系统，其中包含具备用户管理、资源权限管理、网关 API 管理等多个模块，支持多业务系统并行开发，可以作为后端服务的开发脚手架。代码简洁，架构清晰，适合学习和直接项目中使用。核心技术采用 Spring Boot2 以及 Spring Cloud Gateway 相关核心组件，前端采用 vue-element-admin 组件。</li>
+<li><a href="%5Bhttps://github.com/tomsun28/bootshiro%5D(https://github.com/tomsun28/bootshiro)">bootshiro</a>：基于 springboot+shiro+jwt 的资源无状态认证权限管理系统后端</li>
+<li><a href="%5Bhttps://github.com/72crm/72crm-java%5D(https://github.com/72crm/72crm-java)">悟空 CRM</a>：基于 jfinal+vue+ElementUI 的前后端分离 CRM 系统</li>
+<li><a href="%5Bhttps://github.com/elunez/eladmin%5D(https://github.com/elunez/eladmin)">EL-ADMIN</a>：基于 SpringBoot 的后台管理系统</li>
+<li><a href="%5Bhttps://gitee.com/log4j/pig%5D(https://gitee.com/log4j/pig)">pig</a>：基于 Spring Boot 2.2、 Spring Cloud Hoxton &amp; Alibaba、 OAuth2 的 RBAC 权限管理系统。</li>
+<li><a href="%5Bhttps://github.com/wuyouzhuguli/FEBS-Shiro%5D(https://github.com/wuyouzhuguli/FEBS-Shiro)">FEBS-Shiro</a>：Spring Boot 2.1.3，Shiro1.4.0 &amp; Layui 2.5.4 权限管理系统。</li>
+<li><a href="%5Bhttps://github.com/Heeexy/SpringBoot-Shiro-Vue%5D(https://github.com/Heeexy/SpringBoot-Shiro-Vue)">Spring Boot-Shiro-Vue</a>：基于 Spring Boot-Shiro-Vue 的权限管理</li>
+<li><a href="%5Bhttps://github.com/ZeroWdd/studentmanager%5D(https://github.com/ZeroWdd/studentmanager)">studentmanager</a>：基于 springboot+mybatis 学生管理系统</li>
+<li><a href="%5Bhttps://github.com/jishenghua/jshERP%5D(https://github.com/jishenghua/jshERP)">jshERP</a>：华夏 ERP 基于 SpringBoot 框架和 SaaS 模式，立志为中小企业提供开源好用的 ERP 软件，目前专注进销存+财务功能。主要模块有零售管理、采购管理、销售管理、仓库管理、财务管理、报表查询、系统管理等。支持预付款、收入支出、仓库调拨、组装拆卸、订单等特色功能。拥有库存状况、出入库统计等报表。同时对角色和权限进行了细致全面控制，精确到每个按钮和菜单。</li>
+<li><a href="%5Bhttps://github.com/misterchaos/HotelSystem%5D(https://github.com/misterchaos/HotelSystem)">HotelSystem</a>：酒店管理系统 Java,tomcat,mysql,servlet,jsp 实现，没有使用任何框架</li>
+</ul>
+<h2 id="开发平台"><a href="#开发平台" class="headerlink" title="开发平台"></a>开发平台</h2><ul>
+<li><a href="%5Bhttps://github.com/2014shijina2014/open-capacity-platform%5D(https://github.com/2014shijina2014/open-capacity-platform)">open-capacity-platform</a>：微服务能力开发平台</li>
+<li><a href="%5Bhttps://github.com/zhangdaiscott/jeecg-boot%5D(https://github.com/zhangdaiscott/jeecg-boot)">jeecg-boot</a>：JeecgBoot 是一款基于 BPM 的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发。</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="%5Bhttps://github.com/mindskip/xzs%5D(https://github.com/mindskip/xzs)">学之思在线考试系统</a>：一款 java + vue 的前后端分离的考试系统</li>
+<li><a href="%5Bhttps://github.com/Jackson0714/PassJava-Platform%5D(https://github.com/Jackson0714/PassJava-Platform)">PassJava-Platform</a>：一款面试刷题的 Spring Cloud 开源系统</li>
+<li><a href="%5Bhttps://github.com/kekingcn/kkFileView%5D(https://github.com/kekingcn/kkFileView)">kkFileView</a>：使用 spring boot 打造文件文档在线预览项目</li>
+<li><a href="%5Bhttps://github.com/baomidou/dynamic-datasource-spring-boot-starter%5D(https://github.com/baomidou/dynamic-datasource-spring-boot-starter)">dynamic-datasource</a>：一个基于 springboot 的快速集成多数据源的启动器</li>
+<li><a href="%5Bhttps://github.com/373675032/moti-cloud%5D(https://github.com/373675032/moti-cloud)">moti-cloud</a>：莫提网盘，基于 SpringBoot+MyBatis+ThymeLeaf+BootStrap，适合初学者</li>
+<li><a href="%5Bhttps://github.com/qiurunze123/threadandjuc%5D(https://github.com/qiurunze123/threadandjuc)">threadandjuc</a>：three-high-import 高可用\高可靠\高性能，三高多线程导入系统（该项目意义为理论贯通)</li>
+<li><a href="%5Bhttps://github.com/proxyee-down-org/proxyee-down%5D(https://github.com/proxyee-down-org/proxyee-down)">proxyee-down</a>：http 下载工具，基于 http 代理，支持多连接分块下载</li>
+<li><a href="%5Bhttps://github.com/sfturing/hosp_order%5D(https://github.com/sfturing/hosp_order)">hosp_order</a>：医院预约挂号系统，基于 SSM 框架</li>
+<li><a href="%5Bhttps://how2j.cn/module/170.html%5D(https://how2j.cn/module/170.html)">趋势投资 SpringCloud</a></li>
+<li><a href="%5Bhttps://how2j.cn/module/176.html%5D(https://how2j.cn/module/176.html)">DiyTomcat</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -2896,81 +2875,41 @@ stop
       </tags>
   </entry>
   <entry>
-    <title>阶段5：项目实战</title>
-    <url>/2022/12/03/jie-duan-5-xiang-mu-shi-zhan/</url>
+    <title>阶段7：Java求职</title>
+    <url>/2022/12/03/jie-duan-7-java-qiu-zhi/</url>
     <content><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><blockquote>
-<p>综合所学技术从 0 到 1 开发和上线一个全面、有特色的、可以写进简历的个人项目。</p>
+<p>找到好工作</p>
 </blockquote>
-<h1 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h1><blockquote>
-<p>其实在之前的框架学习视频中应该就做过几个项目了，但相对不够完整和体系化。 有想法的同学可以做任何自己想做的项目，推荐参加一些作品类竞赛，练手、拿奖、收获项目经历一举三得。 暂时没想法的，建议先跟着专门带做项目的视频教程做 1 - 2 套 Java 完整项目，一定要从 0 到 1 自己手写！ 有能力的也可以试着用 GitHub 上的源码来学习~ 做一个完整的项目的确很不容易，建议大家根据自己的时间和兴趣选择 <strong>较新的、有配套源码的</strong> 教程，保持耐心。</p>
-</blockquote>
-<h1 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h1><ul>
-<li>尚硅谷 - 谷粒学院 - 微服务 + 全栈 - 在线教育实战项目：<a href="https://www.bilibili.com/video/BV1dQ4y1A75e">https://www.bilibili.com/video/BV1dQ4y1A75e</a>（全栈项目，前后端讲得都很全面）</li>
-<li>尚硅谷 - 尚筹网 - Java 项目实战开发教程 - SSM 框架 + 微服务架构：<a href="https://www.bilibili.com/video/BV1bE411T7oZ">https://www.bilibili.com/video/BV1bE411T7oZ</a>（500 多集，包含完整的用户权限管理，功能丰富、细致全面）</li>
-<li>黑马 - 24 小时搞定 Java 毕设电商项目：<a href="https://www.bilibili.com/video/BV13f4y1r7fS">https://www.bilibili.com/video/BV13f4y1r7fS</a></li>
-<li>黑马程序员 Java 项目《传智健康》，超完整的企业级医疗行业项目：<a href="https://www.bilibili.com/video/BV1Bo4y117zV">https://www.bilibili.com/video/BV1Bo4y117zV</a></li>
-<li>黑马程序员 Java 项目《万信金融》企业级开发实战，互联网金融行业解决方案：<a href="https://www.bilibili.com/video/BV1Ub4y1f7rk">https://www.bilibili.com/video/BV1Ub4y1f7rk</a></li>
-<li>黑马程序员 Java 项目 SaaS 移动办公完整版《iHRM 人力资源管理系统》，跨行业 SaaS 办公整合性解决方案：<a href="https://www.bilibili.com/video/BV18A411L7UX">https://www.bilibili.com/video/BV18A411L7UX</a></li>
-<li>黑马程序员 Java 大型分布式微服务闪聚支付项目，Java 移动支付全生态系统：<a href="https://www.bilibili.com/video/BV17v411V79c">https://www.bilibili.com/video/BV17v411V79c</a></li>
-<li>黑马程序员 Java 项目《好客租房》：<a href="https://www.bilibili.com/video/BV1sZ4y1F7PD">https://www.bilibili.com/video/BV1sZ4y1F7PD</a></li>
+<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><ol>
+<li>尽早做规划，可以通过大厂招聘官网的岗位描述来了解岗位的要求</li>
+<li>多读面经，坚持刷算法</li>
+<li>多参与面试，持续复盘总结</li>
+</ol>
+<h1 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h1><ul>
+<li><strong>岗位要求</strong><ul>
+<li>阿里 Java 开发：<a href="https://campus.alibaba.com/position.htm?refno=12699">https://campus.alibaba.com/position.htm?refno=12699</a></li>
+<li>腾讯后台开发：<a href="https://join.qq.com/post_detail.html?pid=1&amp;id=101&amp;tid=2">https://join.qq.com/post_detail.html?pid=1&amp;id=101&amp;tid=2</a></li>
+<li>腾讯全栈开发：<a href="https://join.qq.com/post_detail.html?pid=1&amp;id=137&amp;tid=2">https://join.qq.com/post_detail.html?pid=1&amp;id=137&amp;tid=2</a></li>
+<li>腾讯运营开发：<a href="https://join.qq.com/post_detail.html?pid=1&amp;id=105&amp;tid=2">https://join.qq.com/post_detail.html?pid=1&amp;id=105&amp;tid=2</a></li>
+<li>美团后端开发：<a href="https://campus.meituan.com/jobs?jobFamily=1&amp;jobId=4005&amp;jobType=1&amp;pageNo=2">https://campus.meituan.com/jobs?jobFamily=1&amp;jobId=4005&amp;jobType=1&amp;pageNo=2</a></li>
+<li>华为软件开发：<a href="https://career.huawei.com/reccampportal/portal5/campus-recruitment-detail.html?jobId=176044">https://career.huawei.com/reccampportal/portal5/campus-recruitment-detail.html?jobId=176044</a></li>
 </ul>
-<h1 id="项目源码（50-套）"><a href="#项目源码（50-套）" class="headerlink" title="项目源码（50 套）"></a>项目源码（50 套）</h1><h2 id="电商秒杀"><a href="#电商秒杀" class="headerlink" title="电商秒杀"></a>电商秒杀</h2><ul>
-<li>天猫整站 J2EE：<a href="https://how2j.cn/module/115.html">https://how2j.cn/module/115.html</a></li>
-<li>天猫整站 SSM：<a href="https://how2j.cn/module/134.html">https://how2j.cn/module/134.html</a></li>
-<li>天猫整站 Springboot：<a href="https://how2j.cn/module/156.html">https://how2j.cn/module/156.html</a></li>
-<li>mall-learning：<a href="https://github.com/macrozheng/mall-learningmall">https://github.com/macrozheng/mall-learningmall</a>（学习教程，架构、业务、技术要点全方位解析）</li>
-<li>SpringBoot 电商商城系统 Mall4j：<a href="https://github.com/gz-yami/mall4j">https://github.com/gz-yami/mall4j</a></li>
-<li>SpringBoot 完整电商系统 Mall：<a href="https://github.com/macrozheng/mall">https://github.com/macrozheng/mall</a>（包括前台商城系统及后台管理系统，基于 SpringBoot+MyBatis 实现）</li>
-<li>newbee-mall：<a href="https://github.com/newbee-ltd/newbee-mall">https://github.com/newbee-ltd/newbee-mall</a> （一套电商系统，包括 newbee-mall 商城系统及 newbee-mall-admin 商城后台管理系统，基于 Spring Boot 2.X 及相关技术栈开发）</li>
-<li>paascloud-master：<a href="https://github.com/paascloud/paascloud-master">https://github.com/paascloud/paascloud-master</a>（基于 spring cloud + vue + oAuth2.0，前后端分离商城系统）</li>
-<li>mall-swarm：<a href="https://github.com/macrozheng/mall-swarm">https://github.com/macrozheng/mall-swarm</a>（一套微服务商城系统，采用了 Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch 等核心技术，同时提供了基于 Vue 的管理后台方便快速搭建系统）</li>
-<li>onemall：<a href="https://github.com/YunaiV/onemall">https://github.com/YunaiV/onemall</a>（mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba）</li>
-<li>litemall：<a href="https://github.com/linlinjava/litemall">https://github.com/linlinjava/litemall</a>（又一个小商城，litemall = Spring Boot 后端 + Vue 管理员前端 + 微信小程序用户前端 + Vue 用户移动端）</li>
-<li>xmall：<a href="https://github.com/Exrick/xmall">https://github.com/Exrick/xmall </a>（基于 SOA 架构的分布式电商购物商城 前后端分离 前台商城:Vue 全家桶 后台管理系统）</li>
-<li>miaosha：<a href="https://github.com/qiurunze123/miaosha">https://github.com/qiurunze123/miaosha</a> （秒杀系统设计与实现）</li>
-<li>SecKill：<a href="https://github.com/hfbin/Seckill">https://github.com/hfbin/Seckill</a>（基于 SpringBoot+Mybatis+Redis+RabbitMQ 秒杀系统）</li>
+</li>
+<li><strong>知识总结</strong><ul>
+<li>⭐ 牛客 Java 面试宝典：<a href="https://www.nowcoder.com/tutorial/94">https://www.nowcoder.com/tutorial/94</a></li>
+<li>阿里 Java 技术图谱：<a href="https://developer.aliyun.com/graph/java">https://developer.aliyun.com/graph/java</a></li>
 </ul>
-<h2 id="博客论坛"><a href="#博客论坛" class="headerlink" title="博客论坛"></a>博客论坛</h2><ul>
-<li><a href="%5Bhttps://github.com/langhsu/mblog%5D(https://github.com/langhsu/mblog)">Mblog</a>：开源 Java 博客系统</li>
-<li><a href="%5Bhttps://github.com/halo-dev/halo%5D(https://github.com/halo-dev/halo)">halo</a>：一个优秀的开源博客发布应用</li>
-<li><a href="%5Bhttps://github.com/Qbian61/forum-java%5D(https://github.com/Qbian61/forum-java)">forum-java</a>：一款用 Java（spring boot） 实现的现代化社区（论坛/问答/BBS/社交网络/博客）系统平台</li>
-<li><a href="%5Bhttps://github.com/lenve/vhr%5D(https://github.com/lenve/vhr)">vhr</a>：微人事是一个前后端分离的人力资源管理系统，项目采用 SpringBoot+Vue 开发。</li>
-<li><a href="%5Bhttps://github.com/cloudfavorites/favorites-web%5D(https://github.com/cloudfavorites/favorites-web)">favorites-web</a>:云收藏 Spring Boot 2.X 开源项目。云收藏是一个使用 Spring Boot 构建的开源网站，可以让用户在线随时随地收藏的一个网站，在网站上分类整理收藏的网站或者文章。</li>
-<li><a href="%5Bhttps://github.com/codedrinker/community%5D(https://github.com/codedrinker/community)">community</a>：码问，开源论坛、问答系统，现有功能提问、回复、通知、最新、最热、消除零回复功能。技术栈 Spring、Spring Boot、MyBatis、MySQL/H2、Bootstrap</li>
-<li><a href="%5Bhttps://github.com/yourkevin/NiterForum%5D(https://github.com/yourkevin/NiterForum)">NiterForum</a>：尼特社区-NiterForum-一个论坛/社区程序。后端 Springboot/MyBatis/Maven/MySQL，前端 Thymeleaf/Layui。可供初学者，学习、交流使用。</li>
-<li><a href="%5Bhttps://github.com/lenve/VBlog%5D(https://github.com/lenve/VBlog)">VBlog</a>：V 部落，Vue+SpringBoot 实现的多用户博客管理平台!</li>
-<li><a href="%5Bhttps://github.com/damoqiongqiu/NiceFish%5D(https://github.com/damoqiongqiu/NiceFish)">NiceFish</a>：SpringBoot/SpringCloud 前后端分离项目</li>
-<li><a href="%5Bhttps://github.com/ZHENFENG13/My-Blog%5D(https://github.com/ZHENFENG13/My-Blog)">My-Blog</a>： My Blog 是由 SpringBoot + Mybatis + Thymeleaf 等技术实现的 Java 博客系统，页面美观、功能齐全、部署简单及完善的代码，一定会给使用者无与伦比的体验。</li>
-<li><a href="%5Bhttps://github.com/ZHENFENG13/My-Blog-layui%5D(https://github.com/ZHENFENG13/My-Blog-layui)">My-Blog-layui</a>：layui 版本的 My-Blog : A simple &amp; beautiful blogging system implemented with spring-boot &amp; layui &amp; thymeleaf &amp; mybatis My Blog 是由 SpringBoot + Layui + Mybatis + Thymeleaf 等技术实现的 Java 博客系统，页面美观、功能齐全、部署简单及完善的代码，一定会给使用者无与伦比的体验</li>
-<li><a href="%5Bhttps://github.com/88250/symphony%5D(https://github.com/88250/symphony)">symphony</a>：Java 实现的现代化社区</li>
+</li>
+<li><strong>面经</strong><ul>
+<li>⭐ 2021 最新 Java 笔试、面试题合集：<a href="https://pan.baidu.com/s/1DE4HAu-DS80n7VOaGpU_KQ">https://pan.baidu.com/s/1DE4HAu-DS80n7VOaGpU_KQ</a>（密码：lkw1）</li>
+<li>⭐ 牛客面经：<a href="https://www.nowcoder.com/discuss/experience?tagId=639">https://www.nowcoder.com/discuss/experience?tagId=639</a></li>
 </ul>
-<h2 id="管理系统"><a href="#管理系统" class="headerlink" title="管理系统"></a>管理系统</h2><ul>
-<li><a href="%5Bhttps://github.com/wxiaoqi/Spring-Cloud-Admin%5D(https://github.com/wxiaoqi/Spring-Cloud-Admin)">Spring-Cloud-Admin</a>：Cloud-Admin 是国内首个基于 Spring Cloud 微服务化开发平台，具有统一授权、认证后台管理系统，其中包含具备用户管理、资源权限管理、网关 API 管理等多个模块，支持多业务系统并行开发，可以作为后端服务的开发脚手架。代码简洁，架构清晰，适合学习和直接项目中使用。核心技术采用 Spring Boot2 以及 Spring Cloud Gateway 相关核心组件，前端采用 vue-element-admin 组件。</li>
-<li><a href="%5Bhttps://github.com/tomsun28/bootshiro%5D(https://github.com/tomsun28/bootshiro)">bootshiro</a>：基于 springboot+shiro+jwt 的资源无状态认证权限管理系统后端</li>
-<li><a href="%5Bhttps://github.com/72crm/72crm-java%5D(https://github.com/72crm/72crm-java)">悟空 CRM</a>：基于 jfinal+vue+ElementUI 的前后端分离 CRM 系统</li>
-<li><a href="%5Bhttps://github.com/elunez/eladmin%5D(https://github.com/elunez/eladmin)">EL-ADMIN</a>：基于 SpringBoot 的后台管理系统</li>
-<li><a href="%5Bhttps://gitee.com/log4j/pig%5D(https://gitee.com/log4j/pig)">pig</a>：基于 Spring Boot 2.2、 Spring Cloud Hoxton &amp; Alibaba、 OAuth2 的 RBAC 权限管理系统。</li>
-<li><a href="%5Bhttps://github.com/wuyouzhuguli/FEBS-Shiro%5D(https://github.com/wuyouzhuguli/FEBS-Shiro)">FEBS-Shiro</a>：Spring Boot 2.1.3，Shiro1.4.0 &amp; Layui 2.5.4 权限管理系统。</li>
-<li><a href="%5Bhttps://github.com/Heeexy/SpringBoot-Shiro-Vue%5D(https://github.com/Heeexy/SpringBoot-Shiro-Vue)">Spring Boot-Shiro-Vue</a>：基于 Spring Boot-Shiro-Vue 的权限管理</li>
-<li><a href="%5Bhttps://github.com/ZeroWdd/studentmanager%5D(https://github.com/ZeroWdd/studentmanager)">studentmanager</a>：基于 springboot+mybatis 学生管理系统</li>
-<li><a href="%5Bhttps://github.com/jishenghua/jshERP%5D(https://github.com/jishenghua/jshERP)">jshERP</a>：华夏 ERP 基于 SpringBoot 框架和 SaaS 模式，立志为中小企业提供开源好用的 ERP 软件，目前专注进销存+财务功能。主要模块有零售管理、采购管理、销售管理、仓库管理、财务管理、报表查询、系统管理等。支持预付款、收入支出、仓库调拨、组装拆卸、订单等特色功能。拥有库存状况、出入库统计等报表。同时对角色和权限进行了细致全面控制，精确到每个按钮和菜单。</li>
-<li><a href="%5Bhttps://github.com/misterchaos/HotelSystem%5D(https://github.com/misterchaos/HotelSystem)">HotelSystem</a>：酒店管理系统 Java,tomcat,mysql,servlet,jsp 实现，没有使用任何框架</li>
+</li>
+<li><strong>视频</strong><ul>
+<li>⭐ 尚硅谷 2021 逆袭版 Java 面试题第三季：<a href="https://www.bilibili.com/video/BV1Hy4y1B78T">https://www.bilibili.com/video/BV1Hy4y1B78T</a></li>
+<li>⭐ 阿里大佬透彻讲解 Java 面试 500 道必考题：<a href="https://www.bilibili.com/video/BV1yU4y1J7Bb">https://www.bilibili.com/video/BV1yU4y1J7Bb</a></li>
 </ul>
-<h2 id="开发平台"><a href="#开发平台" class="headerlink" title="开发平台"></a>开发平台</h2><ul>
-<li><a href="%5Bhttps://github.com/2014shijina2014/open-capacity-platform%5D(https://github.com/2014shijina2014/open-capacity-platform)">open-capacity-platform</a>：微服务能力开发平台</li>
-<li><a href="%5Bhttps://github.com/zhangdaiscott/jeecg-boot%5D(https://github.com/zhangdaiscott/jeecg-boot)">jeecg-boot</a>：JeecgBoot 是一款基于 BPM 的低代码平台！前后端分离架构 SpringBoot 2.x，SpringCloud，Ant Design&amp;Vue，Mybatis-plus，Shiro，JWT，支持微服务。强大的代码生成器让前后端代码一键生成，实现低代码开发。</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="%5Bhttps://github.com/mindskip/xzs%5D(https://github.com/mindskip/xzs)">学之思在线考试系统</a>：一款 java + vue 的前后端分离的考试系统</li>
-<li><a href="%5Bhttps://github.com/Jackson0714/PassJava-Platform%5D(https://github.com/Jackson0714/PassJava-Platform)">PassJava-Platform</a>：一款面试刷题的 Spring Cloud 开源系统</li>
-<li><a href="%5Bhttps://github.com/kekingcn/kkFileView%5D(https://github.com/kekingcn/kkFileView)">kkFileView</a>：使用 spring boot 打造文件文档在线预览项目</li>
-<li><a href="%5Bhttps://github.com/baomidou/dynamic-datasource-spring-boot-starter%5D(https://github.com/baomidou/dynamic-datasource-spring-boot-starter)">dynamic-datasource</a>：一个基于 springboot 的快速集成多数据源的启动器</li>
-<li><a href="%5Bhttps://github.com/373675032/moti-cloud%5D(https://github.com/373675032/moti-cloud)">moti-cloud</a>：莫提网盘，基于 SpringBoot+MyBatis+ThymeLeaf+BootStrap，适合初学者</li>
-<li><a href="%5Bhttps://github.com/qiurunze123/threadandjuc%5D(https://github.com/qiurunze123/threadandjuc)">threadandjuc</a>：three-high-import 高可用\高可靠\高性能，三高多线程导入系统（该项目意义为理论贯通)</li>
-<li><a href="%5Bhttps://github.com/proxyee-down-org/proxyee-down%5D(https://github.com/proxyee-down-org/proxyee-down)">proxyee-down</a>：http 下载工具，基于 http 代理，支持多连接分块下载</li>
-<li><a href="%5Bhttps://github.com/sfturing/hosp_order%5D(https://github.com/sfturing/hosp_order)">hosp_order</a>：医院预约挂号系统，基于 SSM 框架</li>
-<li><a href="%5Bhttps://how2j.cn/module/170.html%5D(https://how2j.cn/module/170.html)">趋势投资 SpringCloud</a></li>
-<li><a href="%5Bhttps://how2j.cn/module/176.html%5D(https://how2j.cn/module/176.html)">DiyTomcat</a></li>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -3174,51 +3113,6 @@ stop
       </tags>
   </entry>
   <entry>
-    <title>阶段7：Java求职</title>
-    <url>/2022/12/03/jie-duan-7-java-qiu-zhi/</url>
-    <content><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><blockquote>
-<p>找到好工作</p>
-</blockquote>
-<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><ol>
-<li>尽早做规划，可以通过大厂招聘官网的岗位描述来了解岗位的要求</li>
-<li>多读面经，坚持刷算法</li>
-<li>多参与面试，持续复盘总结</li>
-</ol>
-<h1 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h1><ul>
-<li><strong>岗位要求</strong><ul>
-<li>阿里 Java 开发：<a href="https://campus.alibaba.com/position.htm?refno=12699">https://campus.alibaba.com/position.htm?refno=12699</a></li>
-<li>腾讯后台开发：<a href="https://join.qq.com/post_detail.html?pid=1&amp;id=101&amp;tid=2">https://join.qq.com/post_detail.html?pid=1&amp;id=101&amp;tid=2</a></li>
-<li>腾讯全栈开发：<a href="https://join.qq.com/post_detail.html?pid=1&amp;id=137&amp;tid=2">https://join.qq.com/post_detail.html?pid=1&amp;id=137&amp;tid=2</a></li>
-<li>腾讯运营开发：<a href="https://join.qq.com/post_detail.html?pid=1&amp;id=105&amp;tid=2">https://join.qq.com/post_detail.html?pid=1&amp;id=105&amp;tid=2</a></li>
-<li>美团后端开发：<a href="https://campus.meituan.com/jobs?jobFamily=1&amp;jobId=4005&amp;jobType=1&amp;pageNo=2">https://campus.meituan.com/jobs?jobFamily=1&amp;jobId=4005&amp;jobType=1&amp;pageNo=2</a></li>
-<li>华为软件开发：<a href="https://career.huawei.com/reccampportal/portal5/campus-recruitment-detail.html?jobId=176044">https://career.huawei.com/reccampportal/portal5/campus-recruitment-detail.html?jobId=176044</a></li>
-</ul>
-</li>
-<li><strong>知识总结</strong><ul>
-<li>⭐ 牛客 Java 面试宝典：<a href="https://www.nowcoder.com/tutorial/94">https://www.nowcoder.com/tutorial/94</a></li>
-<li>阿里 Java 技术图谱：<a href="https://developer.aliyun.com/graph/java">https://developer.aliyun.com/graph/java</a></li>
-</ul>
-</li>
-<li><strong>面经</strong><ul>
-<li>⭐ 2021 最新 Java 笔试、面试题合集：<a href="https://pan.baidu.com/s/1DE4HAu-DS80n7VOaGpU_KQ">https://pan.baidu.com/s/1DE4HAu-DS80n7VOaGpU_KQ</a>（密码：lkw1）</li>
-<li>⭐ 牛客面经：<a href="https://www.nowcoder.com/discuss/experience?tagId=639">https://www.nowcoder.com/discuss/experience?tagId=639</a></li>
-</ul>
-</li>
-<li><strong>视频</strong><ul>
-<li>⭐ 尚硅谷 2021 逆袭版 Java 面试题第三季：<a href="https://www.bilibili.com/video/BV1Hy4y1B78T">https://www.bilibili.com/video/BV1Hy4y1B78T</a></li>
-<li>⭐ 阿里大佬透彻讲解 Java 面试 500 道必考题：<a href="https://www.bilibili.com/video/BV1yU4y1J7Bb">https://www.bilibili.com/video/BV1yU4y1J7Bb</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java全栈学习路线</category>
-      </categories>
-      <tags>
-        <tag>Java全栈学习路线</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>阶段8：职业规划</title>
     <url>/2022/12/03/jie-duan-8-zhi-ye-gui-hua/</url>
     <content><![CDATA[<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><blockquote>
@@ -3313,6 +3207,117 @@ stop
 <li>美团技术团队：<a href="https://tech.meituan.com/">https://tech.meituan.com/</a></li>
 <li>阿里技术团队：<a href="https://102.alibaba.com/tech/list/">https://102.alibaba.com/tech/list/</a></li>
 <li>有赞技术团队：<a href="https://tech.youzan.com/tag/back-end/">https://tech.youzan.com/tag/back-end/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java全栈学习路线</category>
+      </categories>
+      <tags>
+        <tag>Java全栈学习路线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阶段2：计算机基础</title>
+    <url>/2022/12/03/jie-duan-2-ji-suan-ji-ji-chu/</url>
+    <content><![CDATA[<h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h2><p><strong>数据结构</strong></p>
+<ul>
+<li>数组</li>
+<li>字符串</li>
+<li>队列</li>
+<li>栈</li>
+<li>链表</li>
+<li>集合</li>
+<li>哈希表</li>
+<li>二叉树</li>
+</ul>
+<p><strong>算法</strong></p>
+<ul>
+<li>排序</li>
+<li>双指针</li>
+<li>查找</li>
+<li>分治</li>
+<li>动态规划</li>
+<li>递归</li>
+<li>回溯</li>
+<li>贪心</li>
+<li>位运算</li>
+<li>DFS</li>
+<li>BFS</li>
+<li>图</li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>在线教程<ul>
+<li>⭐ LeetCode LeetBook：<a href="https://leetcode-cn.com/leetbook/">https://leetcode-cn.com/leetbook/</a></li>
+</ul>
+</li>
+<li>在线刷题<ul>
+<li>⭐ LeetCode：<a href="https://leetcode-cn.com/">https://leetcode-cn.com/</a></li>
+</ul>
+</li>
+<li>书籍<ul>
+<li>⭐《小灰的漫画算法》</li>
+<li>⭐《剑指 Offer》</li>
+<li>《程序员代码面试指南》</li>
+<li>图解算法数据结构：<a href="https://leetcode-cn.com/leetbook/detail/illustration-of-algorithm/">https://leetcode-cn.com/leetbook/detail/illustration-of-algorithm/</a></li>
+</ul>
+</li>
+<li>视频<ul>
+<li>尚硅谷 Java 数据结构与算法：<a href="https://www.bilibili.com/video/BV1E4411H73v">https://www.bilibili.com/video/BV1E4411H73v</a></li>
+<li>Leetcode 真题解析：<a href="https://www.bilibili.com/video/BV1a54y1b74k">https://www.bilibili.com/video/BV1a54y1b74k</a></li>
+</ul>
+</li>
+<li>工具<ul>
+<li>VisuAlgo 数据结构和算法动态可视化：<a href="https://visualgo.net/zh">https://visualgo.net/zh</a></li>
+<li>数据结构可视化：<a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></li>
+</ul>
+</li>
+<li>网站<ul>
+<li>五分钟学算法：<a href="https://www.cxyxiaowu.com/">https://www.cxyxiaowu.com/</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="知识-1"><a href="#知识-1" class="headerlink" title="知识"></a>知识</h2><ul>
+<li>进程、线程</li>
+<li>进程 / 线程间通讯方式</li>
+<li>进程调度算法</li>
+<li>进程 / 线程状态</li>
+<li>死锁</li>
+<li>内存管理</li>
+<li>文件管理</li>
+</ul>
+<h2 id="资源-1"><a href="#资源-1" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>视频<ul>
+<li>《清华操作系统原理》：<a href="https://www.bilibili.com/video/BV1uW411f72n">https://www.bilibili.com/video/BV1uW411f72n</a></li>
+</ul>
+</li>
+<li>书籍<ul>
+<li>《编码》</li>
+<li>《30 天自制操作系统》</li>
+<li>《现代操作系统》（难度较大，不推荐新手看）</li>
+<li>《深入理解计算机系统》（难度较大，不推荐新手看）</li>
+</ul>
+</li>
+</ul>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="知识-2"><a href="#知识-2" class="headerlink" title="知识"></a>知识</h2><ul>
+<li>HTTP / HTTPS 协议</li>
+<li>网络模型</li>
+<li>UDP / TCP 协议</li>
+<li>网络安全</li>
+<li>DNS</li>
+<li>《图解 HTTP》</li>
+</ul>
+<h2 id="资源-2"><a href="#资源-2" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>视频<ul>
+<li>《计算机网络微课堂》：<a href="https://www.bilibili.com/video/BV1c4411d7jb">https://www.bilibili.com/video/BV1c4411d7jb</a></li>
+</ul>
+</li>
+<li>书籍<ul>
+<li>⭐《图解 HTTP》</li>
+<li>《网络是怎样连接的》</li>
+<li>⭐《图解 TCP / IP》</li>
+<li>《计算机网络-自顶向下方法》（难度较大，不推荐新手看）</li>
+</ul>
+</li>
 </ul>
 ]]></content>
       <categories>
